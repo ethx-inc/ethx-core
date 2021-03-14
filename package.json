@@ -7,16 +7,15 @@
 		"build": "next build",
 		"start": "next start",
 		"prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-		"lint": "eslint . --ext .tsx",
-		"lint:fix": "eslint . --ext .tsx --fix",
+		"lint": "eslint . --ext .tsx && prettier --check .",
+		"lint:fix": "eslint . --ext .tsx --fix && prettier --write .",
 		"prepare": "husky install",
 		"postinstall": "husky install"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "prettier-format && yarn lint",
-			"pre-push": " yarn lint:fix",
-			"...": "..."
+			"pre-commit": "yarn lint",
+			"pre-push": " yarn lint:fix"
 		}
 	},
 	"dependencies": {
@@ -59,7 +58,7 @@
 		"postcss": "^8.2.8",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-preset-env": "^6.7.0",
-		"prettier": "2.1.1",
+		"prettier": "2.2.1",
 		"sass": "^1.32.8",
 		"sass-loader": "^11.0.1",
 		"style-loader": "^2.0.0",
