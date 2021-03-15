@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ButtonProps {
+export interface ButtonProps {
 	title: string;
 }
 

@@ -1,0 +1,22 @@
+{
+	"name": "@ethx/button-atom",
+	"version": "0.1.0",
+	"description": "ETHX Button atom",
+	"main": "button.atom.tsx",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"button"
+	],
+	"devDependencies": {},
+	"peerDependencies": {
+		"react": "17.0.1"
+	},
+	"author": "Powell, Anthony",
+	"license": "ISC",
+	"dependencies": {
+		"@storybook/react": "^6.1.21",
+		"@storybook/addon-docs": "^6.1.21"
+	}
+}

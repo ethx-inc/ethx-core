@@ -2,6 +2,16 @@
 	"root": true,
 	"env": { "browser": true, "es6": true, "node": true, "commonjs": true },
 	"parser": "@typescript-eslint/parser",
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	},
 	"extends": [
 		"airbnb",
 		"prettier",
@@ -16,6 +26,13 @@
 		"plugin:import/warnings",
 		"plugin:jsx-a11y/recommended"
 	],
+	"parserOptions": {
+		"ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+		"sourceType": "module", // Allows for the use of imports
+		"ecmaFeatures": {
+			"jsx": true // Allows for the parsing of JSX
+		}
+	},
 	"plugins": ["prettier", "@typescript-eslint", "react", "react-hooks"],
 	"rules": {
 		// Existing rules
@@ -30,6 +47,7 @@
 		"no-use-before-define": "off",
 		"@typescript-eslint/no-use-before-define": ["error"],
 		"prettier/prettier": ["error"],
-		"react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }]
+		"react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+		"react/jsx-props-no-spreading": 0
 	}
 }
