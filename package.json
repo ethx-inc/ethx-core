@@ -66,6 +66,6 @@
 		"sass": "^1.32.8",
 		"sass-loader": "^11.0.1",
 		"style-loader": "^2.0.0",
-		"tailwindcss": "npm:@tailwindcss/postcss7-compat"
+		"tailwindcss": "^2.0.4"
 	}
 }
