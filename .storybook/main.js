@@ -14,9 +14,17 @@ module.exports = {
     "../packages/components/**/*.stories.tsx"
   ],
   "addons": [
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-docs",
-    "@storybook/addon-a11y"
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
   ]
 }
