@@ -13,7 +13,8 @@ export const Button = ({ title, color }: ButtonProps): JSX.Element => {
 			type='button'
 			className={`font-semibold py-2 px-6 ${
 				color ? `bg-[${color}]` : 'bg-yellow-200'
-			}  rounded-xl`}>
+			}  rounded-xl`}
+			style={{ fontFamily: 'Roboto' }}>
 			{title}
 		</button>
 	);
