@@ -10,13 +10,21 @@ export default {
 	component: Button /* component */,
 	argTypes: {
 		color: { control: 'color' },
+		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
 
 const Template: Story<ButtonProps> = args => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const DarkMode = Template.bind({});
 
-Primary.args = {
+DarkMode.args = {
 	title: 'Button',
+};
+
+export const LightMode = Template.bind({});
+
+LightMode.args = {
+	title: 'Light Button',
+	color: 'green-400',
 };

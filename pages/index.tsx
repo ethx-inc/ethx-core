@@ -1,18 +1,15 @@
 import React from 'react';
 
-const navy = ' Navy ';
+import { Button } from '../packages/components/atoms/button-atom/src';
 
-console.log(navy);
-
-export const Home = (killer: string): JSX.Element => {
-	console.log(killer);
-
+export const Home = (): JSX.Element => {
 	return (
 		<div className='mx-auto w-3/5'>
 			<header />
 			<div className='font-bold text-7xl text-center'>
 				Welcome To ETHX!
 			</div>
+			<Button title='Click Me' />
 		</div>
 	);
 };
