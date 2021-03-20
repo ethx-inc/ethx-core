@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "plop/ploppack.js"  ],
   "exclude": [
     "node_modules"
   ]
