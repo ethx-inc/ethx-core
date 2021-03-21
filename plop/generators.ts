@@ -1,51 +1,70 @@
-import { PlopGenerator } from 'plop';
+import { PlopGeneratorConfig } from 'node-plop';
+import { NodePlopAPI, PlopGenerator } from 'plop';
 
-const atomGenerator = (plop): PlopGenerator =>
+import {
+    atomAction,
+    controllerAction,
+    moleculeAction,
+    organismAction,
+    pageAction,
+    serviceAction,
+    templateAction,
+} from './actions';
+import {
+    atomPrompt,
+    controllerPrompt,
+    moleculePrompt,
+    organismPrompt,
+    pagePrompt,
+    servicePrompt,
+    templatePrompt,
+} from './prompts';
+
+export const atomGenerator = (plop: NodePlopAPI): PlopGeneratorConfig =>
 	plop.setGenerator('atom', {
 		description: 'generate a atom',
-		prompt: [],
-		action: [atomAction],
+		prompts: [atomPrompt],
+		actions: [atomAction],
 	});
 
-const organismGenerator = plop => {
+export const organismGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('organism', {
 		description: 'generate a organism',
-		prompt: [],
-		action: [organismAction],
+		prompts: [organismPrompt],
+		actions: [organismAction],
 	});
-};
-const moleculeGenerator = plop => {
+
+export const moleculeGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('molecule', {
 		description: 'generate a molecule',
-		prompt: [],
-		action: [moleculeAction],
+		prompts: [moleculePrompt],
+		actions: [moleculeAction],
 	});
-};
-const templateGenerator = plop => {
+
+export const templateGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('template', {
 		description: 'generate a template',
-		prompt: [],
-		action: [templateAction],
+		prompts: [templatePrompt],
+		actions: [templateAction],
 	});
-};
-const pageGenerator = plop => {
+
+export const pageGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('page', {
 		description: 'generate a page',
-		prompt: [],
-		action: [pageAction],
+		prompts: [pagePrompt],
+		actions: [pageAction],
 	});
-};
-const controllerGenerator = plop => {
+
+export const controllerGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('controller', {
 		description: 'generate a controller',
-		prompt: [],
-		action: [controllerAction],
+		prompts: [controllerPrompt],
+		actions: [controllerAction],
 	});
-};
-const serviceGenerator = plop => {
+
+export const serviceGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('service', {
 		description: 'generate a service',
-		prompt: [],
-		action: [serviceAction],
+		prompts: [servicePrompt],
+		actions: [serviceAction],
 	});
-};
