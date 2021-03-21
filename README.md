@@ -19,6 +19,8 @@ We are using
 
 ## Getting Started
 
+### Folder Structure
+![Atomic Design](https://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png)
 All UI components should be composed in atom, molecules, organisms, templates and pages. They should be created and designed in isolation using storybook.
 
 First, thing clone the repo
