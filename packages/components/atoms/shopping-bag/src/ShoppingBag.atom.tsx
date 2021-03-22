@@ -4,7 +4,7 @@ import '../../../../../styles/globals.css';
 
 export interface ShoppingBagProps {
 	count: number;
-	color?: string;
+	color?: 'white' | 'black' | 'gray-400';
 }
 
 export const ShoppingBag = ({
@@ -15,9 +15,8 @@ export const ShoppingBag = ({
 		<button
 			type='button'
 			className={`font-semibold py-2 px-6 ${
-				color ? `bg-[${color}]` : 'bg-yellow-200'
-			}  rounded-xl`}
-			style={{ fontFamily: 'Roboto' }}>
+				color ? `text-${color}` : 'text-black'
+			}  rounded-xl`}>
 			{count}
 		</button>
 	);
