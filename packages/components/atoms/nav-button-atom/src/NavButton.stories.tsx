@@ -1,22 +1,20 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { NavLink, NavLinkProps } from './NavLink.atom';
+import { NavButton, NavButtonProps } from './NavButton.atom';
 
 // eslint-disable-next-line import/no-unresolved
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 export default {
-	title: 'Atom/NavLink' /* Title of the component  */,
-	component: NavLink /* component */,
+	title: 'Atom/NavButton' /* Title of the component  */,
+	component: NavButton /* component */,
 	argTypes: {},
 } as Meta;
 
-const Template: Story<NavLinkProps> = args => <NavLink {...args} />;
+const Template: Story<NavButtonProps> = args => <NavButton {...args} />;
 
 export const NavBar = Template.bind({});
 
 NavBar.args = {
-	label: 'home',
-	href:
-		'https://nextjs.org/learn/basics/navigate-between-pages/link-component',
+	label: 'sign in',
 };

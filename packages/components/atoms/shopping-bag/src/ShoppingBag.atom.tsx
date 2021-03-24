@@ -6,7 +6,7 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 export interface ShoppingBagProps {
 	count: number;
-	color?: 'white' | 'gray-400';
+	color?: 'black' | 'gray-400';
 }
 
 export const ShoppingBag = ({
@@ -17,7 +17,7 @@ export const ShoppingBag = ({
 		<button
 			type='button'
 			className={`font-semibold ${
-				color ? `text-${color}` : 'text-black'
+				color ? `text-${color}` : 'text-white'
 			}  relative flex justify-center items-center`}>
 			<HiOutlineShoppingBag size={40} />
 			<span className='absolute top-3'>{count}</span>
