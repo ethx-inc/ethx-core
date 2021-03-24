@@ -6,7 +6,7 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 export interface ShoppingBagProps {
 	count: number;
-	color?: 'white' | 'black' | 'gray-400';
+	color?: 'white' | 'gray-400';
 }
 
 export const ShoppingBag = ({
