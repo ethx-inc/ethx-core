@@ -5,8 +5,8 @@ import '../../../../../styles/globals.css';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 export interface ShoppingBagProps {
-	count: number;
-	color?: 'black' | 'gray-400';
+	count?: 0;
+	color?: 'black' | 'gray-400' | 'white';
 }
 
 export const ShoppingBag = ({
@@ -17,7 +17,7 @@ export const ShoppingBag = ({
 		<button
 			type='button'
 			className={`font-semibold ${
-				color ? `text-${color}` : 'text-white'
+				color ? `text-${color}` : ''
 			}  relative flex justify-center items-center`}>
 			<HiOutlineShoppingBag size={40} />
 			<span className='absolute top-3'>{count}</span>
