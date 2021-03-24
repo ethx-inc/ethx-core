@@ -7,14 +7,17 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 export interface ShoppingBagProps {
 	count?: 0;
 	color?: 'black' | 'gray-400' | 'white';
+	onClick?;
 }
 
 export const ShoppingBag = ({
 	count,
 	color,
+	onClick,
 }: ShoppingBagProps): JSX.Element => {
 	return (
 		<button
+			onClick={() => onClick()}
 			type='button'
 			className={`font-semibold ${
 				color ? `text-${color}` : ''
