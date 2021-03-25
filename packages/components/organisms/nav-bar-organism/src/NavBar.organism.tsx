@@ -5,8 +5,6 @@ import { NavLink } from '../../../atoms/nav-link-atom/src/NavLink.atom';
 import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src/ShoppingBag.atom';
 import { Hamburger } from '../../../atoms/hamburger-atom/src/Hamburger.atom';
 
-import '../../../../../styles/globals.css';
-
 export interface NavBarProps {
 	backgroundColor?: 'black' | 'gray-400';
 	color?: 'black' | 'gray-400';

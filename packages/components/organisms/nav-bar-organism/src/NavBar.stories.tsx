@@ -15,4 +15,6 @@ const Template: Story<NavBarProps> = args => <NavBar {...args} />;
 
 export const primary = Template.bind({});
 
-primary.args = {};
+primary.args = {
+	color: 'black',
+};

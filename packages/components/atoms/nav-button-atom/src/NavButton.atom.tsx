@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../../../../../styles/globals.css';
-
 export interface NavButtonProps {
 	label: string;
 	color?: 'black' | 'gray-400' | 'white';

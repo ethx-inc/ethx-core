@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { GiHamburgerMenu } from 'react-icons/gi';
-
-import '../../../../../styles/globals.css';
+import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu';
 
 export interface HamburgerProps {
 	onClick?;

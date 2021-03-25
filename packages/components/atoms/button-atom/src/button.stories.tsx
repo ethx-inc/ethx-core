@@ -26,5 +26,4 @@ export const LightMode = Template.bind({});
 
 LightMode.args = {
 	title: 'Light Button',
-	color: 'green-400',
 };
