@@ -1,26 +1,25 @@
-import { PlopGeneratorConfig } from 'node-plop';
 import { NodePlopAPI, PlopGenerator } from 'plop';
 
 import {
-    atomAction,
-    controllerAction,
-    moleculeAction,
-    organismAction,
-    pageAction,
-    serviceAction,
-    templateAction,
+	atomAction,
+	controllerAction,
+	moleculeAction,
+	organismAction,
+	pageAction,
+	serviceAction,
+	templateAction,
 } from './actions';
 import {
-    atomPrompt,
-    controllerPrompt,
-    moleculePrompt,
-    organismPrompt,
-    pagePrompt,
-    servicePrompt,
-    templatePrompt,
+	atomPrompt,
+	controllerPrompt,
+	moleculePrompt,
+	organismPrompt,
+	pagePrompt,
+	servicePrompt,
+	templatePrompt,
 } from './prompts';
 
-export const atomGenerator = (plop: NodePlopAPI): PlopGeneratorConfig =>
+export const atomGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('atom', {
 		description: 'generate a atom',
 		prompts: [atomPrompt],
