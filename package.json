@@ -19,9 +19,10 @@
 		"create-package": "plop"
 	},
 	"dependencies": {
-		"@types/node": "^14.14.34",
-		"@types/react": "^17.0.3",
+		"@react-icons/all-files": "^4.1.0",
 		"@storybook/react": "^6.2.0-rc.4",
+		"@types/node": "^14.14.35",
+		"@types/react": "^17.0.3",
 		"next": "10.0.8",
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
