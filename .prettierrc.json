@@ -1,7 +1,7 @@
 {
 	"tabWidth": 4,
 	"useTabs": true,
-	"endOfLine": "lf",
+	"endOfLine": "auto",
 	"singleQuote": true,
 	"arrowParens": "avoid",
 	"bracketSpacing": true,
