@@ -22,7 +22,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "packages/components/atoms/shop-now/src/shopNow.atom.js", "packages/components/atoms/shop-now/shopNow.stories.js"  ],
+, "plop/ploppack.js"  ],
+    
   "exclude": [
     "node_modules"
   ]

@@ -8,9 +8,7 @@ import { ShoppingBag, ShoppingBagProps } from './ShoppingBag.atom';
 export default {
 	title: 'Atom/ShoppingBag' /* Title of the component  */,
 	component: ShoppingBag /* component */,
-	argTypes: {
-		color: { control: 'color' },
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<ShoppingBagProps> = args => <ShoppingBag {...args} />;
