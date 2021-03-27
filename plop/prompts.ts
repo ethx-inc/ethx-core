@@ -15,7 +15,6 @@ export const organismPrompt: InputQuestion = {
 };
 export const moleculePrompt: InputQuestion = {
 	type: 'input',
-
 	name: 'moleculeName',
 	message: 'Please enter molecule name',
 };

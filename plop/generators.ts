@@ -1,6 +1,6 @@
 import { NodePlopAPI, PlopGenerator } from 'plop';
-
 import {
+	generalComponentAction,
 	atomAction,
 	controllerAction,
 	moleculeAction,
@@ -10,6 +10,7 @@ import {
 	templateAction,
 } from './actions';
 import {
+	componentPrompt,
 	atomPrompt,
 	controllerPrompt,
 	moleculePrompt,
@@ -48,12 +49,18 @@ export const templateGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	});
 
 export const pageGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('page', {
+	plop.setGenerator('Page', {
 		description: 'generate a page',
 		prompts: [pagePrompt],
 		actions: [pageAction],
 	});
 
+export const componentGenerator = (plop: NodePlopAPI): PlopGenerator =>
+	plop.setGenerator('Component', {
+		description: 'generate a component',
+		prompts: [componentPrompt],
+		actions: [generalComponentAction],
+	});
 export const controllerGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('controller', {
 		description: 'generate a controller',

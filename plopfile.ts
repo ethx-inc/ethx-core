@@ -1,7 +1,14 @@
-import { NodePlopAPI } from 'plop';
+import { NodePlopAPI, Plop } from 'plop';
+import {
+	serviceGenerator,
+	controllerGenerator,
+	componentGenerator,
+} from './plop/generators';
 
-export const plopWelcome = (plop: NodePlopAPI): void => {
-	plop.setWelcomeMessage(
-		`Welcome to package generation. Please follow the prompts to generate your new package. For any questions view the README.`
-	);
+const packageSetup = (plop: NodePlopAPI): void => {
+	componentGenerator(plop);
+	controllerGenerator(plop);
+	serviceGenerator(plop);
 };
+
+export default packageSetup;

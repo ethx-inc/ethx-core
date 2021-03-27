@@ -1,5 +1,13 @@
 import { AddActionConfig } from 'plop';
 
+export const generalComponentAction: AddActionConfig = {
+	type: 'add',
+	path:
+		'packages/components/{{componentType}}s/{{kebabCase componentName}}.{{componentType}}.tsx',
+	template: './templates/atom.component.hbs',
+	templateFile: './templates/general.component.hbs',
+};
+
 export const atomAction: AddActionConfig = {
 	type: 'add',
 	path: 'packages/components/atoms/{{componentName}}.atom.tsx',
