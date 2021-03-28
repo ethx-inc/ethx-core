@@ -1,23 +1,24 @@
 import { NodePlopAPI, PlopGenerator } from 'plop';
+
 import {
-	generalComponentAction,
-	atomAction,
-	controllerAction,
-	moleculeAction,
-	organismAction,
-	pageAction,
-	serviceAction,
-	templateAction,
+    atomAction,
+    controllerAction,
+    generalComponentAction,
+    moleculeAction,
+    organismAction,
+    pageAction,
+    serviceAction,
+    templateAction,
 } from './actions';
 import {
-	componentPrompt,
-	atomPrompt,
-	controllerPrompt,
-	moleculePrompt,
-	organismPrompt,
-	pagePrompt,
-	servicePrompt,
-	templatePrompt,
+    atomPrompt,
+    componentPrompt,
+    controllerPrompt,
+    moleculePrompt,
+    organismPrompt,
+    pagePrompt,
+    servicePrompt,
+    templatePrompt,
 } from './prompts';
 
 export const atomGenerator = (plop: NodePlopAPI): PlopGenerator =>
@@ -57,20 +58,22 @@ export const pageGenerator = (plop: NodePlopAPI): PlopGenerator =>
 
 export const componentGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('Component', {
-		description: 'generate a component',
+		description: 'generate a component, an ui element',
 		prompts: [componentPrompt],
 		actions: [generalComponentAction],
 	});
 export const controllerGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('controller', {
-		description: 'generate a controller',
+	plop.setGenerator('Controller', {
+		description:
+			'generate a controller, a logical element that gives components brains',
 		prompts: [controllerPrompt],
 		actions: [controllerAction],
 	});
 
 export const serviceGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('service', {
-		description: 'generate a service',
+	plop.setGenerator('Service', {
+		description:
+			'generate a service, logic that should be shared throughout the application',
 		prompts: [servicePrompt],
 		actions: [serviceAction],
 	});
