@@ -1,39 +1,18 @@
-import { InputQuestion, ListQuestion } from 'inquirer';
+import { InputQuestion, ListQuestion, QuestionCollection } from 'inquirer';
 
-export const atomPrompt: InputQuestion = [
+export const componentPrompt: QuestionCollection = [
 	{
+		name: 'componentType',
+		type: 'list',
+		message: 'Selected which type of component you would like to generate',
+		choices: ['Atom', 'Molecule', 'Organism', 'Template', 'Page'],
+	},
+	{
+		name: 'componentName',
 		type: 'input',
-		name: 'atomName',
-		message: 'Please enter atom name',
+		message: 'Please give your component a name',
 	},
 ];
-
-export const organismPrompt: InputQuestion = {
-	type: 'input',
-	name: 'organismName',
-	message: 'Please enter organism name',
-};
-export const moleculePrompt: InputQuestion = {
-	type: 'input',
-	name: 'moleculeName',
-	message: 'Please enter molecule name',
-};
-export const templatePrompt: InputQuestion = {
-	type: 'input',
-	name: 'templateName',
-	message: 'Please enter template name',
-};
-export const pagePrompt: InputQuestion = {
-	type: 'input',
-	name: 'pageName',
-	message: 'Please enter page name',
-};
-export const componentPrompt: ListQuestion = {
-	type: 'list',
-	name: 'componentType',
-	message: 'Selected which type of component you would like to generate',
-	choices: ['Atom', 'Molecule', 'Organism', 'Template', 'Page'],
-};
 export const controllerPrompt: InputQuestion = {
 	type: 'input',
 	name: 'controllerName',
