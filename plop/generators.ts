@@ -1,66 +1,51 @@
 import { NodePlopAPI, PlopGenerator } from 'plop';
+import { componentPrompt, controllerPrompt, servicePrompt } from './prompts';
 
 import {
-    atomAction,
-    controllerAction,
-    generalComponentAction,
-    moleculeAction,
-    organismAction,
-    pageAction,
-    serviceAction,
-    templateAction,
+	atomAction,
+	controllerAction,
+	generalComponentAction,
+	moleculeAction,
+	organismAction,
+	pageAction,
+	serviceAction,
+	templateAction,
 } from './actions';
-import {
-    atomPrompt,
-    componentPrompt,
-    controllerPrompt,
-    moleculePrompt,
-    organismPrompt,
-    pagePrompt,
-    servicePrompt,
-    templatePrompt,
-} from './prompts';
-
-export const atomGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('atom', {
-		description: 'generate a atom',
-		prompts: [atomPrompt],
-		actions: [atomAction],
-	});
-
-export const organismGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('organism', {
-		description: 'generate a organism',
-		prompts: [organismPrompt],
-		actions: [organismAction],
-	});
-
-export const moleculeGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('molecule', {
-		description: 'generate a molecule',
-		prompts: [moleculePrompt],
-		actions: [moleculeAction],
-	});
-
-export const templateGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('template', {
-		description: 'generate a template',
-		prompts: [templatePrompt],
-		actions: [templateAction],
-	});
-
-export const pageGenerator = (plop: NodePlopAPI): PlopGenerator =>
-	plop.setGenerator('Page', {
-		description: 'generate a page',
-		prompts: [pagePrompt],
-		actions: [pageAction],
-	});
 
 export const componentGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('Component', {
 		description: 'generate a component, an ui element',
-		prompts: [componentPrompt],
-		actions: [generalComponentAction],
+		prompts: componentPrompt as [],
+		actions: data => {
+			let actions = [];
+			switch (data.componentType) {
+				case 'Atom':
+					actions = actions.concat(generalComponentAction);
+					console.log(data.componentType, data.componentName);
+					break;
+				case 'Molecule':
+					actions = actions.concat(generalComponentAction);
+					console.log(data.componentType, data.componentName);
+					break;
+				case 'Organism':
+					actions = actions.concat(generalComponentAction);
+					console.log(data.componentType, data.componentName);
+					break;
+				case 'Template':
+					actions = actions.concat(generalComponentAction);
+					console.log(data.componentType, data.componentName);
+					break;
+				case 'Page':
+					actions = actions.concat(generalComponentAction);
+					console.log(data.componentType, data.componentName);
+					break;
+
+				default:
+					break;
+			}
+			// console.log(actions);
+			return actions;
+		},
 	});
 export const controllerGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('Controller', {
