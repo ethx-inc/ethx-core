@@ -7,7 +7,7 @@ export interface ButtonProps {
 	color?: string;
 }
 
-export const Button = ({ title, color }: ButtonProps): JSX.Element => {
+export const Button = ({ title }: ButtonProps): JSX.Element => {
 	return (
 		<button
 			type='button'
