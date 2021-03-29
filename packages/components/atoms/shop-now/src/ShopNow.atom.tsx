@@ -8,8 +8,11 @@ export interface ShopNowProps {
 	fontColor?: string;
 }
 
-export const ShopNow = ({ title, color, fontColor }: ShopNowProps): JSX.Element => {
-
+export const ShopNow = ({
+	title,
+	color,
+	fontColor,
+}: ShopNowProps): JSX.Element => {
 	return (
 		<button
 			type='button'
