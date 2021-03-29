@@ -19,6 +19,8 @@ We are using
 
 ## Getting Started
 
+To create a new package run `yarn create-pacakge`, follow the prompts and your package should be generated for you.
+
 ### Folder Structure
 
 ![Atomic Design](https://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png)

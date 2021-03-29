@@ -1,55 +1,54 @@
-import { AddActionConfig } from 'plop';
-import fs from 'fs';
 import path from 'path';
+import { AddActionConfig } from 'plop';
 
 export const generalComponentAction: AddActionConfig[] = [
 	{
 		type: 'add',
 		path:
-			'packages/components/{{lowerCase componentType}}s/{{kebabCase componentName}}-{{lowerCase componentType}}/src/{{kebabCase componentName}}.{{lowerCase componentType}}.tsx',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{kebabCase componentName}}.{{dashCase componentType}}.tsx',
 		template: './templates/atom.component.hbs',
-		templateFile: path.join('./plop/templates/general.component.hbs'),
+		templateFile: path.join('./plop/templates/component.general.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{lowerCase componentType}}s/{{kebabCase componentName}}-{{lowerCase componentType}}/src/{{kebabCase componentName}}.stories.tsx',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{kebabCase componentName}}.stories.tsx',
 		template: './templates/atom.component.hbs',
-		templateFile: path.join('./plop/templates/general.component.hbs'),
+		templateFile: path.join('./plop/templates/component.stories.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{lowerCase componentType}}s/{{kebabCase componentName}}-{{lowerCase componentType}}/src/index.ts',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/index.ts',
 		template: './templates/atom.component.hbs',
-		templateFile: path.join('./plop/templates/general.component.hbs'),
+		templateFile: path.join('./plop/templates/component.index.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{lowerCase componentType}}s/{{kebabCase componentName}}-{{lowerCase componentType}}/src/{{kebabCase componentName}}.{{lowerCase componentType}}.d.ts',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/types.d.ts',
 		template: './templates/atom.component.hbs',
-		templateFile: path.join('./plop/templates/general.component.hbs'),
+		templateFile: path.join('./plop/templates/component.types.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{lowerCase componentType}}s/{{kebabCase componentName}}-{{lowerCase componentType}}/package.json',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/package.json',
 		template: './templates/atom.component.hbs',
-		templateFile: path.join('./plop/templates/general.component.hbs'),
+		templateFile: path.join('./plop/templates/component.package.hbs'),
 	},
 ];
 
 export const controllerAction: AddActionConfig = {
 	type: 'add',
-	path: 'packages/controllers/{{packageName}}.controller.tsx',
+	path: 'packages/controllers/{{kebabCase packageName}}.controller.tsx',
 	template: '/plop/templates/controller.package.hbs',
-	templateFile: path.join('./plop/templates/general.component.hbs'),
+	templateFile: path.join('./plop/templates/component.general.hbs'),
 };
 
 export const serviceAction: AddActionConfig = {
 	type: 'add',
-	path: 'packages/components/{{packageName}}.service.tsx',
+	path: 'packages/components/{{kebabCase packageName}}.service.tsx',
 	template: '/plop/templates/service.package.hbs',
-	templateFile: path.join('./plop/templates/general.component.hbs'),
+	templateFile: path.join('./plop/templates/component.general.hbs'),
 };
