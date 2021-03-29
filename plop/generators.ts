@@ -1,16 +1,11 @@
 import { NodePlopAPI, PlopGenerator } from 'plop';
-import { componentPrompt, controllerPrompt, servicePrompt } from './prompts';
 
 import {
-	atomAction,
-	controllerAction,
-	generalComponentAction,
-	moleculeAction,
-	organismAction,
-	pageAction,
-	serviceAction,
-	templateAction,
+    controllerAction,
+    generalComponentAction,
+    serviceAction,
 } from './actions';
+import { componentPrompt, controllerPrompt, servicePrompt } from './prompts';
 
 export const componentGenerator = (plop: NodePlopAPI): PlopGenerator =>
 	plop.setGenerator('Component', {
@@ -18,32 +13,27 @@ export const componentGenerator = (plop: NodePlopAPI): PlopGenerator =>
 		prompts: componentPrompt as [],
 		actions: data => {
 			let actions = [];
+
 			switch (data.componentType) {
 				case 'Atom':
 					actions = actions.concat(generalComponentAction);
-					console.log(data.componentType, data.componentName);
 					break;
 				case 'Molecule':
 					actions = actions.concat(generalComponentAction);
-					console.log(data.componentType, data.componentName);
 					break;
 				case 'Organism':
 					actions = actions.concat(generalComponentAction);
-					console.log(data.componentType, data.componentName);
 					break;
 				case 'Template':
 					actions = actions.concat(generalComponentAction);
-					console.log(data.componentType, data.componentName);
 					break;
 				case 'Page':
 					actions = actions.concat(generalComponentAction);
-					console.log(data.componentType, data.componentName);
 					break;
 
 				default:
 					break;
 			}
-			// console.log(actions);
 			return actions;
 		},
 	});
