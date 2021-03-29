@@ -4,20 +4,22 @@
 
 We are using
 
-- Next.js:
+-   Next.js:
     This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
     [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
     [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- Typescript:
+-   Typescript:
     [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- Storybook:
+-   Storybook:
     [Storybook What's a Story](https://storybook.js.org/docs/react/get-started/whats-a-story)
-- TailwindCSS:
+-   TailwindCSS:
     [Documentation](https://tailwindcss.com/docs)
 
     Everything should be created using Atomic Design for more details the full book is found online [here](https://atomicdesign.bradfrost.com/table-of-contents/) and a quick reference guide of core concepts can be found [here](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/), [here](https://bradfrost.com/blog/post/atomic-web-design/), storybook version [here](https://storybook.js.org/blog/storybook-addons-to-manage-data-state/), and video of the author of Atomic Design System can be found [here](https://www.youtube.com/watch?v=W-h1FtNYim4)
 
 ## Getting Started
+
+To create a new package run `yarn create-pacakge`, follow the prompts and your package should be generated for you.
 
 ### Folder Structure
 
@@ -82,12 +84,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Standards
 
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
-- [Semantic versioning](https://semver.org/#backusnaur-form-grammar-for-valid-semver-versions)
+-   [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
+-   [Semantic versioning](https://semver.org/#backusnaur-form-grammar-for-valid-semver-versions)
 
 ## Learn More
 
-- [How to COMMIT BETTER with Git](https://www.youtube.com/watch?v=Hlp-9cdImSM)
+-   [How to COMMIT BETTER with Git](https://www.youtube.com/watch?v=Hlp-9cdImSM)
 
 ## Setting up auto lint fixer
 
