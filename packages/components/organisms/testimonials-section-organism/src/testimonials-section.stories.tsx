@@ -6,7 +6,7 @@ import {
 	TestimonialsSectionProps,
 } from './testimonials-section.organism';
 
-import { Primary } from '../../../molecules/testimonial-molecule/Testimonial.stories';
+import { Primary } from '../../../molecules/testimonial-molecule/src/Testimonial.stories';
 
 export default {
 	title: 'Organism/TestimonialsSection',
@@ -30,4 +30,15 @@ Base.args = {
 		{ ...Primary.args, id: 2 },
 		{ ...Primary.args, id: 3 },
 	],
+};
+
+export const Stack = Template.bind({});
+
+Stack.args = {
+	testimonials: [
+		{ ...Primary.args, id: 0 },
+		{ ...Primary.args, id: 1 },
+		{ ...Primary.args, id: 2 },
+	],
+	stackView: true,
 };

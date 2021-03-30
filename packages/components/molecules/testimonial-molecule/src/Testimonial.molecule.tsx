@@ -17,7 +17,7 @@ export const Testimonial = ({
 	bgColor,
 }: TestimonialProps): JSX.Element => {
 	return (
-		<div className='relative flex flex-col justify-center md:w-40 sm:mr-0 mr-1'>
+		<div className='relative flex flex-col justify-center md:w-40 w-24 sm:mr-0 mr-1'>
 			<img
 				className='absolute z-10 rounded-full md:w-24 w-16 md:top-5 top-0 md:left-8 left-4'
 				src={img}
