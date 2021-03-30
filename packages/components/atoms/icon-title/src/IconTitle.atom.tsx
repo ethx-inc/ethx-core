@@ -7,11 +7,9 @@ export interface IconTitleProps {
 }
 
 export const IconTitle = ({ title }: IconTitleProps): JSX.Element => {
-
 	return (
-		<div className={`text-center`}>
-			<h4 className={`font-regular text-sm text-gray-400`}>{title}</h4>
+		<div className='text-center'>
+			<h4 className='font-regular text-sm text-gray-400'>{title}</h4>
 		</div>
-
 	);
 };

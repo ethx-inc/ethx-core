@@ -10,7 +10,7 @@ export default {
 	component: AddCart /* component */,
 	argTypes: {
 		color: { control: 'color' },
-		fontColor: { control: 'text-white'}
+		fontColor: { control: 'text-white' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
@@ -28,5 +28,5 @@ export const OutlineShopNow = Template.bind({});
 OutlineShopNow.args = {
 	title: 'add to cart',
 	color: 'transparent',
-	fontColor: 'text-black'
+	fontColor: 'text-black',
 };
