@@ -10,9 +10,13 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          primary: "#D77E5E"
+          primary: "#D77E5E",
+          secondary: "#E0BFBB"
         }
       },
+      minWidth: {
+        '1/4' : '25%'
+      }
     },
     variants: {
       extend: {},
