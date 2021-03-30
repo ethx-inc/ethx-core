@@ -1,17 +1,17 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { {{titleCase componentName}}{{titleCase componentType}}, {{titleCase componentName}}{{titleCase componentType}}Props } from './{{kebabCase componentName}}.{{dashCase componentType}}';
+import { {{pascalCase componentName}}{{pascalCase componentType}}, {{pascalCase componentName}}{{pascalCase componentType}}Props } from './{{kebabCase componentName}}.{{dashCase componentType}}';
 
 export default {
-	title: '{{titleCase componentType}}/{{titleCase componentName}}',
-	component: {{titleCase componentName}}{{titleCase componentType}},
+	title: '{{pascalCase componentType}}/{{pascalCase componentName}}',
+	component: {{pascalCase componentName}}{{pascalCase componentType}},
 	argTypes: {
         /* agrs go here */
 	},
 } as Meta;
 
-const Template: Story<{{titleCase componentName}}{{titleCase componentType}}Props> = args => <{{titleCase componentName}}{{titleCase componentType}} {...args} />;
+const Template: Story<{{pascalCase componentName}}{{pascalCase componentType}}Props> = args => <{{pascalCase componentName}}{{pascalCase componentType}} {...args} />;
 
 export const Base = Template.bind({});
 

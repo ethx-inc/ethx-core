@@ -9,7 +9,7 @@ export default {
 	title: 'Atom/HeroText' /* Title of the component  */,
 	component: HeroText /* component */,
 	argTypes: {
-		fontColor: { control: 'text-red-300'}
+		fontColor: { control: 'text-red-300' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
@@ -20,7 +20,7 @@ export const BrandColorHero = Template.bind({});
 
 BrandColorHero.args = {
 	title: 'ethx',
-	subtitle: 'simplified ecommerce for the conscious consumer'
+	subtitle: 'simplified ecommerce for the conscious consumer',
 };
 
 export const BrandColorAlt = Template.bind({});
@@ -28,5 +28,5 @@ export const BrandColorAlt = Template.bind({});
 BrandColorAlt.args = {
 	title: 'ethx',
 	subtitle: 'simplified ecommerce for the conscious consumer',
-	fontColor: 'text-gray'
+	fontColor: 'text-gray',
 };

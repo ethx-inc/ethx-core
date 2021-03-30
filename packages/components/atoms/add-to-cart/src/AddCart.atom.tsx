@@ -8,8 +8,11 @@ export interface AddCartProps {
 	fontColor?: string;
 }
 
-export const AddCart = ({ title, color, fontColor }: AddCartProps): JSX.Element => {
-
+export const AddCart = ({
+	title,
+	color,
+	fontColor,
+}: AddCartProps): JSX.Element => {
 	return (
 		<button
 			type='button'

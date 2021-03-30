@@ -5,21 +5,21 @@ export const generalComponentAction: AddActionConfig[] = [
 	{
 		type: 'add',
 		path:
-			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{kebabCase componentName}}.{{dashCase componentType}}.tsx',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{pascalCase componentName}}.{{dashCase componentType}}.tsx',
 		template: './templates/atom.component.hbs',
 		templateFile: path.join('./plop/templates/component.general.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{kebabCase componentName}}.stories.tsx',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/{{pascalCase componentName}}.stories.tsx',
 		template: './templates/atom.component.hbs',
 		templateFile: path.join('./plop/templates/component.stories.hbs'),
 	},
 	{
 		type: 'add',
 		path:
-			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{dashCase componentType}}/src/index.ts',
+			'packages/components/{{dashCase componentType}}s/{{kebabCase componentName}}-{{pascalCase componentType}}/src/index.ts',
 		template: './templates/atom.component.hbs',
 		templateFile: path.join('./plop/templates/component.index.hbs'),
 	},

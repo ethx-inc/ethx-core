@@ -9,7 +9,7 @@ export default {
 	title: 'Atom/SectionText' /* Title of the component  */,
 	component: SectionText /* component */,
 	argTypes: {
-		fontColor: { control: 'text-gray-400'}
+		fontColor: { control: 'text-gray-400' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
@@ -19,11 +19,11 @@ const Template: Story<SectionTextProps> = args => <SectionText {...args} />;
 export const NoSubTitle = Template.bind({});
 
 NoSubTitle.argTypes = {
-	subtitle: { control : {disable: true } }
+	subtitle: { control: { disable: true } },
 };
 
 NoSubTitle.args = {
-	title: 'testimonials'
+	title: 'testimonials',
 };
 
 export const TitleAndSubTitle = Template.bind({});
