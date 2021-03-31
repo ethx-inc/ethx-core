@@ -13,9 +13,9 @@
 		"lint:fix": "eslint ./packages/ --ext .tsx --fix && prettier --write ./packages/ && git add -A .",
 		"prepare": "husky install",
 		"postinstall": "husky install",
-		"storybook": "start-storybook -p 6006",
+		"storybook": "start-storybook -s ./public -p 6006",
 		"storybook:build": "build-storybook",
-		"build-storybook": "build-storybook",
+		"build-storybook": "build-storybook -s public",
 		"create-package": "plop"
 	},
 	"dependencies": {
