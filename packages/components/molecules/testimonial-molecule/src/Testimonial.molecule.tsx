@@ -17,14 +17,14 @@ export const Testimonial = ({
 	bgColor,
 }: TestimonialProps): JSX.Element => {
 	return (
-		<div className='relative flex flex-col justify-center md:w-40 w-24 sm:mr-0 mr-1'>
+		<div className='relative flex flex-col justify-center md:w-40 w-28 mr-1 md:min-w-10r min-w-7r'>
 			<img
-				className='absolute z-10 rounded-full md:w-24 w-16 md:top-5 top-0 md:left-8 left-4'
+				className='absolute z-10 rounded-full md:w-24 w-16 md:top-5 top-3 md:left-8 left-6'
 				src={img}
 				alt={`profile for ${name}`}
 			/>
 			<div
-				className={`md:mt-20 mt-10 flex flex-col justify-center items-center ${
+				className={`md:mt-20 mt-14 flex flex-col justify-center items-center ${
 					bgColor ? `bg-${bgColor}` : 'bg-secondary'
 				} md:h-40 h-28 rounded-md ${
 					color ? `text-${color}` : 'text-white'
