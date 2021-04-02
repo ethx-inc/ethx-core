@@ -23,15 +23,15 @@ const Template: Story<FilterDropdownProps> = args => <FilterDropdown {...args} /
 export const SolidFill = Template.bind({});
 
 SolidFill.args = {
-	borderColor: 'red-300',
-	color: 'red-300',
+	borderColor: 'primary',
+	color: 'primary',
 	fontColor: 'white'
 };
 
 export const OutlineNoFill = Template.bind({});
 
 OutlineNoFill.args = {
-	borderColor: 'gray-400',
-	color: 'transparent',
-	fontColor: 'gray-400',
+	borderColor: 'primary',
+	color: 'gray-50',
+	fontColor: 'gray-500'
 };

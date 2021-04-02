@@ -27,6 +27,6 @@ export const OutlineShopNow = Template.bind({});
 
 OutlineShopNow.args = {
 	title: 'add to cart',
-	color: 'transparent',
-	fontColor: 'text-black',
+	color: 'gray-50',
+	fontColor: 'gray-500',
 };

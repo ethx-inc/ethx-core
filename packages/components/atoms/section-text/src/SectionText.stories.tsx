@@ -9,7 +9,7 @@ export default {
 	title: 'Atom/SectionText' /* Title of the component  */,
 	component: SectionText /* component */,
 	argTypes: {
-		fontColor: { control: 'text-gray-400' },
+		fontColor: { control: 'gray-500' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;

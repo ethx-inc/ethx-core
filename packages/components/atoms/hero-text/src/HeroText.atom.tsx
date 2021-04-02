@@ -15,13 +15,11 @@ export const HeroText = ({
 }: HeroTextProps): JSX.Element => {
 	return (
 		<div className='w-3/5 text-center lg:text-left'>
-			<h2 className='font-bold text-5xl lg:text-6xl text-red-400'>
+			<h2 className='font-bold text-5xl lg:text-6xl text-primary'>
 				{title}
 			</h2>
 			<h4
-				className={`font-regular text-sm lg: text-lg ${
-					fontColor ? `text-[${fontColor}]` : 'text-red-300'
-				}`}>
+				className={`font-regular text-sm lg: text-lg text-${fontColor}`}>
 				{subtitle}
 			</h4>
 		</div>
