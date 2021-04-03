@@ -19,7 +19,7 @@ const Template: Story<IconImageProps> = args => <IconImage {...args} />;
 export const RoseOutline = Template.bind({});
 RoseOutline.args = {
 	// iconUrl: '/rice-icon.png',
-	borderColor: 'red-400'
+	borderColor: 'primary'
 }
 
 export const GrayOutline = Template.bind({});

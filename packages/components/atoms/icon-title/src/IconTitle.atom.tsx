@@ -3,13 +3,16 @@ import React from 'react';
 import '../../../../../styles/globals.css';
 
 export interface IconTitleProps {
-	title: string;
+	fontColor?: string;
+	title?: string;
 }
 
-export const IconTitle = ({ title }: IconTitleProps): JSX.Element => {
+export const IconTitle = ({ fontColor, title }: IconTitleProps): JSX.Element => {
 	return (
-		<div className='text-center'>
-			<h4 className='font-regular text-sm text-gray-400'>{title}</h4>
+		<div className={`mt-2 text-center`}>
+			<h4 className={`font-bold text-xs
+			${fontColor ? `text-${fontColor}` : 'text-primary'}
+			`}>{title}</h4>
 		</div>
 	);
 };
