@@ -16,12 +16,43 @@ export const IconWrapper = ({
 }: IconWrapperProps): JSX.Element => {
 
 	return (
+		<div className={`flex flex-col ml-12 lg:ml-0 lg:flex-row mt-5`}>
 
 		<div className={`grid justify-items-stretch w-40 h-40`}>
 			<div className={`justify-self-center`}>
 				<IconImage borderColor={borderColor} />
 				<IconTitle title={title} fontColor={fontColor}/>
 			</div>
+		</div>
+
+		<div className={`grid justify-items-stretch w-40 h-40`}>
+			<div className={`justify-self-center`}>
+				<IconImage borderColor={borderColor} />
+				<IconTitle title={title} fontColor={fontColor}/>
+			</div>
+		</div>
+
+		<div className={`grid justify-items-stretch w-40 h-40`}>
+			<div className={`justify-self-center`}>
+				<IconImage borderColor={borderColor} />
+				<IconTitle title={title} fontColor={fontColor}/>
+			</div>
+		</div>
+
+		<div className={`grid justify-items-stretch w-40 h-40`}>
+			<div className={`justify-self-center`}>
+				<IconImage borderColor={borderColor} />
+				<IconTitle title={title} fontColor={fontColor}/>
+			</div>
+		</div>
+
+		<div className={`grid justify-items-stretch w-40 h-40`}>
+			<div className={`justify-self-center`}>
+				<IconImage borderColor={borderColor} />
+				<IconTitle title={title} fontColor={fontColor}/>
+			</div>
+		</div>
+
 		</div>
 	);
 };
