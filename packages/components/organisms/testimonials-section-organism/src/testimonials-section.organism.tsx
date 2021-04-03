@@ -1,21 +1,17 @@
-import React from 'react';
-import {
-	Testimonial,
-	TestimonialProps,
-} from '../../../molecules/testimonial-molecule/src';
+import React, { FC } from 'react';
 
 import { SectionText } from '../../../atoms/section-text/src';
 
 export interface TestimonialsSectionProps {
 	/* Props here */
-	testimonials: TestimonialProps[];
 	stackView?: false;
+	children?: React.ReactNode;
 }
 
-export const TestimonialsSection = ({
-	testimonials,
+export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 	stackView,
-}: TestimonialsSectionProps): JSX.Element => {
+	children,
+}: TestimonialsSectionProps) => {
 	return (
 		<div className='flex flex-col items-center'>
 			<SectionText title='testimonials' subtitle='' />
@@ -23,9 +19,7 @@ export const TestimonialsSection = ({
 				className={`flex ${
 					stackView ? 'flex-col items-center' : ''
 				} md:justify-around justify-between w-full sm:overflow-auto overflow-x-scroll`}>
-				{testimonials.map(testimony => {
-					return <Testimonial key={testimony.id} {...testimony} />;
-				})}
+				{children}
 			</div>
 		</div>
 	);

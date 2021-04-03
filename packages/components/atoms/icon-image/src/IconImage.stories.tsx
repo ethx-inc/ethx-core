@@ -9,7 +9,7 @@ export default {
 	title: 'Atom/IconImage' /* Title of the component  */,
 	component: IconImage /* component */,
 	argTypes: {
-		borderColor: { control: 'borderColor'},
+		borderColor: { control: 'borderColor' },
 		// iconUrl: { control : 'iconUrl' }
 	},
 } as Meta;
@@ -19,11 +19,11 @@ const Template: Story<IconImageProps> = args => <IconImage {...args} />;
 export const RoseOutline = Template.bind({});
 RoseOutline.args = {
 	// iconUrl: '/rice-icon.png',
-	borderColor: 'red-400'
-}
+	borderColor: 'red-400',
+};
 
 export const GrayOutline = Template.bind({});
 GrayOutline.args = {
 	// iconUrl: '/rice-icon.png',
-	borderColor: 'gray-300'
-}
+	borderColor: 'gray-300',
+};

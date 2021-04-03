@@ -6,7 +6,7 @@ import {
 	TestimonialsSectionProps,
 } from './testimonials-section.organism';
 
-import { Primary } from '../../../molecules/testimonial-molecule/src/Testimonial.stories';
+import { Testimonial } from '../../../molecules/testimonial-molecule/src';
 
 export default {
 	title: 'Organism/TestimonialsSection',
@@ -17,28 +17,33 @@ export default {
 } as Meta;
 
 const Template: Story<TestimonialsSectionProps> = args => (
-	<TestimonialsSection {...args} />
+	<TestimonialsSection {...args}>
+		<Testimonial
+			name='Blake'
+			quote='I like eggs'
+			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+		/>
+		<Testimonial
+			name='Blake'
+			quote='I like eggs'
+			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+		/>
+		<Testimonial
+			name='Blake'
+			quote='I like eggs'
+			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+		/>
+	</TestimonialsSection>
 );
 
 export const Base = Template.bind({});
 
 Base.args = {
 	/* agrs go here */
-	testimonials: [
-		{ ...Primary.args, id: 0 },
-		{ ...Primary.args, id: 1 },
-		{ ...Primary.args, id: 2 },
-		{ ...Primary.args, id: 3 },
-	],
 };
 
 export const Stack = Template.bind({});
 
 Stack.args = {
-	testimonials: [
-		{ ...Primary.args, id: 0 },
-		{ ...Primary.args, id: 1 },
-		{ ...Primary.args, id: 2 },
-	],
 	stackView: true,
 };

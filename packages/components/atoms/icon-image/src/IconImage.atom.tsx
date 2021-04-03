@@ -8,9 +8,9 @@ export interface IconImageProps {
 }
 
 export const IconImage = ({ borderColor }: IconImageProps): JSX.Element => {
-
 	return (
-		<div className={`rounded-full object-contain border-2 border-${borderColor} w-24 h-24`}>
+		<div
+			className={`rounded-full object-contain border-2 border-${borderColor} w-24 h-24`}>
 			{/* <img src={`${iconUrl}`} alt='rice-icon-png' width={24} height={24}/> */}
 		</div>
 	);
