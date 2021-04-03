@@ -18,7 +18,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 			<div
 				className={`flex ${
 					stackView ? 'flex-col items-center' : ''
-				} md:justify-around justify-between w-full sm:overflow-auto overflow-x-scroll`}>
+				} md:justify-around justify-between w-full overflow-auto `}>
 				{children}
 			</div>
 		</div>
