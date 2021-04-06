@@ -22,7 +22,6 @@
   "ts-node": {
     // ts-node options here
     "transpileOnly": true,
-   packages/components/atoms/button-with-arrow/src/ButtonArrow.atom.jspackages/components/atoms/button-with-arrow/ButtonArrow.stories.js
     // ts-node-specific overrides for compilerOptions
     // any compilerOptions specified here will override the values specified above, *only* when running in ts-node
     "compilerOptions": {},

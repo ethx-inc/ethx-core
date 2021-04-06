@@ -9,7 +9,8 @@ export default {
 	title: 'Organism/IconWrapper' /* Title of the component  */,
 	component: IconWrapper /* component */,
 	argTypes: {
-		borderColor: { control : 'borderColor'},
+		borderColor: { control: 'borderColor' },
+		color: { control : 'color'},
 		fontColor: { control: 'fontColor'},
 		title: {
 			control: {
@@ -37,12 +38,14 @@ const Template: Story<IconWrapperProps> = args => <IconWrapper {...args} />;
 export const GrayIcon = Template.bind({});
 GrayIcon.args = {
 	borderColor: 'gray-300',
+	color: 'gray-50',
 	fontColor: 'gray-500'
 };
 
 export const RoseIcon = Template.bind({});
 RoseIcon.args = {
 	borderColor: 'primary',
+	color: 'gray-50',
 	fontColor: 'primary'
 }
 
