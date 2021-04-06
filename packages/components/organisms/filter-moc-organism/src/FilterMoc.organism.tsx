@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Dropdown } from '../../filter-dropdown-organism/src/Dropdown.organism';
+import { IconWrapper } from '../../icon-wrapper-organism/src/IconWrapper.organism';
 
 export interface FilterMocProps {
 	borderColor?: string;
