@@ -1,18 +1,16 @@
 import React from 'react';
 
-import '../../../../../styles/globals.css';
-
-export interface ShopNowProps {
+export interface ButtonCTAProps {
 	title: string;
 	color?: string;
 	fontColor?: string;
 }
 
-export const ShopNow = ({
+export const ButtonCTA = ({
 	title,
 	color,
 	fontColor,
-}: ShopNowProps): JSX.Element => {
+}: ButtonCTAProps): JSX.Element => {
 	return (
 		<button
 			type='button'
