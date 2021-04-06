@@ -20,15 +20,13 @@ const Template: Story<MoreFilterProps> = args => <MoreFilter {...args} />;
 export const SolidFill = Template.bind({});
 
 SolidFill.args = {
-	title: 'more ethx filters',
-	color: 'red-400',
+	color: 'primary',
 	fontColor: 'white',
 };
 
 export const OutlineNoFill = Template.bind({});
 
 OutlineNoFill.args = {
-	title: 'more ethx filters',
-	color: 'transparent',
-	fontColor: 'gray-400',
+	color: 'gray-50',
+	fontColor: 'gray-500',
 };

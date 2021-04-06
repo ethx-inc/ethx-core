@@ -37,7 +37,7 @@
 	"rules": {
 		// Existing rules
 		"comma-dangle": ["error", "always-multiline"], // https://eslint.org/docs/rules/comma-dangle
-		"function-paren-newline": ["error", "never"], // https://eslint.org/docs/rules/function-paren-newline
+		"function-paren-newline": ["error", "multiline"], // https://eslint.org/docs/rules/function-paren-newline
 		// New rules
 		"class-methods-use-this": "off",
 		"import/extensions": "off",

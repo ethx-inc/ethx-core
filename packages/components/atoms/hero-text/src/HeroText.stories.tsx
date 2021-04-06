@@ -21,6 +21,7 @@ export const BrandColorHero = Template.bind({});
 BrandColorHero.args = {
 	title: 'ethx',
 	subtitle: 'simplified ecommerce for the conscious consumer',
+	fontColor: 'primary',
 };
 
 export const BrandColorAlt = Template.bind({});
@@ -28,5 +29,5 @@ export const BrandColorAlt = Template.bind({});
 BrandColorAlt.args = {
 	title: 'ethx',
 	subtitle: 'simplified ecommerce for the conscious consumer',
-	fontColor: 'text-gray',
+	fontColor: 'gray-500',
 };

@@ -1,29 +1,23 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { FilterDropdown, FilterDropdownProps } from './FilterDropdown.atom';
+import { Dropdown, DropdownProps } from './Dropdown.organism';
 
 // eslint-disable-next-line import/no-unresolved
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 export default {
-	title: 'Atom/FilterDropdown' /* Title of the component  */,
-	component: FilterDropdown /* component */,
+	title: 'Atom/Dropdown' /* Title of the component  */,
+	component: Dropdown /* component */,
 	argTypes: {
 		borderColor: { control: 'borderColor' },
 		color: { control: 'color' },
 		fontColor: { control: 'fontColor' },
-		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
 
-// export const data = new Array(7).fill("more filter options");
-
-const Template: Story<FilterDropdownProps> = args => (
-	<FilterDropdown {...args} />
-);
+const Template: Story<DropdownProps> = args => <Dropdown {...args} />;
 
 export const SolidFill = Template.bind({});
-
 SolidFill.args = {
 	borderColor: 'primary',
 	color: 'primary',
@@ -31,7 +25,6 @@ SolidFill.args = {
 };
 
 export const OutlineNoFill = Template.bind({});
-
 OutlineNoFill.args = {
 	borderColor: 'primary',
 	color: 'gray-50',

@@ -27,9 +27,18 @@ export default {
 				],
 			},
 		},
+		fontColor: { control: 'fontColor' },
 	},
 } as Meta;
 
 const Template: Story<IconTitleProps> = args => <IconTitle {...args} />;
 
+export const RoseText = Template.bind({});
+RoseText.args = {
+	fontColor: 'primary',
+};
+
 export const GrayText = Template.bind({});
+GrayText.args = {
+	fontColor: 'gray-500',
+};

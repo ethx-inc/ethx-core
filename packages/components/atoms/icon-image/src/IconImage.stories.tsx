@@ -10,7 +10,7 @@ export default {
 	component: IconImage /* component */,
 	argTypes: {
 		borderColor: { control: 'borderColor' },
-		// iconUrl: { control : 'iconUrl' }
+		color: { control: 'color' },
 	},
 } as Meta;
 
@@ -18,12 +18,12 @@ const Template: Story<IconImageProps> = args => <IconImage {...args} />;
 
 export const RoseOutline = Template.bind({});
 RoseOutline.args = {
-	// iconUrl: '/rice-icon.png',
-	borderColor: 'red-400',
+	borderColor: 'primary',
+	color: 'gray-50',
 };
 
 export const GrayOutline = Template.bind({});
 GrayOutline.args = {
-	// iconUrl: '/rice-icon.png',
 	borderColor: 'gray-300',
+	color: 'gray-50',
 };

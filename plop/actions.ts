@@ -41,14 +41,14 @@ export const generalComponentAction: AddActionConfig[] = [
 
 export const controllerAction: AddActionConfig = {
 	type: 'add',
-	path: 'packages/controllers/{{kebabCase packageName}}.controller.tsx',
+	path: 'packages/controllers/{{dashCase controllerName}}.controller.tsx',
 	template: '/plop/templates/controller.package.hbs',
-	templateFile: path.join('./plop/templates/component.general.hbs'),
+	templateFile: path.join('./plop/templates/controller.general.hbs'),
 };
 
 export const serviceAction: AddActionConfig = {
 	type: 'add',
-	path: 'packages/components/{{kebabCase packageName}}.service.tsx',
+	path: 'packages/components/{{dashCase serviceName}}.service.tsx',
 	template: '/plop/templates/service.package.hbs',
-	templateFile: path.join('./plop/templates/component.general.hbs'),
+	templateFile: path.join('./plop/templates/service.general.hbs'),
 };
