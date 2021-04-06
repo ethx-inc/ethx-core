@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../../../../../styles/globals.css';
-
 export interface IconTitleProps {
 	fontColor?: string;
 	title?: string;
