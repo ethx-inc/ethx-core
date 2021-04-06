@@ -18,7 +18,7 @@ export const TestimonialCardAtom: FC<TestimonialCardAtomProps> = ({
 }: TestimonialCardAtomProps) => {
 	return (
 		<div
-			className={`md:mt-20 mt-14 flex flex-col justify-center items-center ${
+			className={`md:mt-16 mt-10 flex flex-col justify-center items-center ${
 				bgColor ? `bg-${bgColor}` : 'bg-secondary'
 			} md:h-40 h-28 rounded-md ${
 				color ? `text-${color}` : 'text-white'

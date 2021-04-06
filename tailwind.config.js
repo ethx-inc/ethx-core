@@ -11,7 +11,8 @@ module.exports = {
       extend: {
         colors: {
           primary: "#D77E5E",
-          secondary: "#E0BFBB"
+          secondary: "#E0BFBB",
+          offWhite: "#EAEAEA"
         }
       },
       minWidth: {

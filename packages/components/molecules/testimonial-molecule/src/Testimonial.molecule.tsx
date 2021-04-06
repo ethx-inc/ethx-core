@@ -20,9 +20,9 @@ export const Testimonial = ({
 	bgColor,
 }: TestimonialProps): JSX.Element => {
 	return (
-		<div className='relative flex flex-col justify-center md:w-40 w-28 mr-1 md:min-w-10r min-w-7r'>
+		<div className='relative flex flex-col justify-center md:w-40 w-28  sm:mr-0 mr-2 md:min-w-10r min-w-7r md:mb-2 mb-1'>
 			<AvatarAtom
-				css='absolute z-10 md:w-24 w-16 md:top-5 top-3 md:left-8 left-6'
+				css='absolute z-10 md:w-24 w-16 md:top-2 top-1 md:left-8 left-6'
 				name={name}
 				img={img}
 			/>
