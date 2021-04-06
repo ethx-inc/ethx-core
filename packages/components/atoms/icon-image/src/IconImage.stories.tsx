@@ -10,6 +10,7 @@ export default {
 	component: IconImage /* component */,
 	argTypes: {
 		borderColor: { control: 'borderColor' },
+
 		color: { control: 'color' },
 	},
 } as Meta;
