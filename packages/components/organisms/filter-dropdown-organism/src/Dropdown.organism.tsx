@@ -13,17 +13,23 @@ export const Dropdown = ({
 	borderColor,
 	color,
 	fontColor,
-	
 }: DropdownProps): JSX.Element => {
 	const [filterOpen, setFilterOpen] = React.useState(false);
 	return (
-
 		<div>
 			<div>
-				<MoreFilter onClick={() => setFilterOpen(!filterOpen)} color={color} fontColor={fontColor} />
+				<MoreFilter
+					onClick={() => setFilterOpen(!filterOpen)}
+					color={color}
+					fontColor={fontColor}
+				/>
 			</div>
-			<div className={`${ filterOpen ? 'flex flex-col' : ' hidden' }`}>
-				<FilterDropdown borderColor={borderColor} fontColor={fontColor} color={color}/>
+			<div className={`${filterOpen ? 'flex flex-col' : ' hidden'}`}>
+				<FilterDropdown
+					borderColor={borderColor}
+					fontColor={fontColor}
+					color={color}
+				/>
 			</div>
 		</div>
 	);

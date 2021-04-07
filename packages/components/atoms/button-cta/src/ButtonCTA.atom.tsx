@@ -16,9 +16,7 @@ export const ButtonCTA = ({
 			type='button'
 			className={`font-regular py-1 px-4 border-2 border-primary ${
 				color ? `bg-${color}` : 'bg-primary'
-			}  ${
-				fontColor ? `text-${fontColor}` : 'text-white'
-			} rounded-full`}
+			}  ${fontColor ? `text-${fontColor}` : 'text-white'} rounded-full`}
 			style={{ fontFamily: 'Roboto' }}>
 			{title}
 		</button>

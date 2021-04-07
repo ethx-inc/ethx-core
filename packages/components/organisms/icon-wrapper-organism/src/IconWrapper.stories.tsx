@@ -10,8 +10,8 @@ export default {
 	component: IconWrapper /* component */,
 	argTypes: {
 		borderColor: { control: 'borderColor' },
-		color: { control : 'color'},
-		fontColor: { control: 'fontColor'},
+		color: { control: 'color' },
+		fontColor: { control: 'fontColor' },
 		title: {
 			control: {
 				type: 'select',
@@ -39,14 +39,12 @@ export const GrayIcon = Template.bind({});
 GrayIcon.args = {
 	borderColor: 'gray-300',
 	color: 'gray-50',
-	fontColor: 'gray-500'
+	fontColor: 'gray-500',
 };
 
 export const RoseIcon = Template.bind({});
 RoseIcon.args = {
 	borderColor: 'primary',
 	color: 'gray-50',
-	fontColor: 'primary'
-}
-
-
+	fontColor: 'primary',
+};

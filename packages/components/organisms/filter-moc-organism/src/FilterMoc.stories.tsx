@@ -9,9 +9,9 @@ export default {
 	title: 'Organism/FilterMoc' /* Title of the component  */,
 	component: FilterMoc /* component */,
 	argTypes: {
-		borderColor: { control : 'borderColor'},
+		borderColor: { control: 'borderColor' },
 		color: { control: 'color' },
-		fontColor: { control: 'fontColor'},
+		fontColor: { control: 'fontColor' },
 	},
 } as Meta;
 
@@ -28,7 +28,5 @@ export const OutlineNoFill = Template.bind({});
 OutlineNoFill.args = {
 	borderColor: 'primary',
 	color: 'gray-50',
-	fontColor: 'gray-500'
-}
-
-
+	fontColor: 'gray-500',
+};

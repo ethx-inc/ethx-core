@@ -10,7 +10,7 @@ export default {
 	component: MoreFilter /* component */,
 	argTypes: {
 		color: { control: 'color' },
-		fontColor: { control: 'fontColor' }
+		fontColor: { control: 'fontColor' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
@@ -21,7 +21,7 @@ export const SolidFill = Template.bind({});
 
 SolidFill.args = {
 	color: 'primary',
-	fontColor: 'white'
+	fontColor: 'white',
 };
 
 export const OutlineNoFill = Template.bind({});

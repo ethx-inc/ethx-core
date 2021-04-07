@@ -16,45 +16,42 @@ export const IconWrapper = ({
 	fontColor,
 	title,
 }: IconWrapperProps): JSX.Element => {
-
 	return (
-		<div className={`flex flex-col ml-12 lg:ml-0 lg:flex-row mt-5`}>
-
-		<div className={`grid justify-items-stretch w-40 h-40`}>
-			<div className={`justify-self-center`}>
-				<IconImage borderColor={borderColor} color={color} />
-				<IconTitle title={title} fontColor={fontColor}/>
+		<div className='flex flex-col ml-12 lg:ml-0 lg:flex-row mt-5'>
+			<div className='grid justify-items-stretch w-40 h-40'>
+				<div className='justify-self-center'>
+					<IconImage borderColor={borderColor} color={color} />
+					<IconTitle title={title} fontColor={fontColor} />
+				</div>
 			</div>
-		</div>
 
-		<div className={`grid justify-items-stretch w-40 h-40`}>
-			<div className={`justify-self-center`}>
-				<IconImage borderColor={borderColor} color={color} />
-				<IconTitle title={title} fontColor={fontColor}/>
+			<div className='grid justify-items-stretch w-40 h-40'>
+				<div className='justify-self-center'>
+					<IconImage borderColor={borderColor} color={color} />
+					<IconTitle title={title} fontColor={fontColor} />
+				</div>
 			</div>
-		</div>
 
-		<div className={`grid justify-items-stretch w-40 h-40`}>
-			<div className={`justify-self-center`}>
-				<IconImage borderColor={borderColor} color={color} />
-				<IconTitle title={title} fontColor={fontColor}/>
+			<div className='grid justify-items-stretch w-40 h-40'>
+				<div className='justify-self-center'>
+					<IconImage borderColor={borderColor} color={color} />
+					<IconTitle title={title} fontColor={fontColor} />
+				</div>
 			</div>
-		</div>
 
-		<div className={`grid justify-items-stretch w-40 h-40`}>
-			<div className={`justify-self-center`}>
-				<IconImage borderColor={borderColor} color={color} />	
-				<IconTitle title={title} fontColor={fontColor}/>
+			<div className='grid justify-items-stretch w-40 h-40'>
+				<div className='justify-self-center'>
+					<IconImage borderColor={borderColor} color={color} />
+					<IconTitle title={title} fontColor={fontColor} />
+				</div>
 			</div>
-		</div>
 
-		<div className={`grid justify-items-stretch w-40 h-40`}>
-			<div className={`justify-self-center`}>
-				<IconImage borderColor={borderColor} color={color} />
-				<IconTitle title={title} fontColor={fontColor}/>
+			<div className='grid justify-items-stretch w-40 h-40'>
+				<div className='justify-self-center'>
+					<IconImage borderColor={borderColor} color={color} />
+					<IconTitle title={title} fontColor={fontColor} />
+				</div>
 			</div>
-		</div>
-
 		</div>
 	);
 };

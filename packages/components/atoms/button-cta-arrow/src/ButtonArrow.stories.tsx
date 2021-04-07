@@ -21,7 +21,7 @@ export const SolidShopNow = Template.bind({});
 
 SolidShopNow.args = {
 	title: 'go',
-	fontColor: 'white'
+	fontColor: 'white',
 };
 
 export const OutlineShopNow = Template.bind({});

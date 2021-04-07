@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { HeroText } from '../packages/components/atoms/hero-text/src';
 import { SectionText } from '../packages/components/atoms/section-text/src';
 import { IconWrapper } from '../packages/components/organisms/icon-wrapper-organism/src/IconWrapper.organism';
@@ -19,6 +18,7 @@ export const Home = (
 	subtitle
 
 ): JSX.Element => {
+  
 	return (
 		<div className='mx-auto w-3/5'>
 			<header />

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NavButton } from '../../../atoms/nav-button-atom/src/NavButton.atom';
-import { NavLink } from '../../../atoms/nav-link-atom/src/NavLink.atom';
-import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src/ShoppingBag.atom';
-import { Hamburger } from '../../../atoms/hamburger-atom/src/Hamburger.atom';
+import { NavButton } from '../../../atoms/nav-button-atom/src';
+import { NavLink } from '../../../atoms/nav-link-atom/src';
+import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src';
+import { Hamburger } from '../../../atoms/hamburger-atom/src';
 
 export interface NavBarProps {
 	backgroundColor?: 'black' | 'gray-400';

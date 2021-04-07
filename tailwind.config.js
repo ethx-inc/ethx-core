@@ -10,9 +10,16 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          primary: "#D77E5E"
+          primary: "#D77E5E",
+          secondary: "#E0BFBB",
+          offWhite: "#EAEAEA"
         }
       },
+      minWidth: {
+        '1/4' : '25%',
+        '7r' : '7rem',
+        '10r' : '10rem'
+      }
     },
     variants: {
       extend: {},

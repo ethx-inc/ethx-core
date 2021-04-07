@@ -9,23 +9,25 @@ export default {
 	title: 'Atom/FilterDropdown' /* Title of the component  */,
 	component: FilterDropdown /* component */,
 	argTypes: {
-		borderColor: { control: 'borderColor'},
+		borderColor: { control: 'borderColor' },
 		color: { control: 'color' },
-		fontColor: { control: 'fontColor' }
+		fontColor: { control: 'fontColor' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;
 
 // export const data = new Array(7).fill("more filter options");
 
-const Template: Story<FilterDropdownProps> = args => <FilterDropdown {...args} />;
+const Template: Story<FilterDropdownProps> = args => (
+	<FilterDropdown {...args} />
+);
 
 export const SolidFill = Template.bind({});
 
 SolidFill.args = {
 	borderColor: 'primary',
 	color: 'primary',
-	fontColor: 'white'
+	fontColor: 'white',
 };
 
 export const OutlineNoFill = Template.bind({});
@@ -33,5 +35,5 @@ export const OutlineNoFill = Template.bind({});
 OutlineNoFill.args = {
 	borderColor: 'primary',
 	color: 'gray-50',
-	fontColor: 'gray-500'
+	fontColor: 'gray-500',
 };
