@@ -5,6 +5,7 @@ import { IconWrapper } from '../packages/components/organisms/icon-wrapper-organ
 import { FilterMoc } from '../packages/components/organisms/filter-moc-organism/src/FilterMoc.organism';
 import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src';
 import { TestimonialController} from '../packages/controllers/testimonials-controller/TestimonialController';
+import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src'
 
 export interface HomeProps {
 	color?: string;
@@ -21,15 +22,15 @@ export const HomePage: FC<HomeProps> = ({
 }: HomeProps) => {
 
     let testimonials = [
-        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'},
-        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'},
-        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'}
+        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 0},
+        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 1},
+        {name:'Blake' , quote:'I like eggs', img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 2}
     ];
 
 	return (
-		<div className='mx-auto w-3/5'>
+		<div className='mx-auto'>
 			<header />
-			<div>
+			<MainContentContainer css="mx-auto">
 				<div>
 					<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 				</div> 
@@ -39,7 +40,7 @@ export const HomePage: FC<HomeProps> = ({
 					<div>
 						<ButtonArrow title={'go'}/>
 					</div>
-			</div>
+			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
 
 		</div>

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { MainContentContainer } from '../../../atoms/main-content-container-atom/src';
 
 export interface TestimonialsSectionProps {
 	/* Props here */
@@ -23,12 +24,12 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 			className={`flex flex-col items-center ${
 				bgColor ? `bg-${bgColor}` : 'bg-gray-50'
 			}`}>
-			<div
-				className={`flex ${
+			<MainContentContainer
+				css={`flex ${
 					stackView ? 'flex-col items-center' : ''
 				} md:justify-around justify-between w-full overflow-auto md:py-8 py-4`}>
 				{children}
-			</div>
+			</MainContentContainer>
 		</div>
 	);
 };

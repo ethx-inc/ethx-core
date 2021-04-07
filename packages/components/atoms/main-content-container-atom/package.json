@@ -1,0 +1,17 @@
+{
+	"name": "@ethx/main-content-container-atom",
+	"version": "0.1.0",
+	"description": "ETHX MainContentContainer Atom",
+	"main": "MainContentContainer.atom.tsx",
+	"keywords": [],
+	"devDependencies": {},
+	"peerDependencies": {
+		"react": "17.0.1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@storybook/react": "^6.1.21",
+		"@storybook/addon-docs": "^6.1.21"
+	}
+}
