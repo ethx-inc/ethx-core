@@ -6,7 +6,7 @@ export interface TestimonialsSectionProps {
 	bgColor?:
 		| 'white'
 		| 'black'
-		| 'gray-400'
+		| 'gray-50'
 		| 'primary'
 		| 'secondary'
 		| 'offWhite';
@@ -21,7 +21,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 	return (
 		<div
 			className={`flex flex-col items-center ${
-				bgColor ? `bg-${bgColor}` : 'bg-offWhite'
+				bgColor ? `bg-${bgColor}` : 'bg-gray-50'
 			}`}>
 			<div
 				className={`flex ${
