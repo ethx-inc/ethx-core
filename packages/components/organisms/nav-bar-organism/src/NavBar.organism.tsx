@@ -17,11 +17,11 @@ export const NavBar = ({
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
 		<div
-			className={`lg:px-16 px-4 ${
+			className={`${
 				backgroundColor ? `bg-${backgroundColor}` : 'bg-white'
 			} 
-			${color ? `text-${color}` : 'text-primary'} border-b border-t flex-col items-center py-2`}>
-			<div className='flex-1 flex justify-between items-center pb-3'>
+			${color ? `text-${color}` : 'text-primary'} border-b border-t flex-col items-center pt-2 lg:py-2`}>
+			<div className='flex-1 flex justify-around border-b items-center pb-3'>
 				<NavButton css='hidden lg:flex' label='sign in' />
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
@@ -32,7 +32,7 @@ export const NavBar = ({
 			</div>
 
 			<div
-				className={`lg:flex items-start justify-around ${
+				className={`lg:flex items-start justify-evenly mt-1 ${
 					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
 				}`}>
 				<NavButton css='lg:hidden' label='sign in' />
