@@ -18,15 +18,15 @@ export const NavBar = ({
 	return (
 		<div
 			className={`lg:px-16 px-4 ${
-				backgroundColor ? `bg-${backgroundColor}` : 'bg-primary'
+				backgroundColor ? `bg-${backgroundColor}` : 'bg-white'
 			} 
-			${color ? `text-${color}` : 'text-white'} flex-col items-center py-2`}>
-			<div className='flex-1 flex justify-between'>
+			${color ? `text-${color}` : 'text-primary'} border-b border-t flex-col items-center py-2`}>
+			<div className='flex-1 flex justify-between items-center pb-3'>
 				<NavButton css='hidden lg:flex' label='sign in' />
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
 
-				<span className='font-semibold text-4xl'>ethx</span>
+				<span className='font-regular text-4xl'>ethx</span>
 
 				<ShoppingBag count={0} />
 			</div>

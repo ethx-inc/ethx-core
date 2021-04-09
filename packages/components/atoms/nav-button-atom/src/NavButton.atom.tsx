@@ -18,7 +18,7 @@ export const NavButton = ({
 		<button
 			onClick={() => onClick()}
 			type='button'
-			className={`font-semibold ${css} focus:outline-none ${
+			className={`font-regular ${css} focus:outline-none ${
 				color ? `text-${color}` : ''
 			}`}>
 			{label}

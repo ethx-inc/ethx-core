@@ -30,8 +30,8 @@ export const HomePage: FC<HomeProps> = ({
 	return (
 		<div className='mx-auto'>
 			<header />
+			<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 			<MainContentContainer css="mx-auto">
-				<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
 				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} />
 				<FilterMoc />
