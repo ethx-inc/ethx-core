@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
+import { TextInput } from '../../../atoms/text-input-atom/src';
 
-export interface SignInFormMoleculeProps {
+export interface SignInFormProps {
 	/* Props here */
 }
 
-export const SignInFormMolecule: FC = (props: SignInFormMoleculeProps) => {
-	return <div>SignInFormMolecule Preview</div>;
+export const SignInForm: FC = (props: SignInFormProps) => {
+	return (
+		<form>
+			<TextInput placeholder='email' />
+			<TextInput placeholder='password' />
+		</form>
+	);
 };
