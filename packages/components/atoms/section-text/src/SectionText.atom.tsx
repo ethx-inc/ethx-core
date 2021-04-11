@@ -3,7 +3,7 @@ import React from 'react';
 export interface SectionTextProps {
 	title: string;
 	fontColor?: string;
-	subtitle: string;
+	subtitle?: string;
 }
 
 export const SectionText = ({
