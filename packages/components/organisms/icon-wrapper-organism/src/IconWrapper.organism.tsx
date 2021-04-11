@@ -17,36 +17,36 @@ export const IconWrapper = ({
 	title,
 }: IconWrapperProps): JSX.Element => {
 	return (
-		<div className='flex flex-col ml-12 lg:ml-0 lg:flex-row mt-5'>
-			<div className='grid justify-items-stretch w-40 h-40'>
+		<div className='flex flex-row justify-center overflow-auto mt-5'>
+			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 				<div className='justify-self-center'>
 					<IconImage borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40'>
+			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 				<div className='justify-self-center'>
 					<IconImage borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40'>
+			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 				<div className='justify-self-center'>
 					<IconImage borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40'>
+			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 				<div className='justify-self-center'>
 					<IconImage borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40'>
+			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 				<div className='justify-self-center'>
 					<IconImage borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />

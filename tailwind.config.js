@@ -19,7 +19,10 @@ module.exports = {
         '1/4' : '25%',
         '7r' : '7rem',
         '10r' : '10rem'
-      }
+      },
+      backgroundImage: theme => ({
+        'hero-home' : "url('/images/flipped-hero-image.jpg')"
+      })
     },
     variants: {
       extend: {},
