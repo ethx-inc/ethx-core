@@ -1,4 +1,1 @@
-export {
-	SignInFormMolecule,
-	SignInFormMoleculeProps,
-} from './SignInForm.molecule';
+export { SignInForm, SignInFormProps } from './SignInForm.molecule';
