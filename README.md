@@ -91,7 +91,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 -   [How to COMMIT BETTER with Git](https://www.youtube.com/watch?v=Hlp-9cdImSM)
 
-## Setting up auto lint fixer
+## Setting up auto linter
 
 [How To Lint and Format Code with ESLint in Visual Studio Code](https://www.digitalocean.com/community/tutorials/linting-and-formatting-with-eslint-in-vs-code)
 
@@ -101,4 +101,14 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. --> -->
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
+
+## State Manager
+
+1. **UI State** - State of an UI element such as menu open or closed
+    1. Pure react i.e. `useState`, `useContext` for all things first. If that fails or causes perf issues...
+    2. [Jotai](https://github.com/pmndrs/jotai) or [Recoil](https://recoiljs.org/)
+        1. [Introduction to Jotai](https://www.youtube.com/watch?v=x9usS4l1VD0)
+2. **Server Cache state** - State of data from the server like user favorite filters, email address, and blog posts
+    1. [GraphQL]()
+    2. [React-Query]()
