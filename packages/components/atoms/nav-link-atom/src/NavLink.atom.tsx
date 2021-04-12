@@ -13,8 +13,8 @@ export const NavLink = ({ label, href, color }: NavLinkProps): JSX.Element => {
 		<Link href={href}>
 			{/* eslint-disable-next-line */}
 			<a
-				className={`font-semibold ${
-					color ? `text-${color}` : 'text-white'
+				className={`font-regular ${
+					color ? `text-${color}` : 'text-primary'
 				}`}>
 				{label}
 			</a>

@@ -20,7 +20,7 @@ export const FilterMoc = ({
 				<IconWrapper borderColor={borderColor} fontColor={fontColor} title={title} />
 			</div> */}
 
-			<div className='flex flex-col justify-between'>
+			<div className='flex flex-col justify-between mx-5'>
 				<div className='mb-8'>
 					<Dropdown
 						borderColor={borderColor}
