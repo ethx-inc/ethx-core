@@ -20,7 +20,9 @@ export const NavBar = ({
 			className={`${
 				backgroundColor ? `bg-${backgroundColor}` : 'bg-white'
 			} 
-			${color ? `text-${color}` : 'text-primary'} border-b border-t flex-col items-center pt-2 lg:py-2`}>
+			${
+				color ? `text-${color}` : 'text-primary'
+			} border-b border-t flex-col items-center pt-2 lg:py-2`}>
 			<div className='flex-1 flex justify-around border-b items-center pb-3'>
 				<NavButton css='hidden lg:flex' label='sign in' />
 
