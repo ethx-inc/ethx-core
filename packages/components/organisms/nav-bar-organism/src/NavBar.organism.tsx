@@ -24,7 +24,7 @@ export const NavBar = ({
 				color ? `text-${color}` : 'text-primary'
 			} border-b border-t flex-col items-center pt-2 lg:py-2`}>
 			<div className='flex-1 flex justify-around border-b items-center pb-3'>
-				<NavButton css='hidden lg:flex' label='sign in' />
+				<NavLink label='sign in' href='/signin' css='hidden lg:flex' />
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
 
@@ -37,7 +37,7 @@ export const NavBar = ({
 				className={`lg:flex items-start justify-evenly mt-1 ${
 					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
 				}`}>
-				<NavButton css='lg:hidden' label='sign in' />
+				<NavLink label='sign in' href='/signin' css='lg:hidden' />
 				<NavLink
 					label='shop'
 					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
