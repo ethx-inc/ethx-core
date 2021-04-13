@@ -9,10 +9,10 @@ export interface SignInFormProps {
 
 export const SignInForm: FC = (props: SignInFormProps) => {
 	return (
-		<form className='flex flex-col h-48 justify-between items-center max-w-2xl'>
+		<form className='flex flex-col h-72 justify-between items-center max-w-2xl pb-10'>
 			<SectionText title='sign in' />
-			<TextInput placeholder='email' />
-			<TextInput placeholder='password' />
+			<TextInput placeholder='email' css='mb-2' />
+			<TextInput placeholder='password' css='mb-2' />
 			<SubmitButton title='sign in' />
 		</form>
 	);

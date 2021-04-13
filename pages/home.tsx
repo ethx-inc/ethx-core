@@ -6,6 +6,7 @@ import { FilterMoc } from '../packages/components/organisms/filter-moc-organism/
 import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src';
 import { TestimonialController} from '../packages/controllers/testimonials-controller/TestimonialController';
 import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src'
+import {SignInForm} from '../packages/components/molecules/sign-in-form-molecule/src'
 
 export interface HomeProps {
 	color?: string;
@@ -40,6 +41,7 @@ export const HomePage: FC<HomeProps> = ({
 					</div>
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
+			<SignInForm />
 
 		</div>
 	);
