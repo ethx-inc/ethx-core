@@ -27,29 +27,29 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			<SectionText title='sign up' />
 			<TextInput
 				placeholder='first name'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onFNameChange()}
 				required
 			/>
 			<TextInput
 				placeholder='last name'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onLNameChange()}
 				required
 			/>
 			<TextInput
 				placeholder='email'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onEmailChange()}
 				required
 			/>
 			<TextInput
 				placeholder='password'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onPasswordChange()}
 				required
 			/>
-			<SubmitButton title='sign up' css='mb-2' />
+			<SubmitButton title='sign up' css='mb-3' />
 			<NavLink label='sign in' href='signin' />
 		</form>
 	);

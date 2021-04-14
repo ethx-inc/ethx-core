@@ -15,9 +15,9 @@ const SignInPage: FC<SignInProps> = ({
 }: SignInProps) => {
 
 	return (
-		<div>
+		<div className='h-screen w-full bg-gray-100'>
 			<NavBar />
-			<MainContentContainer css="flex justify-center items-center h-screen">
+			<MainContentContainer css="flex justify-center items-center h-5/6">
 				<SignInForm />
 			</MainContentContainer>
 		</div>

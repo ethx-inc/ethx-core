@@ -22,7 +22,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 	return (
 		<div
 			className={`flex flex-col items-center mt-10 md:py-40 py-32 ${
-				bgColor ? `bg-${bgColor}` : 'bg-gray-50'
+				bgColor ? `bg-${bgColor}` : 'bg-gray-100'
 			}`}>
 			<MainContentContainer
 				css={`flex ${
