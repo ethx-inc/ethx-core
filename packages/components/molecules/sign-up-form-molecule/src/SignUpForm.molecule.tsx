@@ -8,9 +8,9 @@ export interface SignUpFormProps {
 	/* Props here */
 	onSubmit?;
 	onFNameChange?;
-	onLNameChange;
-	onEmailChange;
-	onPasswordChange;
+	onLNameChange?;
+	onEmailChange?;
+	onPasswordChange?;
 }
 
 export const SignUpForm: FC<SignUpFormProps> = ({
