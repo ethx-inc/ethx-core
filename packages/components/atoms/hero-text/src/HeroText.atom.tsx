@@ -18,7 +18,7 @@ export const HeroText = ({
 			<MainContentContainer>
 					<div className='py-40 px-10 lg:px-0 lg:pl-20'>
 						<h2 className='font-bold text-5xl text-primary'>{title}</h2>
-						<h4 className={`font-regular mx-5 lg:mx-0 text-sm lg:text-lg text-${fontColor}`}> {subtitle}</h4>
+						<h4 className={`font-regular w-3/5 mt-2 lg:mt-0 text-sm lg:text-lg text-${fontColor}`}> {subtitle}</h4>
 					</div>
 			</MainContentContainer>
 		</div>
