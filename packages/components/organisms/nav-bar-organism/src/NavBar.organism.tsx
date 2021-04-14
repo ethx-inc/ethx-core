@@ -6,8 +6,8 @@ import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src';
 import { Hamburger } from '../../../atoms/hamburger-atom/src';
 
 export interface NavBarProps {
-	backgroundColor?: 'black' | 'gray-400';
-	color?: 'black' | 'gray-400';
+	backgroundColor?: 'black' | 'gray-400' | 'white' | 'primary';
+	color?: 'black' | 'gray-400' | 'primary' | 'white';
 }
 
 export const NavBar = ({
