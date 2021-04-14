@@ -5,12 +5,14 @@ export interface TextInputProps {
 	placeholder: string;
 	onChange?;
 	css?;
+	required?: boolean;
 }
 
 export const TextInput: FC<TextInputProps> = ({
 	placeholder,
 	onChange,
 	css,
+	required,
 }: TextInputProps) => {
 	return (
 		<input
@@ -20,6 +22,7 @@ export const TextInput: FC<TextInputProps> = ({
 			    bg-gray-50 ${css}`}
 			placeholder={placeholder}
 			onChange={() => onChange()}
+			required={required}
 		/>
 	);
 };
