@@ -4,23 +4,39 @@ import { SubmitButton } from '../../../atoms/submit-button-atom/src';
 import { SectionText } from '../../../atoms/section-text/src';
 import { NavLink } from '../../../atoms/nav-link-atom/src';
 
-export interface SignInFormProps {
+export interface SignUpFormProps {
 	/* Props here */
 	onSubmit?;
-	onEmailChange?;
-	onPasswordChange?;
+	onFNameChange?;
+	onLNameChange;
+	onEmailChange;
+	onPasswordChange;
 }
 
-export const SignInForm: FC<SignInFormProps> = ({
+export const SignUpForm: FC<SignUpFormProps> = ({
 	onSubmit,
+	onFNameChange,
+	onLNameChange,
 	onEmailChange,
 	onPasswordChange,
-}: SignInFormProps) => {
+}: SignUpFormProps) => {
 	return (
 		<form
 			onSubmit={() => onSubmit()}
-			className='flex flex-col h-72 justify-between items-center max-w-2xl w-full'>
-			<SectionText title='sign in' />
+			className='flex flex-col h-96 justify-between items-center max-w-2xl w-full '>
+			<SectionText title='sign up' />
+			<TextInput
+				placeholder='first name'
+				css='mb-2'
+				onChange={() => onFNameChange()}
+				required
+			/>
+			<TextInput
+				placeholder='last name'
+				css='mb-2'
+				onChange={() => onLNameChange()}
+				required
+			/>
 			<TextInput
 				placeholder='email'
 				css='mb-2'
@@ -33,8 +49,8 @@ export const SignInForm: FC<SignInFormProps> = ({
 				onChange={() => onPasswordChange()}
 				required
 			/>
-			<SubmitButton title='sign in' css='mb-2' />
-			<NavLink label='sign up' href='signup' />
+			<SubmitButton title='sign up' css='mb-2' />
+			<NavLink label='sign in' href='signin' />
 		</form>
 	);
 };
