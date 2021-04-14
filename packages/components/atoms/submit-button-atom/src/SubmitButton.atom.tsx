@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface ButtonProps {
+export interface SubmitButtonProps {
 	title: string;
 	bgColor?: 'white' | 'black' | 'gray-50' | 'primary' | 'secondary';
 	color?: 'white' | 'black' | 'gray-50' | 'primary' | 'secondary';
@@ -8,16 +8,16 @@ export interface ButtonProps {
 	css?: string;
 }
 
-export const Button = ({
+export const SubmitButton = ({
 	title,
 	bgColor,
 	color,
 	onClick,
 	css,
-}: ButtonProps): JSX.Element => {
+}: SubmitButtonProps): JSX.Element => {
 	return (
 		<button
-			type='button'
+			type='submit'
 			className={`font-regular ${
 				bgColor ? `bg-${bgColor}` : 'bg-primary'
 			} 

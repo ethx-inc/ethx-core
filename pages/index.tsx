@@ -1,6 +1,5 @@
 import React from 'react';
-import {HomePage} from "./home";
-import {NavBar} from '../packages/components/organisms/nav-bar-organism/src'
+import HomePage from "./home";
 
 export interface HomeProps {
 	color?: string;
@@ -18,7 +17,6 @@ export const Home = (
   
 	return (
 		<div>
-			<NavBar />
 			<HomePage />
 		</div>
 	);

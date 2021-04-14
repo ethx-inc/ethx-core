@@ -6,7 +6,7 @@ import {
 	TestimonialsSectionProps,
 } from './testimonials-section.organism';
 
-import { Testimonial } from '../../../molecules/testimonial-molecule/src';
+import { TestimonialQuote } from '../../../atoms/testimonial-quote-atom/src';
 
 export default {
 	title: 'Organism/TestimonialsSection',
@@ -18,20 +18,17 @@ export default {
 
 const Template: Story<TestimonialsSectionProps> = args => (
 	<TestimonialsSection {...args}>
-		<Testimonial
+		<TestimonialQuote
 			name='Blake'
-			quote='I like eggs'
-			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+			quote='I like eggs and toast for breakfast'
 		/>
-		<Testimonial
+		<TestimonialQuote
 			name='Blake'
-			quote='I like eggs'
-			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+			quote='I like eggs and toast for breakfast'
 		/>
-		<Testimonial
+		<TestimonialQuote
 			name='Blake'
-			quote='I like eggs'
-			img='https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg'
+			quote='I like eggs and toast for breakfast'
 		/>
 	</TestimonialsSection>
 );

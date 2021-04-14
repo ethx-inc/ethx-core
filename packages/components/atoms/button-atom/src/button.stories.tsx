@@ -9,7 +9,6 @@ export default {
 	title: 'Atom/Button' /* Title of the component  */,
 	component: Button /* component */,
 	argTypes: {
-		color: { control: 'color' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
 } as Meta;

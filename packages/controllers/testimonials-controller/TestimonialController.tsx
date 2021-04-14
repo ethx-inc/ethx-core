@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-	Testimonial,
-	TestimonialProps,
-} from '../../components/molecules/testimonial-molecule/src';
+	TestimonialQuote,
+	TestimonialQuoteProps,
+} from '../../components/atoms/testimonial-quote-atom/src';
 import { TestimonialsSection } from '../../components/organisms/testimonials-section-organism/src';
 
 export interface TestimonialsSectionProps {
 	/* Props here */
-	testimonials: TestimonialProps[];
+	testimonials: TestimonialQuoteProps[];
 }
 
 export const TestimonialController = ({
@@ -16,7 +16,7 @@ export const TestimonialController = ({
 	return (
 		<TestimonialsSection>
 			{testimonials.map(testimony => {
-				return <Testimonial key={testimony.id} {...testimony} />;
+				return <TestimonialQuote key={testimony.id} {...testimony} />;
 			})}
 		</TestimonialsSection>
 	);
