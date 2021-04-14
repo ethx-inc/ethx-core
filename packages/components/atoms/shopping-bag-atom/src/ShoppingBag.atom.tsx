@@ -4,7 +4,7 @@ import { HiOutlineShoppingBag } from '@react-icons/all-files/hi/HiOutlineShoppin
 
 export interface ShoppingBagProps {
 	count?: 0;
-	color?: 'black' | 'gray-400' | 'white';
+	color?: 'black' | 'gray-400' | 'white' | 'primary';
 	onClick?;
 }
 
