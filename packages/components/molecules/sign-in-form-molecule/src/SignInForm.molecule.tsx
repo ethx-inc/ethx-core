@@ -23,17 +23,17 @@ export const SignInForm: FC<SignInFormProps> = ({
 			<SectionText title='sign in' />
 			<TextInput
 				placeholder='email'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onEmailChange()}
 				required
 			/>
 			<TextInput
 				placeholder='password'
-				css='mb-2'
+				css='mb-3'
 				onChange={() => onPasswordChange()}
 				required
 			/>
-			<SubmitButton title='sign in' css='mb-2' />
+			<SubmitButton title='sign in' css='mb-3' />
 			<NavLink label='sign up' href='signup' />
 		</form>
 	);
