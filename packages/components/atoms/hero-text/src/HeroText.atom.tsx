@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {MainContentContainer} from '../../../atoms/main-content-container-atom/src';
+import { MainContentContainer } from '../../main-content-container-atom/src';
 
 export interface HeroTextProps {
 	title: string;

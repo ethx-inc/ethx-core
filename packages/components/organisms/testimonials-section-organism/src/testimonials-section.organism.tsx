@@ -21,13 +21,13 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
 }: TestimonialsSectionProps) => {
 	return (
 		<div
-			className={`flex flex-col items-center mt-10 ${
-				bgColor ? `bg-${bgColor}` : 'bg-gray-50'
+			className={`flex flex-col items-center mt-10 md:py-40 py-32 ${
+				bgColor ? `bg-${bgColor}` : 'bg-gray-100'
 			}`}>
 			<MainContentContainer
 				css={`flex ${
 					stackView ? 'flex-col items-center' : ''
-				} md:justify-around justify-between w-full overflow-auto md:py-8 py-4`}>
+				} md:justify-around justify-between w-full overflow-auto`}>
 				{children}
 			</MainContentContainer>
 		</div>

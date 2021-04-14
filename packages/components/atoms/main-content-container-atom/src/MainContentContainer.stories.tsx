@@ -2,20 +2,20 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import {
-	MainContentContainerAtom,
-	MainContentContainerAtomProps,
+	MainContentContainer,
+	MainContentContainerProps,
 } from './MainContentContainer.atom';
 
 export default {
 	title: 'Atom/MainContentContainer',
-	component: MainContentContainerAtom,
+	component: MainContentContainer,
 	argTypes: {
 		/* agrs go here */
 	},
 } as Meta;
 
-const Template: Story<MainContentContainerAtomProps> = args => (
-	<MainContentContainerAtom {...args} />
+const Template: Story<MainContentContainerProps> = args => (
+	<MainContentContainer {...args} />
 );
 
 export const Base = Template.bind({});
