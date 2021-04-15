@@ -9,7 +9,38 @@ export const PDPImage = ({
 }: PDPImageProps): JSX.Element => {
 	return (
 		<div
-			className={`bg-${color}`}>
+			className={`bg-${color} flex flex-row`}>
+			<div className={`hidden lg:flex flex-col overflow-auto h-4/5 mr-3`}>
+			<img
+				src='/images/flipped-hero-image.jpg'
+				alt='flipped-hero'
+				width={100}
+				height={100}
+				className='rounded-lg mb-3'
+			/>
+			<img
+				src='/images/flipped-hero-image.jpg'
+				alt='flipped-hero'
+				width={100}
+				height={100}
+				className='rounded-lg mb-3'
+			/>
+			<img
+				src='/images/flipped-hero-image.jpg'
+				alt='flipped-hero'
+				width={100}
+				height={100}
+				className='rounded-lg mb-3'
+			/>
+			<img
+				src='/images/flipped-hero-image.jpg'
+				alt='flipped-hero'
+				width={100}
+				height={100}
+				className='rounded-lg mb-3'
+			/>
+			</div>	
+			<div>
 			<img
 				src='/images/flipped-hero-image.jpg'
 				alt='flipped-hero'
@@ -17,6 +48,7 @@ export const PDPImage = ({
 				height={200}
 				className='rounded-lg'
 			/>
+			</div>
 		</div>
 	);
 };
