@@ -21,7 +21,7 @@ export const TextInput: FC<TextInputProps> = ({
 			  text-gray-500 border-primary rounded-full px-7 py-1 
 			    bg-gray-50 ${css}`}
 			placeholder={placeholder}
-			onChange={() => onChange()}
+			onChange={event => onChange(event)}
 			required={required}
 		/>
 	);

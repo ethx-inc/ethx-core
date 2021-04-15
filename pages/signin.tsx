@@ -10,9 +10,7 @@ export interface SignInProps {
 	
 }
 
-const SignInPage: FC<SignInProps> = ({
-
-}: SignInProps) => {
+const SignInPage: FC<SignInProps> = ({isSignUp}: SignInProps) => {
 
 	return (
 		<div className='h-screen w-full bg-gray-100'>
