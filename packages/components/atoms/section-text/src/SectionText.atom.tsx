@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface SectionTextProps {
-	title: string;
+	title?: string;
 	fontColor?: string;
 	subtitle?: string;
 }
