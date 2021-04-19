@@ -2,9 +2,9 @@ import '../styles/globals.css';
 import React, {useEffect, useState} from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
-import {auth, createUserProfileDoc} from '../firebase/firebase.utils';
+import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
 
-import {LoginProvider} from '../context/login-context';
+import {LoginProvider} from '../packages/services/context/login-context';
 
 import "regenerator-runtime/runtime";
 
