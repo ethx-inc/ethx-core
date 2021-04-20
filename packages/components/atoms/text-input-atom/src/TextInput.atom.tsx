@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 export interface TextInputProps {
 	/* Props here */
 	placeholder: string;
+	type?: string;
 	value?: string;
 	onChange?;
 	css?;
@@ -11,6 +12,7 @@ export interface TextInputProps {
 
 export const TextInput: FC<TextInputProps> = ({
 	placeholder,
+	type,
 	value,
 	onChange,
 	css,
@@ -18,7 +20,7 @@ export const TextInput: FC<TextInputProps> = ({
 }: TextInputProps) => {
 	return (
 		<input
-			type='text'
+			type={type || 'text'}
 			className={`flex w-full focus:outline-none lg:text-lg border-2 
 			  text-gray-500 border-primary rounded-full px-7 py-1 
 			    bg-gray-50 ${css}`}
