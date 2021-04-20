@@ -46,7 +46,7 @@ export const PDPImage = ({
 				alt='flipped-hero'
 				width={400}
 				height={200}
-				className='rounded-lg'
+				className='lg:rounded-lg'
 			/>
 			</div>
 		</div>
