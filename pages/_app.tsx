@@ -1,44 +1,22 @@
 import '../styles/globals.css';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
-import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
-
 import {LoginProvider} from '../packages/services/context/login-context';
+import { UserProvider } from '../packages/services/context/user-context';
 
 import "regenerator-runtime/runtime";
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
-	const [currentUser, setCurrentUser] = useState(null)
-
-	useEffect(() => {
-		let unsubscribe = auth.onAuthStateChanged(async (user) => {
-
-			if (user) {
-				const userRef = await createUserProfileDoc(user);
-		
-				userRef.onSnapshot(snapShot => {
-		
-				setCurrentUser({
-					id: snapShot.id,
-					...snapShot.data()
-				});
-				});
-			}
-			else {
-				setCurrentUser(null);
-			}
-
-		});
-
-		return unsubscribe();
-	})
 
 	return (
-		<LoginProvider>
-			<Component {...pageProps} />
-		</LoginProvider>
+		<UserProvider>
+			<LoginProvider>
+				<Component {...pageProps} />
+			</LoginProvider>
+		</UserProvider>
 	);
 };
+
 
 export default MyApp;
