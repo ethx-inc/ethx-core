@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { SignUpForm } from '../../components/molecules/sign-up-form-molecule/src';
 
 import {
@@ -7,6 +8,8 @@ import {
 } from '../../services/firebase-auth/firebase.utils';
 
 export const SignUpFormController = (): JSX.Element => {
+	const router = useRouter();
+
 	async function handleSubmit(
 		event,
 		{ fname, lname, email, password, confirmPassword },
@@ -22,10 +25,10 @@ export const SignUpFormController = (): JSX.Element => {
 				email,
 				password,
 			);
-			console.log('created user with email and password', user);
+			// not currently working because no db is set up with rules
 			await createUserProfileDoc(user, { fname, lname });
 			// go back to home
-			// this.props.history.push('/');
+			router.push('/');
 		} catch (e) {
 			console.error(e);
 			alert('An error occurred, please try again.');

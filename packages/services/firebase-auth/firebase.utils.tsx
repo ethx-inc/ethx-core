@@ -32,9 +32,7 @@ export const createUserProfileDoc = async (
 	// create a reference to this users location
 	const userRef = firestoreDb.doc(`users/${userAuth.uid}`);
 	// get whatever data is located at reference
-	console.log('userRef made');
 	const snapShot = await userRef.get();
-	console.log('snapshot received');
 	// checks if the user doesn't exist
 	if (!snapShot.exists) {
 		const { email } = userAuth;
