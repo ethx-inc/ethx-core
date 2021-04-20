@@ -24,7 +24,7 @@ export const SubmitButton = ({
 				${
 					color ? `text-${color}` : 'text-white'
 				} lg:text-lg px-4 py-1 rounded-full focus:outline-none ${css}`}
-			onClick={() => onClick()}>
+			onClick={onClick ? event => onClick(event) : null}>
 			{title}
 		</button>
 	);

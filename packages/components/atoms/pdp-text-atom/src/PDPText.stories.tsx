@@ -9,12 +9,12 @@ export default {
 	title: 'Atom/PDPText' /* Title of the component  */,
 	component: PDPText /* component */,
 	argTypes: {
-		bulletOne: { control: 'bulletOne'},
-		bulletTwo: { control: 'bulletTwo'},
-		bulletThree: { control: 'bulletThree'},
+		bulletOne: { control: 'bulletOne' },
+		bulletTwo: { control: 'bulletTwo' },
+		bulletThree: { control: 'bulletThree' },
 		fontColor: { control: 'fontColor' },
 		productDetails: { control: 'productDetails' },
-		productName: { control: 'productName' }
+		productName: { control: 'productName' },
 	},
 } as Meta;
 
@@ -26,8 +26,9 @@ RoseText.args = {
 	bulletTwo: 'short form product details',
 	bulletThree: 'short form product details',
 	fontColor: 'primary',
-	productDetails: 'long form product description (benefits, ingredients, etc.)',
-	productName: 'Brightening Moisturizer'
+	productDetails:
+		'long form product description (benefits, ingredients, etc.)',
+	productName: 'Brightening Moisturizer',
 };
 
 export const GrayText = Template.bind({});
@@ -36,6 +37,7 @@ GrayText.args = {
 	bulletTwo: 'short form product details',
 	bulletThree: 'short form product details',
 	fontColor: 'gray-500',
-	productDetails: 'long form product description (benefits, ingredients, etc.)',
-	productName: 'Brightening Moisturizer'
+	productDetails:
+		'long form product description (benefits, ingredients, etc.)',
+	productName: 'Brightening Moisturizer',
 };

@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC} from 'react';
 import {NavBar} from '../packages/components/organisms/nav-bar-organism/src'
 import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src'
-import {SignUpForm} from '../packages/components/molecules/sign-up-form-molecule/src'
+import {SignUpFormController} from '../packages/controllers/sign-up-form-controller/SignUpFormController';
 
 
 export interface SignUpProps {
@@ -10,15 +10,13 @@ export interface SignUpProps {
 	
 }
 
-const SignUpPage: FC<SignUpProps> = ({
-
-}: SignUpProps) => {
+const SignUpPage: FC<SignUpProps> = ({isSignUp}: SignUpProps) => {
 
 	return (
         <div className='h-screen w-full bg-gray-100'>
             <NavBar/>
             <MainContentContainer css="flex justify-center items-center h-5/6">
-                <SignUpForm />
+                <SignUpFormController />
             </MainContentContainer>
         </div>
 	);

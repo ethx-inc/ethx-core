@@ -4,9 +4,7 @@ export interface PDPImageProps {
 	color?: string;
 }
 
-export const PDPImage = ({
-	color,
-}: PDPImageProps): JSX.Element => {
+export const PDPImage = ({ color }: PDPImageProps): JSX.Element => {
 	return (
 		<div
 			className={`bg-${color} flex flex-row`}>
@@ -41,6 +39,7 @@ export const PDPImage = ({
 			/>
 			</div>	
 			<div>
+		<div className={`bg-${color}`}>
 			<img
 				src='/images/flipped-hero-image.jpg'
 				alt='flipped-hero'
