@@ -8,13 +8,10 @@ import { PDPImage, PDPImageProps } from './PDPImage.atom';
 export default {
 	title: 'Atom/PDPImage' /* Title of the component  */,
 	component: PDPImage /* component */,
-	argTypes: {
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<PDPImageProps> = args => <PDPImage {...args} />;
 
 export const Base = Template.bind({});
-Base.args = {
-};
-
+Base.args = {};

@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 export interface TextInputProps {
 	/* Props here */
 	placeholder: string;
+	value?: string;
 	onChange?;
 	css?;
 	required?: boolean;
@@ -10,6 +11,7 @@ export interface TextInputProps {
 
 export const TextInput: FC<TextInputProps> = ({
 	placeholder,
+	value,
 	onChange,
 	css,
 	required,
@@ -21,8 +23,9 @@ export const TextInput: FC<TextInputProps> = ({
 			  text-gray-500 border-primary rounded-full px-7 py-1 
 			    bg-gray-50 ${css}`}
 			placeholder={placeholder}
-			onChange={() => onChange()}
+			onChange={event => onChange(event)}
 			required={required}
+			value={value}
 		/>
 	);
 };
