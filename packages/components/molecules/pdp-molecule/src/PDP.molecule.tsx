@@ -32,7 +32,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 					productDetails='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tellus sit amet ligula pretium, quis consectetur dui euismod. Pellentesque efficitur eleifend vehicula. Vivamus vulputate leo vitae libero tempor, sed molestie augue pretium. Morbi semper, justo et tincidunt sagittis, magna metus euismod ipsum, at congue odio leo ac dolor.'
 				/>
 			</div>
-			<div className='flex relative justify-center lg:right-40 lg:bottom-10'>
+			<div className='flex relative justify-center lg:right-14 lg:bottom-10'>
 				{' '}
 				<ButtonCTA title='add to cart' />{' '}
 			</div>
@@ -47,7 +47,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				<ButtonCTA
 					title='shop all'
 					color='gray-50'
-					fontColor='primary'
+					fontColor='gray-500'
 				/>{' '}
 			</div>
 		</div>
