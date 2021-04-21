@@ -1,20 +1,55 @@
 import '../styles/globals.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
 import {LoginProvider} from '../packages/services/context/login-context';
-import { UserProvider } from '../packages/services/context/user-context';
+import { UserContext } from '../packages/services/context/user-context';
+
+import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
 
 import "regenerator-runtime/runtime";
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+	const [userData, setUserData] = useState({
+		fname: '',
+		lname: '',
+		email: '',
+		uid: '',
+	});
+
+
+	useEffect(() => {
+		
+		let unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+			if (userAuth) {
+				const userRef = await createUserProfileDoc(userAuth);
+		
+				userRef.onSnapshot(snapShot => {
+		
+					setUserData({
+						uid: snapShot.id,
+						...snapShot.data()
+					});
+				});
+			}
+			else {
+				setUserData(null);
+			}
+
+		});
+
+		
+
+		return unsubscribe;
+	}, [])
+
 
 	return (
-		<UserProvider>
+		<UserContext.Provider value={{ userData, setUserData }}>
 			<LoginProvider>
 				<Component {...pageProps} />
 			</LoginProvider>
-		</UserProvider>
+		</UserContext.Provider>
 	);
 };
 

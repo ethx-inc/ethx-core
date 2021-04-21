@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import {NavBar} from '../packages/components/organisms/nav-bar-organism/src'
+import {NavBarController} from '../packages/controllers/navbar-controller/NavBarController';
 import { HeroText } from '../packages/components/atoms/hero-text/src';
 import { SectionText } from '../packages/components/atoms/section-text/src';
 import { IconWrapper } from '../packages/components/organisms/icon-wrapper-organism/src/IconWrapper.organism';
@@ -33,7 +33,7 @@ const HomePage: FC<HomeProps> = ({
 
 	return (
 		<div className='mx-auto'>
-			<NavBar />
+			<NavBarController />
 			<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 			<MainContentContainer >
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
