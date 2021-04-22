@@ -54,6 +54,7 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			/>
 			<TextInput
 				placeholder='email'
+				type='email'
 				css='mb-3'
 				onChange={event =>
 					setLoginData({ ...loginData, email: event.target.value })
@@ -63,6 +64,7 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			/>
 			<TextInput
 				placeholder='password'
+				type='password'
 				css='mb-3'
 				onChange={event => setPassword(event.target.value)}
 				required
@@ -70,6 +72,7 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			/>
 			<TextInput
 				placeholder='confirm password'
+				type='password'
 				css='mb-3'
 				onChange={event => setConfirmPassword(event.target.value)}
 				required

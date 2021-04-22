@@ -1,44 +1,57 @@
 import '../styles/globals.css';
-import React, {useEffect, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
-import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
-
 import {LoginProvider} from '../packages/services/context/login-context';
+import { UserContext } from '../packages/services/context/user-context';
+
+import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
 
 import "regenerator-runtime/runtime";
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
-	const [currentUser, setCurrentUser] = useState(null)
+	const [userData, setUserData] = useState({
+		fname: '',
+		lname: '',
+		email: '',
+		uid: '',
+	});
+
 
 	useEffect(() => {
-		let unsubscribe = auth.onAuthStateChanged(async (user) => {
-
-			if (user) {
-				const userRef = await createUserProfileDoc(user);
+		
+		let unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+			if (userAuth) {
+				const userRef = await createUserProfileDoc(userAuth);
 		
 				userRef.onSnapshot(snapShot => {
 		
-				setCurrentUser({
-					id: snapShot.id,
-					...snapShot.data()
-				});
+					setUserData({
+						uid: snapShot.id,
+						...snapShot.data()
+					});
 				});
 			}
 			else {
-				setCurrentUser(null);
+				setUserData(null);
 			}
 
 		});
 
-		return unsubscribe();
-	})
+		
+
+		return unsubscribe;
+	}, [])
+
 
 	return (
-		<LoginProvider>
-			<Component {...pageProps} />
-		</LoginProvider>
+		<UserContext.Provider value={{ userData, setUserData }}>
+			<LoginProvider>
+				<Component {...pageProps} />
+			</LoginProvider>
+		</UserContext.Provider>
 	);
 };
+
 
 export default MyApp;
