@@ -7,13 +7,13 @@ import 'regenerator-runtime/runtime';
 // import { DocumentReference } from '@firebase/firestore-types';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyCQOmSzE3KR6s5xD7S6MLTgdesdF9QMQ_Y',
-	authDomain: 'ethx-6ff0a.firebaseapp.com',
-	projectId: 'ethx-6ff0a',
-	storageBucket: 'ethx-6ff0a.appspot.com',
-	messagingSenderId: '1075800864831',
-	appId: '1:1075800864831:web:430252346c58233be3208a',
-	measurementId: 'G-QY05EGDT9Q',
+	apiKey: process.env.NEXT_PUBLIC_API_KEY,
+	authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+	projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+	storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+	messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+	appId: process.env.NEXT_PUBLIC_APP_ID,
+	measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
 // required to avoid "app named default already exists" https://github.com/vercel/next.js/issues/1999

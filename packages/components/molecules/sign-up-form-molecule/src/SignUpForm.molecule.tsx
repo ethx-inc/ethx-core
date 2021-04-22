@@ -54,6 +54,7 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			/>
 			<TextInput
 				placeholder='email'
+				type='email'
 				css='mb-3'
 				onChange={event =>
 					setLoginData({ ...loginData, email: event.target.value })
