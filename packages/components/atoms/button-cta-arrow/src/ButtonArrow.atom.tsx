@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ButtonArrowProps {
-	title: string;
+	title?: string;
 	color?: string;
 	fontColor?: string;
 }
