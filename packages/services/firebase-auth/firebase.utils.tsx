@@ -30,6 +30,19 @@ export const createUserProfileDoc = async (
 ): Promise<any> => {
 	if (!userAuth) return {};
 	// create a reference to this users location
+	const { displayName } = userAuth;
+	let fname = '';
+	let lname = '';
+	if (displayName) {
+		const names = displayName.split(' ');
+		if (names.length === 2) {
+			[fname, lname] = names;
+		} else if (names.length === 1) {
+			[fname] = names;
+		}
+	}
+	const data = { fname, lname, ...additionalData };
+
 	const userRef = firestoreDb.doc(`users/${userAuth.uid}`);
 	// get whatever data is located at reference
 	const snapShot = await userRef.get();
@@ -43,7 +56,7 @@ export const createUserProfileDoc = async (
 			await userRef.set({
 				email,
 				createdAt,
-				...additionalData,
+				...data,
 			});
 		} catch (e) {
 			console.log('error creating user', e.message);

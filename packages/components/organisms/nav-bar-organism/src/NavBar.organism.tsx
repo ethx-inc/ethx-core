@@ -54,7 +54,11 @@ export const NavBar = ({
 					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
 				}`}>
 				{isSignedIn ? (
-					<NavButton label='sign out' css='lg:hidden' />
+					<NavButton
+						label='sign out'
+						css='lg:hidden'
+						onClick={onSignOut}
+					/>
 				) : (
 					<NavLink label='sign in' href='/signin' css='lg:hidden' />
 				)}
