@@ -5,6 +5,7 @@ import { SignUpForm } from '../../components/molecules/sign-up-form-molecule/src
 import {
 	auth,
 	createUserProfileDoc,
+	signInWithGoogle,
 } from '../../services/firebase-auth/firebase.utils';
 
 export const SignUpFormController = (): JSX.Element => {
@@ -35,7 +36,14 @@ export const SignUpFormController = (): JSX.Element => {
 		}
 	}
 
+	function googleAuth() {
+		signInWithGoogle(() => router.push('/'));
+	}
+
 	return (
-		<SignUpForm onSubmit={(event, props) => handleSubmit(event, props)} />
+		<SignUpForm
+			onSubmit={(event, props) => handleSubmit(event, props)}
+			onClickGoogle={() => googleAuth()}
+		/>
 	);
 };
