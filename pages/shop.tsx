@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { NavBar } from '../packages/components/organisms/nav-bar-organism/src'
 import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src'
 import { ButtonBrowse } from '../packages/components/atoms/browse-button-atom/src'
-import { ButtonCTA } from '../packages/components/atoms/button-cta/src';
+import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src';
 import { MixedSectionText } from '../packages/components/atoms/mixed-section-text/src'
 
 export interface ShopProps {
@@ -21,7 +21,9 @@ const Shop: FC<ShopProps> = ({
         }
     }
     function restartBrowse() {
-        window.location.reload();
+        document.getElementById('browsemakeup').style.display = 'none';
+        document.getElementById('restart').style.display = 'none';
+        document.getElementById('browseall').style.display = 'flex';
     }
     return (
         <div>
@@ -41,7 +43,7 @@ const Shop: FC<ShopProps> = ({
                     <div id='lip'><ButtonBrowse title={'lip'} /></div>
                     <div id='remover'><ButtonBrowse title={'makeup remover'} /></div>
                 </div>
-                <div id='restart' className='hidden'><ButtonCTA title={'restart'} onClick={() => restartBrowse()}/></div>
+                <div id='restart' className='hidden'><ButtonArrow title={'restart'} onClick={() => restartBrowse()}/></div>
             </MainContentContainer>
         </div>
 

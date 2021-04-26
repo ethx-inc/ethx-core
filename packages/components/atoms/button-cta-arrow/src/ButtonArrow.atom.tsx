@@ -14,7 +14,7 @@ export const ButtonArrow = ({
 	return (
 		<button
 			type='button'
-			className={`font-regular m-auto w-20 flex justify-between py-1 px-2 border-2 border-primary ${
+			className={`font-regular m-auto w-28 flex justify-between py-1 px-2 border-2 border-primary ${
 				color ? `bg-${color}` : 'bg-primary'
 			}  ${fontColor ? `text-${fontColor}` : 'text-white'} rounded-full`}
 			style={{ fontFamily: 'Roboto' }}>
@@ -24,7 +24,7 @@ export const ButtonArrow = ({
 				fill='none'
 				viewBox='0 0 24 24'
 				stroke='currentColor'
-				className='w-5 pt-0.5'>
+				className='w-5 pt-1'>
 				<path
 					strokeLinecap='round'
 					strokeLinejoin='round'
