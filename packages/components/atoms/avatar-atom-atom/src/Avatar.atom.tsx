@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 export interface AvatarAtomProps {
 	/* Props here */
-	img: string;
+	img?: string;
 	css?: string;
 	name: string;
 }
