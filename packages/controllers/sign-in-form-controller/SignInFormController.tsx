@@ -2,7 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { SignInForm } from '../../components/molecules/sign-in-form-molecule/src';
 
-import { auth } from '../../services/firebase-auth/firebase.utils';
+import {
+	auth,
+	signInWithGoogle,
+} from '../../services/firebase-auth/firebase.utils';
 
 export const SignInFormController = (): JSX.Element => {
 	const router = useRouter();
@@ -20,7 +23,14 @@ export const SignInFormController = (): JSX.Element => {
 		}
 	}
 
+	function googleAuth() {
+		signInWithGoogle(() => router.push('/'));
+	}
+
 	return (
-		<SignInForm onSubmit={(event, props) => handleSubmit(event, props)} />
+		<SignInForm
+			onSubmit={(event, props) => handleSubmit(event, props)}
+			onClickGoogle={() => googleAuth()}
+		/>
 	);
 };

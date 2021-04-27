@@ -1,8 +1,10 @@
 import React, { FC, useContext, useState } from 'react';
 
+import { FcGoogle } from '@react-icons/all-files/fc/FcGoogle';
 import { NavLink } from '../../../atoms/nav-link-atom/src';
 import { SectionText } from '../../../atoms/section-text/src';
 import { SubmitButton } from '../../../atoms/submit-button-atom/src';
+import { NavButton } from '../../../atoms/nav-button-atom/src/NavButton.atom';
 import { TextInput } from '../../../atoms/text-input-atom/src';
 
 import { LoginContext } from '../../../../services/context/login-context';
@@ -10,10 +12,12 @@ import { LoginContext } from '../../../../services/context/login-context';
 export interface SignUpFormProps {
 	/* Props here */
 	onSubmit?;
+	onClickGoogle?;
 }
 
 export const SignUpForm: FC<SignUpFormProps> = ({
 	onSubmit,
+	onClickGoogle,
 }: SignUpFormProps) => {
 	const { loginData, setLoginData } = useContext(LoginContext);
 	const { fname, lname, email } = loginData;
@@ -32,7 +36,6 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 				})
 			}
 			className='flex flex-col h-3/5 justify-between items-center max-w-2xl w-full '>
-			{/* onSubmit={() => onSubmit()} */}
 			<SectionText title='sign up' />
 			<TextInput
 				placeholder='first name'
@@ -79,6 +82,14 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 				value={confirmPassword}
 			/>
 			<SubmitButton title='sign up' css='mb-3' />
+			<NavButton
+				label='sign up'
+				bgColor='primary'
+				color='white'
+				css='mb-2'
+				onClick={event => onClickGoogle(event)}>
+				<FcGoogle className='md:mt-1.5 mt-1 mr-1 text-lg' />
+			</NavButton>
 			<NavLink label='sign in' href='signin' />
 		</form>
 	);
