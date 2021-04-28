@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
 import { NavBar } from '../packages/components/organisms/nav-bar-organism/src'
 import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src'
-import { ButtonBrowse } from '../packages/components/atoms/browse-button-atom/src'
-import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src';
 import { MixedSectionText } from '../packages/components/atoms/mixed-section-text/src'
+import { BrowseAll } from '../packages/components/molecules/browse-all-molecule/src/browseAll.molecule'
+import { BrowseCos } from '../packages/components/molecules/browse-cos-molecule/src/browseCos.molecule'
+import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src'
+
 
 export interface ShopProps {
 
@@ -13,13 +15,6 @@ const Shop: FC<ShopProps> = ({
 
 }: ShopProps) => {
 
-    function showCos() {
-        if (document.getElementById('makeup')) {
-            document.getElementById('browseall').style.display = 'none';
-            document.getElementById('browsemakeup').style.display = 'flex';
-            document.getElementById('restart').style.display = 'flex';
-        }
-    }
     function restartBrowse() {
         document.getElementById('browsemakeup').style.display = 'none';
         document.getElementById('restart').style.display = 'none';
@@ -30,20 +25,11 @@ const Shop: FC<ShopProps> = ({
             <NavBar/>
             <MainContentContainer css="flex flex-col items-center h-5/6 mt-10">
                 <MixedSectionText css="mixedtext" title={'browse'} subtitle={'all products'}/>
-                <div id='browseall' className='flex flex-col lg:flex-row'>
-                    <div id='makeup'><ButtonBrowse title={'makeup'} onClick={() => showCos()}/></div>
-                    <div id='hair'><ButtonBrowse title={'hair'} /></div>
-                    <div id='fragrance'><ButtonBrowse title={'fragrance'} /></div>
-                    <div id='skin'><ButtonBrowse title={'skin'} /></div>
-                    <div id='shopall'><ButtonBrowse title={'shop all'} /></div>
+                <BrowseAll />
+                <BrowseCos />
+                <div id='restart' className='hidden'>
+                    <ButtonArrow title={'restart'} onClick={() => restartBrowse()}/>
                 </div>
-                <div id='browsemakeup' className='hidden flex flex-col lg:flex-row'>
-                    <div id='eye'><ButtonBrowse title={'eye'} /></div>
-                    <div id='face'><ButtonBrowse title={'face'} /></div>
-                    <div id='lip'><ButtonBrowse title={'lip'} /></div>
-                    <div id='remover'><ButtonBrowse title={'makeup remover'} /></div>
-                </div>
-                <div id='restart' className='hidden'><ButtonArrow title={'restart'} onClick={() => restartBrowse()}/></div>
             </MainContentContainer>
         </div>
 
