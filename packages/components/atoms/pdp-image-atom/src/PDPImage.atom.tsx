@@ -48,5 +48,6 @@ export const PDPImage = ({ color }: PDPImageProps): JSX.Element => {
 				/>
 			</div>
 		</div>
+		</div>
 	);
 };
