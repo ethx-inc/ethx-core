@@ -6,36 +6,58 @@ import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src';
 import { Hamburger } from '../../../atoms/hamburger-atom/src';
 
 export interface NavBarProps {
-	backgroundColor?: 'black' | 'gray-400';
-	color?: 'black' | 'gray-400';
+	backgroundColor?: 'black' | 'gray-400' | 'white' | 'primary';
+	color?: 'black' | 'gray-400' | 'primary' | 'white';
+	isSignedIn?: boolean;
+	onSignOut?;
 }
 
 export const NavBar = ({
 	backgroundColor,
 	color,
+	isSignedIn,
+	onSignOut,
 }: NavBarProps): JSX.Element => {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
 		<div
-			className={`lg:px-16 px-4 ${
-				backgroundColor ? `bg-${backgroundColor}` : 'bg-primary'
+			className={`${
+				backgroundColor ? `bg-${backgroundColor}` : 'bg-white'
 			} 
-			${color ? `text-${color}` : 'text-white'} flex-col items-center py-2`}>
-			<div className='flex-1 flex justify-between'>
-				<NavButton css='hidden lg:flex' label='sign in' />
+			${
+				color ? `text-${color}` : 'text-primary'
+			} border-b border-t flex-col items-center pt-2 lg:py-2`}>
+			<div className='flex-1 flex justify-around border-b items-center pb-3'>
+				{isSignedIn ? (
+					<NavButton
+						label='sign out'
+						css='hidden lg:flex'
+						onClick={onSignOut}
+					/>
+				) : (
+					<NavLink
+						label='sign in'
+						href='/signin'
+						css='hidden lg:flex'
+					/>
+				)}
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
 
-				<span className='font-semibold text-4xl'>ethx</span>
+				<NavLink label='ethx' href='/' css='text-4xl' />
 
 				<ShoppingBag count={0} />
 			</div>
 
 			<div
-				className={`lg:flex items-start justify-around ${
+				className={`lg:flex items-start justify-evenly mt-1 ${
 					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
 				}`}>
-				<NavButton css='lg:hidden' label='sign in' />
+				{isSignedIn ? (
+					<NavButton label='sign out' css='lg:hidden' />
+				) : (
+					<NavLink label='sign in' href='/signin' css='lg:hidden' />
+				)}
 				<NavLink
 					label='shop'
 					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'

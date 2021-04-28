@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Dropdown } from '../../filter-dropdown-organism/src/Dropdown.organism';
-import { IconWrapper } from '../../icon-wrapper-organism/src/IconWrapper.organism';
 
 export interface FilterMocProps {
 	borderColor?: string;
@@ -21,7 +20,7 @@ export const FilterMoc = ({
 				<IconWrapper borderColor={borderColor} fontColor={fontColor} title={title} />
 			</div> */}
 
-			<div className='flex flex-col justify-between'>
+			<div className='flex flex-col justify-between mx-5'>
 				<div className='mb-8'>
 					<Dropdown
 						borderColor={borderColor}

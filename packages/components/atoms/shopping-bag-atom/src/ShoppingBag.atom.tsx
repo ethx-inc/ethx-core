@@ -4,7 +4,7 @@ import { HiOutlineShoppingBag } from '@react-icons/all-files/hi/HiOutlineShoppin
 
 export interface ShoppingBagProps {
 	count?: 0;
-	color?: 'black' | 'gray-400' | 'white';
+	color?: 'black' | 'gray-400' | 'white' | 'primary';
 	onClick?;
 }
 
@@ -17,11 +17,11 @@ export const ShoppingBag = ({
 		<button
 			onClick={() => onClick()}
 			type='button'
-			className={`font-semibold ${
+			className={`font-regular ${
 				color ? `text-${color}` : ''
 			}  relative flex justify-center items-center focus:outline-none`}>
 			<HiOutlineShoppingBag size={40} />
-			<span className='absolute top-3'>{count}</span>
+			<span className='absolute top-4 text-sm'>{count}</span>
 		</button>
 	);
 };
