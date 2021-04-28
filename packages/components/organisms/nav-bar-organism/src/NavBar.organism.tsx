@@ -4,12 +4,14 @@ import { NavButton } from '../../../atoms/nav-button-atom/src';
 import { NavLink } from '../../../atoms/nav-link-atom/src';
 import { ShoppingBag } from '../../../atoms/shopping-bag-atom/src';
 import { Hamburger } from '../../../atoms/hamburger-atom/src';
+import { UserProfileButton } from '../../../atoms/user-profile-button-atom/src';
 
 export interface NavBarProps {
 	backgroundColor?: 'black' | 'gray-400' | 'white' | 'primary';
 	color?: 'black' | 'gray-400' | 'primary' | 'white';
 	isSignedIn?: boolean;
 	onSignOut?;
+	onUserProfile?;
 }
 
 export const NavBar = ({
@@ -17,6 +19,7 @@ export const NavBar = ({
 	color,
 	isSignedIn,
 	onSignOut,
+	onUserProfile,
 }: NavBarProps): JSX.Element => {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
@@ -29,11 +32,10 @@ export const NavBar = ({
 			} border-b border-t flex-col items-center pt-2 lg:py-2`}>
 			<div className='flex-1 flex justify-around border-b items-center pb-3'>
 				{isSignedIn ? (
-					<NavButton
-						label='sign out'
-						css='hidden lg:flex'
-						onClick={onSignOut}
-					/>
+					<div className='hidden lg:flex'>
+						<UserProfileButton onClick={() => onUserProfile()} />
+						<NavButton label='sign out' onClick={onSignOut} />
+					</div>
 				) : (
 					<NavLink
 						label='sign in'
@@ -54,7 +56,13 @@ export const NavBar = ({
 					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
 				}`}>
 				{isSignedIn ? (
-					<NavButton label='sign out' css='lg:hidden' />
+					<div className='lg:hidden'>
+						<NavButton
+							label='view profile'
+							onClick={() => onUserProfile()}
+						/>
+						<NavButton label='sign out' onClick={onSignOut} />
+					</div>
 				) : (
 					<NavLink label='sign in' href='/signin' css='lg:hidden' />
 				)}

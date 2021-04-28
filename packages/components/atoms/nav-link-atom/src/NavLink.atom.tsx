@@ -21,7 +21,7 @@ export const NavLink = ({
 			<a
 				className={`font-regular ${
 					color ? `text-${color}` : 'text-primary'
-				} ${css}`}>
+				} ${css} px-4`}>
 				{label}
 			</a>
 		</Link>

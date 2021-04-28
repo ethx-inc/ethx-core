@@ -30,6 +30,19 @@ export const createUserProfileDoc = async (
 ): Promise<any> => {
 	if (!userAuth) return {};
 	// create a reference to this users location
+	const { displayName } = userAuth;
+	let fname = '';
+	let lname = '';
+	if (displayName) {
+		const names = displayName.split(' ');
+		if (names.length === 2) {
+			[fname, lname] = names;
+		} else if (names.length === 1) {
+			[fname] = names;
+		}
+	}
+	const data = { fname, lname, ...additionalData };
+
 	const userRef = firestoreDb.doc(`users/${userAuth.uid}`);
 	// get whatever data is located at reference
 	const snapShot = await userRef.get();
@@ -43,7 +56,7 @@ export const createUserProfileDoc = async (
 			await userRef.set({
 				email,
 				createdAt,
-				...additionalData,
+				...data,
 			});
 		} catch (e) {
 			console.log('error creating user', e.message);
@@ -51,6 +64,35 @@ export const createUserProfileDoc = async (
 	}
 	// allways return user ref in case we want to use it later
 	return userRef; // new Promise(resolve => resolve(userRef));
+};
+
+export const updateEmail = (email, callback) => {
+	const user = auth.currentUser;
+	user.updateEmail(email)
+		.then(() => {
+			// update successful
+			callback();
+		})
+		.catch(error => {
+			// an error occured
+			alert('An error occurred, please try again.');
+			console.log(error);
+		});
+};
+
+export const changePassword = (newPassword, callback) => {
+	const user = auth.currentUser;
+	// check getProviderData() see if .getProviderId() is google.com
+	user.updatePassword(newPassword)
+		.then(() => {
+			// Update successful.
+			callback();
+		})
+		.catch(error => {
+			// An error happened.
+			alert('An error occurred, please try again.');
+			console.log(error);
+		});
 };
 
 const provider = new firebase.auth.GoogleAuthProvider();
