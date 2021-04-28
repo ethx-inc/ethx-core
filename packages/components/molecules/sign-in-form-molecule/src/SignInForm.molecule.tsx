@@ -38,6 +38,7 @@ export const SignInForm: FC<SignInFormProps> = ({
 			/>
 			<TextInput
 				placeholder='password'
+				type='password'
 				css='mb-3'
 				onChange={event => setPassword(event.target.value)}
 				required

@@ -15,7 +15,7 @@ export const UserProfileButton: FC<UserProfileButtonProps> = ({
 }: UserProfileButtonProps) => {
 	return (
 		<button
-			className={`cursor-pointer text-4xl block focus:outline-none mx-0 ${css} ${
+			className={`cursor-pointer text-3xl block focus:outline-none mx-0 ${css} ${
 				color ? `text-${color}` : 'text-primary'
 			}`}
 			type='button'

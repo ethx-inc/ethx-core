@@ -11,7 +11,7 @@ export const ButtonCTA = ({
 	title,
 	color,
 	fontColor,
-	onClick
+	onClick,
 }: ButtonCTAProps): JSX.Element => {
 	return (
 		<button

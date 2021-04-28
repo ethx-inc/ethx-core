@@ -11,6 +11,7 @@ export interface NavBarProps {
 	color?: 'black' | 'gray-400' | 'primary' | 'white';
 	isSignedIn?: boolean;
 	onSignOut?;
+	onUserProfile?;
 }
 
 export const NavBar = ({
@@ -18,6 +19,7 @@ export const NavBar = ({
 	color,
 	isSignedIn,
 	onSignOut,
+	onUserProfile,
 }: NavBarProps): JSX.Element => {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
@@ -31,7 +33,7 @@ export const NavBar = ({
 			<div className='flex-1 flex justify-around border-b items-center pb-3'>
 				{isSignedIn ? (
 					<div className='hidden lg:flex'>
-						<UserProfileButton />
+						<UserProfileButton onClick={() => onUserProfile()} />
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (
@@ -55,7 +57,10 @@ export const NavBar = ({
 				}`}>
 				{isSignedIn ? (
 					<div className='lg:hidden'>
-						<NavButton label='view profile' />
+						<NavButton
+							label='view profile'
+							onClick={() => onUserProfile()}
+						/>
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (

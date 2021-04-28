@@ -66,6 +66,35 @@ export const createUserProfileDoc = async (
 	return userRef; // new Promise(resolve => resolve(userRef));
 };
 
+export const updateEmail = (email, callback) => {
+	const user = auth.currentUser;
+	user.updateEmail(email)
+		.then(() => {
+			// update successful
+			callback();
+		})
+		.catch(error => {
+			// an error occured
+			alert('An error occurred, please try again.');
+			console.log(error);
+		});
+};
+
+export const changePassword = (newPassword, callback) => {
+	const user = auth.currentUser;
+	// check getProviderData() see if .getProviderId() is google.com
+	user.updatePassword(newPassword)
+		.then(() => {
+			// Update successful.
+			callback();
+		})
+		.catch(error => {
+			// An error happened.
+			alert('An error occurred, please try again.');
+			console.log(error);
+		});
+};
+
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = (callback?) => {

@@ -23,7 +23,7 @@ export const NavButton = ({
 			onClick={() => onClick()}
 			type='button'
 			className={`font-regular ${css} focus:outline-none ${
-				color ? `text-${color}` : 'primary'
+				color ? `text-${color}` : 'text-primary'
 			} ${
 				bgColor ? `bg-${bgColor}` : ''
 			} lg:text-lg px-4 py-1 rounded-full flex`}>
