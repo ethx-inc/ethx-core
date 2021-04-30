@@ -4,10 +4,10 @@ import { ButtonBrowse } from '../../../atoms/browse-button-atom/src';
 export interface BrowseAllProps {
 	/* Props here */
 	browse?;
-	string;
+	onClick?;
 }
 
-export const BrowseAll: FC<BrowseAllProps> = ({ browse }: BrowseAllProps) => {
+export const BrowseAll: FC<BrowseAllProps> = ({ browse, onClick }: BrowseAllProps) => {
 	function showCos() {
 		if (document.getElementById('makeup')) {
 			document.getElementById('browseall').style.display = 'none';
@@ -30,7 +30,7 @@ export const BrowseAll: FC<BrowseAllProps> = ({ browse }: BrowseAllProps) => {
 				<ButtonBrowse title='skin' />
 			</div>
 			<div id='shopall'>
-				<ButtonBrowse title='shop all' />
+				<ButtonBrowse title='trending' />
 			</div>
 		</div>
 	);

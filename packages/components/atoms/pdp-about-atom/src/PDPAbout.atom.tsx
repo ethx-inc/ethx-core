@@ -12,8 +12,8 @@ export const PDPAbout = ({
 	return (
 		<div
 			className={`text-${fontColor} border-t border-primary w-5/6 lg:w-4/5 my-5 mx-auto lg:mx-0 lg:my-10`}>
-			<h3 className='text-lg italic font-light my-4'>About The Brand</h3>
-			<p className='text-md'>{brandDetails}</p>
+			<h3 className='text-lg italic font-medium my-4'>About The Brand</h3>
+			<p className='text-md overflow-clip'>{brandDetails}</p>
 		</div>
 	);
 };
