@@ -11,7 +11,7 @@ export const SellersBanner = ({
 }: SellersBannerProps): JSX.Element => {
 	return (
 		<div
-			className='w-5/6 lg:w-4/5 h-44 mb-10'>
+			className='w-full lg:w-4/5 h-44 mb-10 -mt-10'>
 			<img
 				src='/images/flipped-hero-image.jpg'
 				alt='placeholder-img'
