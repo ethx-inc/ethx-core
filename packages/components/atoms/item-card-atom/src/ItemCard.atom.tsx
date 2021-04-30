@@ -1,21 +1,21 @@
 import React from 'react';
 
 export interface ItemCardProps {
-	name: string;
-	price?: string;
-	img?: string;
-	color?: 'white' | 'black' | 'grey-400';
-	css?: string;
+	brandName: string;
+	productName: string;
+	productPrice?: string;
+	productImg?: string;
 }
 
-export const ItemCard = ({ name, price, img }: ItemCardProps): JSX.Element => {
+export const ItemCard = ({ brandName, productName, productPrice, productImg }: ItemCardProps): JSX.Element => {
 	return (
 		<div className='cursor-pointer'>
-			<img className='w-full' src={img} alt={`Card for ${name}`} />
+			<img className='w-full h-50 mx-auto' src={productImg} alt={`Card for ${productName}`} />
 
-			<div className='flex justify-between text-md mt-3 mb-5 font-bold'>
-				<div>{name}</div>
-				<div>{price}</div>
+			<div className='flex flex-col text-md text-center mt-3 mb-5'>
+				<div className='font-bold'>{brandName}</div>
+				<div>{productName}</div>
+				<div className='font-bold'>{productPrice}</div>
 			</div>
 		</div>
 	);

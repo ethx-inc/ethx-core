@@ -2,8 +2,8 @@ import React from 'react';
 
 export interface ButtonBrowseProps {
 	fontColor?: string;
-	onClick?;
 	title?: string;
+	onClick?;
 }
 
 export const ButtonBrowse = ({

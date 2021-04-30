@@ -4,7 +4,7 @@ import { HeroText } from '../packages/components/atoms/hero-text/src';
 import { SectionText } from '../packages/components/atoms/section-text/src';
 import { IconWrapper } from '../packages/components/organisms/icon-wrapper-organism/src/IconWrapper.organism';
 import { FilterMoc } from '../packages/components/organisms/filter-moc-organism/src/FilterMoc.organism';
-import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src';
+import { ButtonCTA } from '../packages/components/atoms/button-cta/src';
 import { TestimonialController} from '../packages/controllers/testimonials-controller/TestimonialController';
 import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src'
 
@@ -39,8 +39,8 @@ const HomePage: FC<HomeProps> = ({
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
 				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} />
 				<FilterMoc />
-					<div>
-						<ButtonArrow title={'go'}/>
+					<div className='flex justify-center pt-6'>
+						<ButtonCTA title={'go'}/>
 					</div>
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
