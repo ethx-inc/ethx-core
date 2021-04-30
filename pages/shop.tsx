@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { NavBar } from '../packages/components/organisms/nav-bar-organism/src'
+import { NavBarController } from '../packages/controllers/navbar-controller/NavBarController';
 import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src'
 import { MixedSectionText } from '../packages/components/atoms/mixed-section-text/src'
-import { BrowseAll } from '../packages/components/molecules/browse-all-molecule/src/browseAll.molecule'
+import { BrowseAllController } from '../packages/controllers/browse-all-controller/BrowseAllController';
 import { BrowseCos } from '../packages/components/molecules/browse-cos-molecule/src/browseCos.molecule'
 import { ButtonArrow } from '../packages/components/atoms/button-cta-arrow/src'
 
@@ -22,10 +23,10 @@ const Shop: FC<ShopProps> = ({
     }
     return (
         <div>
-            <NavBar/>
+            <NavBarController/>
             <MainContentContainer css="flex flex-col items-center h-5/6 mt-10">
                 <MixedSectionText css="mixedtext" title={'browse'} subtitle={'all products'}/>
-                <BrowseAll />
+                <BrowseAllController />
                 <BrowseCos />
                 <div id='restart' className='hidden'>
                     <ButtonArrow title={'restart'} onClick={() => restartBrowse()}/>
