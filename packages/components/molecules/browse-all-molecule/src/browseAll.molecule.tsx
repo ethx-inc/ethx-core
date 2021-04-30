@@ -7,7 +7,10 @@ export interface BrowseAllProps {
 	onClick?;
 }
 
-export const BrowseAll: FC<BrowseAllProps> = ({ browse, onClick }: BrowseAllProps) => {
+export const BrowseAll: FC<BrowseAllProps> = ({
+	browse,
+	onClick,
+}: BrowseAllProps) => {
 	function showCos() {
 		if (document.getElementById('makeup')) {
 			document.getElementById('browseall').style.display = 'none';

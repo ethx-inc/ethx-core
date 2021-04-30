@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { NavBar } from '../../components/organisms/nav-bar-organism/src';
-import { auth } from '../../services/firebase-auth/firebase.utils';
+import { auth } from '../../services/firebase/firebase.utils';
 
 export const NavBarController = (): JSX.Element => {
 	const router = useRouter();

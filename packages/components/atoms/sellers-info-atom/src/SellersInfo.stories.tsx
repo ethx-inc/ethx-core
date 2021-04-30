@@ -16,8 +16,5 @@ export default {
 
 const Template: Story<SellersInfoProps> = args => <SellersInfo {...args} />;
 
-
 export const Base = Template.bind({});
-Base.args = {
-
-};
+Base.args = {};

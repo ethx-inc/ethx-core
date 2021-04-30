@@ -41,16 +41,3 @@ export const LoginProvider = ({
 		</LoginContext.Provider>
 	);
 };
-
-/*
-export const TestimonialController = ({
-	testimonials,
-}: TestimonialsSectionProps): JSX.Element => {
-	return (
-		<TestimonialsSection>
-			{testimonials.map(testimony => {
-				return <TestimonialQuote key={testimony.id} {...testimony} />;
-			})}
-		</TestimonialsSection>
-	);
-}; */

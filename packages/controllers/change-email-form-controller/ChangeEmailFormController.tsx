@@ -5,7 +5,7 @@ import {
 	auth,
 	changePassword,
 	updateEmail,
-} from '../../services/firebase-auth/firebase.utils';
+} from '../../services/firebase/firebase.utils';
 
 export interface ChangeEmailFormControllerProps {
 	/* Props here */

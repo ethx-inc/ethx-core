@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 import {
 	auth,
-} from '../packages/services/firebase-auth/firebase.utils';
+} from '../packages/services/firebase/firebase.utils';
 
 
 

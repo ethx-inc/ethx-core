@@ -7,10 +7,19 @@ export interface ItemCardProps {
 	productImg?: string;
 }
 
-export const ItemCard = ({ brandName, productName, productPrice, productImg }: ItemCardProps): JSX.Element => {
+export const ItemCard = ({
+	brandName,
+	productName,
+	productPrice,
+	productImg,
+}: ItemCardProps): JSX.Element => {
 	return (
 		<div className='cursor-pointer'>
-			<img className='w-full h-50 mx-auto' src={productImg} alt={`Card for ${productName}`} />
+			<img
+				className='w-full h-50 mx-auto'
+				src={productImg}
+				alt={`Card for ${productName}`}
+			/>
 
 			<div className='flex flex-col text-md text-center mt-3 mb-5'>
 				<div className='font-bold'>{brandName}</div>

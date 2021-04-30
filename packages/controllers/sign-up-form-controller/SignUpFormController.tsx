@@ -6,7 +6,7 @@ import {
 	auth,
 	createUserProfileDoc,
 	signInWithGoogle,
-} from '../../services/firebase-auth/firebase.utils';
+} from '../../services/firebase/firebase.utils';
 
 export const SignUpFormController = (): JSX.Element => {
 	const router = useRouter();
