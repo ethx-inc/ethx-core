@@ -9,7 +9,7 @@ export default {
 	title: 'Atom/SellersBanner' /* Title of the component  */,
 	component: SellersBanner /* component */,
 	argTypes: {
-		brandName : { control: 'brandName' }
+		brandName: { control: 'brandName' },
 	},
 } as Meta;
 
@@ -17,7 +17,5 @@ const Template: Story<SellersBannerProps> = args => <SellersBanner {...args} />;
 
 export const Base = Template.bind({});
 Base.args = {
-	brandName: 'the best brand'
-
+	brandName: 'the best brand',
 };
-
