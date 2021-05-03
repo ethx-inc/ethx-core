@@ -11,6 +11,4 @@ const Template: Story<ItemCardProps> = args => <ItemCard {...args} />;
 
 export const Base = Template.bind({});
 
-Base.args = {
-
-};
+Base.args = {};

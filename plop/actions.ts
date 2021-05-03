@@ -48,7 +48,7 @@ export const controllerAction: AddActionConfig = {
 
 export const serviceAction: AddActionConfig = {
 	type: 'add',
-	path: 'packages/components/{{dashCase serviceName}}.service.tsx',
+	path: 'packages/services/{{dashCase serviceName}}.service.tsx',
 	template: '/plop/templates/service.package.hbs',
 	templateFile: path.join('./plop/templates/service.general.hbs'),
 };
