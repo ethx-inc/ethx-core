@@ -16,7 +16,7 @@ export const ItemCard = ({
 	return (
 		<div className='cursor-pointer'>
 			<img
-				className='w-full h-50 mx-auto'
+				className='w-auto max-h-52 h-52 mx-auto'
 				src={productImg}
 				alt={`Card for ${productName}`}
 			/>

@@ -51,7 +51,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 				<LoginProvider>
 					<Component {...pageProps} />
 				</LoginProvider>
-				</FilterProvider>
+			</FilterProvider>
 		</UserContext.Provider>
 	);
 };

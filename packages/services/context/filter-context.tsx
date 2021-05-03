@@ -7,6 +7,7 @@ export type FilterData = {
 	preferredEthx: string[];
 	items;
 	lastItem?;
+	page?: number;
 };
 
 export type FilterProps = {
@@ -24,6 +25,7 @@ export const FilterContext = React.createContext<FilterProps>({
 		preferredEthx: [],
 		items: [],
 		lastItem: null,
+		page: 1,
 	},
 	setFilterData: filter => console.warn('no login provider'),
 });
@@ -37,11 +39,13 @@ export interface FilterProviderProps {
 export const FilterProvider = ({
 	children,
 }: FilterProviderProps): JSX.Element => {
-	const [filterData, setFilterData] = useState({
+	const [filterData, setFilterData] = useState<FilterData>({
 		category: '',
 		selectedEthx: [],
 		preferredEthx: [],
 		items: [],
+		lastItem: null,
+		page: 1,
 	});
 
 	return (

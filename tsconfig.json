@@ -1,31 +1,50 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": false,
-		"skipLibCheck": true,
-		"strict": false,
-		"forceConsistentCasingInFileNames": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"sourceMap": true,
-		"outDir": "dist"
-	},
-	"ts-node": {
-		// ts-node options here
-		"transpileOnly": true,
-		"compiler": "ttypescript",
-		"module": "CommonJS",
-		// ts-node-specific overrides for compilerOptions
-		// any compilerOptions specified here will override the values specified above, *only* when running in ts-node
-		"compilerOptions": {},
-		"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "plop/ploppack.js"],
-		"exclude": ["node_modules"]
-	}
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "ts-node": {
+    // ts-node options here
+    "transpileOnly": true,
+    "compiler": "ttypescript",
+    "module": "CommonJS",
+    // ts-node-specific overrides for compilerOptions
+    // any compilerOptions specified here will override the values specified above, *only* when running in ts-node
+    "compilerOptions": {},
+    "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx",
+      "plop/ploppack.js"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

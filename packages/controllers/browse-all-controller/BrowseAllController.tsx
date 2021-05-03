@@ -13,7 +13,7 @@ export const BrowseAllController: FC = () => {
 	async function handleClick(category) {
 		const { items, lastItem } = await shopQuery(category, []);
 		setFilterData({ ...filterData, items, category, lastItem });
-		router.push('/shop/shop-items');
+		router.push(`/shop/${category}/1`);
 	}
 
 	return <BrowseAll onClick={category => handleClick(category)} />;
