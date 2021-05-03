@@ -14,33 +14,28 @@ export default {
 const Template: Story<ItemCardGridProps> = args => (
 	<ItemCardGrid {...args}>
 		<ItemCard
-			name='Marc Jacobs'
-			price='$65'
-			img='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
+			productName='Marc Jacobs'
+			productPrice='$65'
+			productImg='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
 		/>
 		<ItemCard
-			name='Marc Jacobs'
-			price='$65'
-			img='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
+			productName='Marc Jacobs'
+			productPrice='$65'
+			productImg='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
 		/>
 		<ItemCard
-			name='Marc Jacobs'
-			price='$65'
-			img='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
+			productName='Marc Jacobs'
+			productPrice='$65'
+			productImg='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
 		/>
 		<ItemCard
-			name='Marc Jacobs'
-			price='$65'
-			img='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
+			productName='Marc Jacobs'
+			productPrice='$65'
+			productImg='https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg'
 		/>
 	</ItemCardGrid>
 );
 
-export const Primary = Template.bind({});
+export const Base = Template.bind({});
 
-Primary.args = {
-	name: 'Marc Jacobs',
-	price: '$65',
-	img:
-		'https://www.marcjacobsbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-MJB-Library/default/v1617992992196/homepage/2021/20210406-30-markdown-slot-c-extra-shot.jpg',
-};
+Base.args = {};

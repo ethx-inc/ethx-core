@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ItemCardProps {
-	brandName: string;
+	brandName?: string;
 	productName: string;
 	productPrice?: string;
 	productImg?: string;
@@ -21,7 +21,7 @@ export const ItemCard = ({
 				alt={`Card for ${productName}`}
 			/>
 
-			<div className='flex flex-col text-md text-center mt-3 mb-5'>
+			<div className='flex flex-col text-md text-center mt-2'>
 				<div className='font-bold'>{brandName}</div>
 				<div>{productName}</div>
 				<div className='font-bold'>{productPrice}</div>

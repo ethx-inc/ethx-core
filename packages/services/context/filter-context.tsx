@@ -6,6 +6,7 @@ export type FilterData = {
 	selectedEthx: string[];
 	preferredEthx: string[];
 	items;
+	lastItem?;
 };
 
 export type FilterProps = {
@@ -22,6 +23,7 @@ export const FilterContext = React.createContext<FilterProps>({
 		selectedEthx: [],
 		preferredEthx: [],
 		items: [],
+		lastItem: null,
 	},
 	setFilterData: filter => console.warn('no login provider'),
 });

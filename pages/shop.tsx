@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { NavBar } from '../packages/components/organisms/nav-bar-organism/src'
 import { NavBarController } from '../packages/controllers/navbar-controller/NavBarController';
 import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src'
 import { MixedSectionText } from '../packages/components/atoms/mixed-section-text/src'
