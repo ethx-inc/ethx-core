@@ -1,10 +1,10 @@
 import React, { FC, useContext, useEffect } from 'react';
-import {NavBarController} from '../../../packages/controllers/navbar-controller/NavBarController'
-import {MainContentContainer} from '../../../packages/components/atoms/main-content-container-atom/src'
-import {ItemCardGrid} from '../../../packages/components/molecules/item-card-grid-molecule/src/ItemCardGrid.molecule'
-import {ItemCard} from '../../../packages/components/atoms/item-card-atom/src/ItemCard.atom'
+import {NavBarController} from '../../packages/controllers/navbar-controller/NavBarController'
+import {MainContentContainer} from '../../packages/components/atoms/main-content-container-atom/src'
+import {ItemCardGrid} from '../../packages/components/molecules/item-card-grid-molecule/src/ItemCardGrid.molecule'
+import {ItemCard} from '../../packages/components/atoms/item-card-atom/src/ItemCard.atom'
 
-import { FilterContext } from '../../../packages/services/context/filter-context';
+import { FilterContext } from '../../packages/services/context/filter-context';
 
 
 export interface ShopItemsProps {

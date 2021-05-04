@@ -5,6 +5,7 @@ export interface ItemCardProps {
 	productName: string;
 	productPrice?: string;
 	productImg?: string;
+	onClick?;
 }
 
 export const ItemCard = ({
@@ -12,9 +13,13 @@ export const ItemCard = ({
 	productName,
 	productPrice,
 	productImg,
+	onClick,
 }: ItemCardProps): JSX.Element => {
 	return (
-		<div className='cursor-pointer'>
+		<button
+			className='focus:outline-none'
+			type='button'
+			onClick={() => onClick()}>
 			<img
 				className='w-20 max-h-52 mx-auto'
 				src={productImg}
@@ -26,6 +31,6 @@ export const ItemCard = ({
 				<div>{productName}</div>
 				<div className='font-bold'>{productPrice}</div>
 			</div>
-		</div>
+		</button>
 	);
 };
