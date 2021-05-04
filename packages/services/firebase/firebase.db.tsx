@@ -1,8 +1,20 @@
 import { firestoreDb } from './firebase.utils';
 
-export const nextPageInQuery = async query => {
-	const itemsSnapShot = await query.get();
-	if (itemsSnapShot.exists) {
+export const nextPageInQuery = async (
+	category: string,
+	filters: string[],
+	lastItem?,
+) => {
+	let itemsRef = firestoreDb.collection(category).orderBy('name');
+	filters.forEach(filter => {
+		itemsRef = itemsRef.where(filter, '==', 'true');
+	});
+	if (lastItem) {
+		itemsRef = itemsRef.startAfter(lastItem);
+	}
+	itemsRef = itemsRef.limit(40);
+	const itemsSnapShot = await itemsRef.get();
+	if (!itemsSnapShot.empty) {
 		const newLastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
 		const firstItem = itemsSnapShot.docs[0];
 		const items = [];
@@ -22,9 +34,20 @@ export const nextPageInQuery = async query => {
 	};
 };
 
-export const prevPageInQuery = async query => {
-	const itemsSnapShot = await query.get();
-	if (itemsSnapShot.exists) {
+export const prevPageInQuery = async (
+	category: string,
+	filters: string[],
+	firstItem,
+) => {
+	let itemsRef = firestoreDb.collection(category).orderBy('name');
+	filters.forEach(filter => {
+		itemsRef = itemsRef.where(filter, '==', 'true');
+	});
+	itemsRef = itemsRef.endBefore(firstItem);
+	itemsRef = itemsRef.limitToLast(40);
+
+	const itemsSnapShot = await itemsRef.get();
+	if (!itemsSnapShot.empty) {
 		const newFirstItem = itemsSnapShot.docs[0];
 		const lastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
 		const items = [];

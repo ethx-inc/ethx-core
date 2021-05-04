@@ -14,8 +14,10 @@ export const BrowseAllController: FC = () => {
 	const { filterData, setFilterData } = useContext(FilterContext);
 
 	async function handleClick(category) {
-		const query = shopQuery(category, []);
-		const { items, firstItem, lastItem } = await nextPageInQuery(query);
+		const { items, firstItem, lastItem } = await nextPageInQuery(
+			category,
+			[],
+		);
 		setFilterData({ ...filterData, items, category, firstItem, lastItem });
 		router.push(`/shop/${category}`);
 	}

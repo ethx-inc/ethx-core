@@ -22,7 +22,7 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
 			<MainContentContainer css="flex justify-center items-center h-auto mt-10">
                 <ItemCardGrid>
                     {items.length > 0 ? items.map(element => {
-                        return (<ItemCard brandName={element.brand} productName={element.name} productImg={element.img} productPrice={element.price} />)
+                        return (<ItemCard key={element.id} brandName={element.brand} productName={element.name} productImg={element.img} productPrice={element.price} />)
                     }) :
                     <span>Page failed to load please go back to Shop</span>
                     }
