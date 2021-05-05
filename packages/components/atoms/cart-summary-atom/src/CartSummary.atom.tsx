@@ -34,7 +34,7 @@ export const CartSummary = ({
 							className='rounded-lg'
 							/>
 						</div>
-						<div className='product-info flex flex-col justify-evenly -ml-32 lg:-ml-36 text-sm'>
+						<div className='product-info flex flex-col justify-evenly -ml-18 lg:-ml-36 text-sm'>
 							<h3 className='font-bold'>{brandName}</h3>
 							<h3>{productName}</h3>
 							<div className='product-quantity flex flex-row italic'><h3>QTY:</h3><h3 className='mx-3'>{productQuantity}</h3></div>
