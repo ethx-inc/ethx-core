@@ -21,7 +21,7 @@ export const CartSummary = ({
 	return (
 		<div className='flex flex-col lg:flex-row w-full md:w-1/2 mt-2 md:mt-10'>
 			<div className='cart-order-basket w-full px-3'>
-				<div className='text-xl mb-1'><h3>Your Basket </h3></div>	
+				<div className='text-2xl font-light mb-1'><h3>Your Basket </h3></div>	
 				<div className='text-sm border-b-2 pb-3 font-light italic'><h3>Thanks for shopping ethically! </h3></div>	
 				<div className='cart-order-item'>
 					<div className='flex flex-row justify-between my-5 border-b-2 pb-5'>
