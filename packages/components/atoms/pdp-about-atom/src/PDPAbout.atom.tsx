@@ -22,6 +22,7 @@ export const PDPAbout = ({
 					alt={'about-brand-logo'}
 					width={1500}
 					height={1500}
+					className={'rounded-lg'}
 					/>
 				</div>
 				<div>
