@@ -8,6 +8,7 @@ export type FilterData = {
 	items;
 	firstItem?;
 	lastItem?;
+	firstItemInCollection?;
 };
 
 export type FilterProps = {
@@ -26,6 +27,7 @@ export const FilterContext = React.createContext<FilterProps>({
 		items: [],
 		firstItem: null,
 		lastItem: null,
+		firstItemInCollection: null,
 	},
 	setFilterData: filter => console.warn('no login provider'),
 });
@@ -46,6 +48,7 @@ export const FilterProvider = ({
 		items: [],
 		firstItem: null,
 		lastItem: null,
+		firstItemInCollection: null,
 	});
 
 	return (

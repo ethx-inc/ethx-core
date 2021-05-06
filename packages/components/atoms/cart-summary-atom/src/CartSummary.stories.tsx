@@ -11,8 +11,7 @@ export default {
 	argTypes: {
 		brandName: { control: 'brandName' },
 		productName: { control: 'productName' },
-		productPrice: { control: 'productPrice' }
-
+		productPrice: { control: 'productPrice' },
 	},
 } as Meta;
 
@@ -23,5 +22,5 @@ export const Base = Template.bind({});
 Base.args = {
 	brandName: 'the best brand',
 	productName: 'moisturizer',
-	productPrice: '$20.99'
+	productPrice: '$20.99',
 };

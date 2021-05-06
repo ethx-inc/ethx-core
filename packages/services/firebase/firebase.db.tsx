@@ -3,6 +3,7 @@ import { firestoreDb } from './firebase.utils';
 export const nextPageInQuery = async (
 	category: string,
 	filters: string[],
+	firstItem?,
 	lastItem?,
 ) => {
 	let itemsRef = firestoreDb.collection(category).orderBy('name');
@@ -16,21 +17,21 @@ export const nextPageInQuery = async (
 	const itemsSnapShot = await itemsRef.get();
 	if (!itemsSnapShot.empty) {
 		const newLastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
-		const firstItem = itemsSnapShot.docs[0];
+		const newFirstItem = itemsSnapShot.docs[0];
 		const items = [];
 		itemsSnapShot.forEach(doc => {
 			items.push({ ...doc.data(), id: doc.id });
 		});
 		return {
 			items,
-			firstItem,
+			firstItem: newFirstItem,
 			lastItem: newLastItem,
 		};
 	}
 	return {
 		items: [],
-		firstItem: null,
-		lastItem: null,
+		firstItem,
+		lastItem,
 	};
 };
 
@@ -38,6 +39,7 @@ export const prevPageInQuery = async (
 	category: string,
 	filters: string[],
 	firstItem,
+	lastItem,
 ) => {
 	let itemsRef = firestoreDb.collection(category).orderBy('name');
 	filters.forEach(filter => {
@@ -49,7 +51,7 @@ export const prevPageInQuery = async (
 	const itemsSnapShot = await itemsRef.get();
 	if (!itemsSnapShot.empty) {
 		const newFirstItem = itemsSnapShot.docs[0];
-		const lastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
+		const newLastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
 		const items = [];
 		itemsSnapShot.forEach(doc => {
 			items.push({ ...doc.data(), id: doc.id });
@@ -57,13 +59,13 @@ export const prevPageInQuery = async (
 		return {
 			items,
 			firstItem: newFirstItem,
-			lastItem,
+			lastItem: newLastItem,
 		};
 	}
 	return {
 		items: [],
-		firstItem: null,
-		lastItem: null,
+		firstItem,
+		lastItem,
 	};
 };
 

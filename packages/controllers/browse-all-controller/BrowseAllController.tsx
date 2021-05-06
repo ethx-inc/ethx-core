@@ -18,7 +18,14 @@ export const BrowseAllController: FC = () => {
 			category,
 			[],
 		);
-		setFilterData({ ...filterData, items, category, firstItem, lastItem });
+		setFilterData({
+			...filterData,
+			items,
+			category,
+			firstItem,
+			lastItem,
+			firstItemInCollection: firstItem,
+		});
 		router.push(`/shop/${category}`);
 	}
 

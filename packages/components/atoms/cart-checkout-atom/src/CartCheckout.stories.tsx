@@ -12,8 +12,7 @@ export default {
 		subtotal: { control: 'subtotal' },
 		shipping: { control: 'shipping' },
 		tax: { control: 'tax' },
-		estTotal: { control: 'estTotal' }
-
+		estTotal: { control: 'estTotal' },
 	},
 } as Meta;
 
@@ -25,5 +24,5 @@ Base.args = {
 	subtotal: '$25.00',
 	shipping: '$5.99',
 	tax: 'Calculated at Checkout',
-	estTotal: '$30.99'
+	estTotal: '$30.99',
 };
