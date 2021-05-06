@@ -1,4 +1,5 @@
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC, useContext } from 'react';
+import { useRouter } from 'next/router';
 import {NavBarController} from '../../packages/controllers/navbar-controller/NavBarController'
 import {MainContentContainer} from '../../packages/components/atoms/main-content-container-atom/src'
 import {ItemCardGrid} from '../../packages/components/molecules/item-card-grid-molecule/src/ItemCardGrid.molecule'
@@ -19,6 +20,7 @@ export interface ShopItemsProps {
 }
 
 const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
+    const router = useRouter();
     const { filterData, setFilterData } = useContext(FilterContext);
     const {items, category, selectedEthx, firstItem, lastItem } = filterData;
 
@@ -60,13 +62,24 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
         }
 	}
 
+    function goToPDP() {
+        router.push('/pdp');
+    }
+
 	return (
 		<div className='h-screen w-full bg-gray-100'>
 			<NavBarController />
 			<MainContentContainer css="flex flex-col justify-center items-center h-auto mt-10">
                 <ItemCardGrid>
                     {items.length > 0 ? items.map(element => {
-                        return (<ItemCard key={element.id} brandName={element.brand} productName={element.name} productImg={element.img} productPrice={element.price} />)
+                        return (<ItemCard 
+                            key={element.id} 
+                            brandName={element.brand} 
+                            productName={element.name} 
+                            productImg={element.img} 
+                            productPrice={element.price} 
+                            onClick={()=> goToPDP()}
+                            />)
                     }) :
                     <span>Page failed to load please go back to Shop</span>
                     }
