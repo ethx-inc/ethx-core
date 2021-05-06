@@ -1,5 +1,6 @@
 import { firestoreDb } from './firebase.utils';
 
+const pageLimit = 40;
 export const nextPageInQuery = async (
 	category: string,
 	filters: string[],
@@ -13,7 +14,7 @@ export const nextPageInQuery = async (
 	if (lastItem) {
 		itemsRef = itemsRef.startAfter(lastItem);
 	}
-	itemsRef = itemsRef.limit(40);
+	itemsRef = itemsRef.limit(pageLimit);
 	const itemsSnapShot = await itemsRef.get();
 	if (!itemsSnapShot.empty) {
 		const newLastItem = itemsSnapShot.docs[itemsSnapShot.docs.length - 1];
@@ -46,7 +47,7 @@ export const prevPageInQuery = async (
 		itemsRef = itemsRef.where(filter, '==', 'true');
 	});
 	itemsRef = itemsRef.endBefore(firstItem);
-	itemsRef = itemsRef.limitToLast(40);
+	itemsRef = itemsRef.limitToLast(pageLimit);
 
 	const itemsSnapShot = await itemsRef.get();
 	if (!itemsSnapShot.empty) {
@@ -84,9 +85,9 @@ export const shopQuery = (
 		itemsRef = itemsRef.limit(40);
 	} else if (firstItem) {
 		itemsRef = itemsRef.endBefore(firstItem);
-		itemsRef = itemsRef.limitToLast(40);
+		itemsRef = itemsRef.limitToLast(pageLimit);
 	} else {
-		itemsRef = itemsRef.limit(40);
+		itemsRef = itemsRef.limit(pageLimit);
 	}
 	return itemsRef;
 };

@@ -9,15 +9,56 @@ import {MdKeyboardArrowLeft} from '@react-icons/all-files/md/MdKeyboardArrowLeft
 
 import { FilterContext } from '../../packages/services/context/filter-context';
 
+import {
+	nextPageInQuery,
+    prevPageInQuery
+} from '../../packages/services/firebase/firebase.db';
+
 
 export interface ShopItemsProps {
-    
-	
 }
 
 const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
     const { filterData, setFilterData } = useContext(FilterContext);
-    const {items} = filterData;
+    const {items, category, selectedEthx, firstItem, lastItem } = filterData;
+
+    async function nextPage(category) {
+		const { items: newItems, firstItem: newFirstItem, lastItem: newLastItem } = await nextPageInQuery(
+			category,
+			selectedEthx, 
+            firstItem,
+            lastItem
+		);
+		if (newItems.length > 0) {
+            setFilterData({
+                ...filterData,
+                items: newItems,
+                category,
+                firstItem: newFirstItem,
+                lastItem: newLastItem,
+                firstItemInCollection: firstItem,
+            });
+        }
+	}
+
+    async function prevPage(category) {
+		const { items: newItems, firstItem: newFirstItem, lastItem: newLastItem } = await prevPageInQuery(
+			category,
+			selectedEthx,
+            firstItem,
+            lastItem
+		);
+        if (newItems.length > 0) {
+            setFilterData({
+                ...filterData,
+                items: newItems,
+                category,
+                firstItem: newFirstItem,
+                lastItem: newLastItem,
+                firstItemInCollection: firstItem,
+            });
+        }
+	}
 
 	return (
 		<div className='h-screen w-full bg-gray-100'>
@@ -31,10 +72,10 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                     }
                 </ItemCardGrid>
                 <div className='flex flex-row mt-10 w-full sm:w-4/12 justify-around'>
-                    <NavButton label='last' color='white' bgColor='primary' flip>
+                    <NavButton label='last' color='white' bgColor='primary' css={'w-24'} flip onClick={()=>prevPage(category)}>
                         <MdKeyboardArrowLeft className='text-2xl mt-0.5'/>
                     </NavButton>
-                    <NavButton label='next' color='white' bgColor='primary'>
+                    <NavButton label='next' color='white' bgColor='primary' css={'w-24 justify-end'} onClick={()=>nextPage(category)}>
                         <MdKeyboardArrowRight className='text-2xl mt-0.5'/>
                     </NavButton>
                 </div>

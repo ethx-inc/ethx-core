@@ -4,10 +4,7 @@ import { BrowseAll } from '../../components/molecules/browse-all-molecule/src';
 
 import { FilterContext } from '../../services/context/filter-context';
 
-import {
-	shopQuery,
-	nextPageInQuery,
-} from '../../services/firebase/firebase.db';
+import { nextPageInQuery } from '../../services/firebase/firebase.db';
 
 export const BrowseAllController: FC = () => {
 	const router = useRouter();
