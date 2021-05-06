@@ -24,10 +24,10 @@ export const SellersInfo = ({
 			</div>
 
 			<div className='mt-5'>
-				<a href='/#'>
+				<a href='/user-profile'>
 					<p className='text-sm italic underline'>Change Email</p>
 				</a>
-				<a href='/#'>
+				<a href='user-profile'>
 					<p className='text-sm italic underline'>Change Password</p>
 				</a>
 			</div>

@@ -21,7 +21,10 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	return (
 		<div id='browseall' className='flex flex-col lg:flex-row'>
 			<div id='makeup'>
-				<ButtonBrowse title='makeup' onClick={() => showCos()} />
+				<ButtonBrowse
+					title='makeup'
+					onClick={() => onClick('makeup')}
+				/>
 			</div>
 			<div id='hair'>
 				<ButtonBrowse title='hair' />

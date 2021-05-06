@@ -1,5 +1,5 @@
 import React from 'react';
-import { RestartSign } from '../../restart-sign-atom/src'
+import { RestartSign } from '../../restart-sign-atom/src';
 
 export interface ButtonArrowProps {
 	title?: string;

@@ -8,14 +8,13 @@ import { CheckoutPayment, CheckoutPaymentProps } from './CheckoutPayment.atom';
 export default {
 	title: 'Atom/CheckoutPayment' /* Title of the component  */,
 	component: CheckoutPayment /* component */,
-	argTypes: {
-
-	},
+	argTypes: {},
 } as Meta;
 
-const Template: Story<CheckoutPaymentProps> = args => <CheckoutPayment {...args} />;
+const Template: Story<CheckoutPaymentProps> = args => (
+	<CheckoutPayment {...args} />
+);
 
 export const Base = Template.bind({});
 
-Base.args = {
-};
+Base.args = {};

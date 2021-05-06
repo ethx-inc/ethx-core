@@ -1,8 +1,7 @@
 import React from 'react';
-import { PlusSign } from '../../plus-sign-atom/src'
-import { TextInput } from '../../text-input-atom/src'
-import { ButtonCTA } from '../../button-cta/src'
-
+import { PlusSign } from '../../plus-sign-atom/src';
+import { TextInput } from '../../text-input-atom/src';
+import { ButtonCTA } from '../../button-cta/src';
 
 export interface CheckoutPaymentProps {
 	sectionName?: string;
@@ -17,9 +16,20 @@ export const CheckoutPayment = ({
 	return (
 		<div className='flex flex-col lg:flex-row w-full mt-5'>
 			<div className='checkout-details-shipping w-full'>
-				<div className='text-xl mb-1'><h3>{sectionName} </h3></div>	
-				<div className='flex flex-row cursor-pointer underline' onClick={() => setAddCreditCard(!addCreditCard )}><PlusSign /><p>Add New</p></div>
-				<form className={` ${addCreditCard ? 'flex flex-col mt-2 ': 'hidden'} w-full`}>
+				<div className='text-xl mb-1'>
+					<h3>{sectionName} </h3>
+				</div>
+				<button
+					className='flex flex-row cursor-pointer underline'
+					type='button'
+					onClick={() => setAddCreditCard(!addCreditCard)}>
+					<PlusSign />
+					<p>Add New</p>
+				</button>
+				<form
+					className={` ${
+						addCreditCard ? 'flex flex-col mt-2 ' : 'hidden'
+					} w-full`}>
 					<TextInput
 						placeholder='Card Number'
 						type='credit-card-number'
@@ -42,10 +52,11 @@ export const CheckoutPayment = ({
 							css='mb-2 lg:mb-0'
 						/>
 					</div>
-					<div className='flex justify-center my-5 w-full w-2/3'><ButtonCTA title={'Save & Continue'} /></div>
+					<div className='flex justify-center my-5 w-full w-2/3'>
+						<ButtonCTA title='Save & Continue' />
+					</div>
 				</form>
 			</div>
-
 		</div>
 	);
 };

@@ -8,14 +8,11 @@ import { PlusSign, PlusSignProps } from './PlusSign.atom';
 export default {
 	title: 'Atom/PlusSign' /* Title of the component  */,
 	component: PlusSign /* component */,
-	argTypes: {
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<PlusSignProps> = args => <PlusSign {...args} />;
 
 export const Base = Template.bind({});
 
-Base.args = {
-};
-
+Base.args = {};

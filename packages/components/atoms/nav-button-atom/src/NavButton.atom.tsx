@@ -5,6 +5,7 @@ export interface NavButtonProps {
 	color?: 'black' | 'gray-400' | 'white';
 	bgColor?: 'white' | 'black' | 'gray-50' | 'primary' | 'secondary';
 	css?: string;
+	flip?: boolean;
 	onClick?;
 	children?;
 }
@@ -15,6 +16,7 @@ export const NavButton = ({
 	color,
 	bgColor,
 	css,
+	flip,
 	onClick,
 	children,
 }: NavButtonProps): JSX.Element => {
@@ -26,9 +28,9 @@ export const NavButton = ({
 				color ? `text-${color}` : 'text-primary'
 			} ${
 				bgColor ? `bg-${bgColor}` : ''
-			} lg:text-lg px-4 py-1 rounded-full flex`}>
-			{children}
-			{label}
+			} lg:text-lg px-4 py-1 items-center rounded-full flex`}>
+			{flip ? children : label}
+			{flip ? label : children}
 		</button>
 	);
 };

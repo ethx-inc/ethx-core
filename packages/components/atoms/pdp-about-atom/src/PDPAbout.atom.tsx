@@ -17,11 +17,11 @@ export const PDPAbout = ({
 			<h3 className='text-lg italic font-medium my-4'>About The Brand</h3>
 			<div className='flex flex-col lg:flex-row'>
 				<div className='lg:mr-10 mb-5'>
-					<img 
-					src={brandLogo}
-					alt={'about-brand-logo'}
-					width={1500}
-					height={1500}
+					<img
+						src={brandLogo}
+						alt='about-brand-logo'
+						width={1500}
+						height={1500}
 					/>
 				</div>
 				<div>

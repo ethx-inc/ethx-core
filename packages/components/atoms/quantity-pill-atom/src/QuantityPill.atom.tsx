@@ -16,11 +16,20 @@ export const QuantityPill = ({
 			className={`flex justify-between w-28 font-regular py-1 px-4 border-2 ${
 				borderColor ? `border-${borderColor}` : 'border-primary'
 			} rounded-full`}
-			style={{ fontFamily: 'Roboto' }}
-			>
-			<div className='cursor-pointer' onClick={() => onClick()}>-</div>
+			style={{ fontFamily: 'Roboto' }}>
+			<button
+				type='button'
+				className='cursor-pointer'
+				onClick={() => onClick()}>
+				-
+			</button>
 			<div>{quantity}</div>
-			<div className='cursor-pointer' onClick={() => onClick()}>+</div>
+			<button
+				type='button'
+				className='cursor-pointer'
+				onClick={() => onClick()}>
+				+
+			</button>
 		</div>
 	);
 };

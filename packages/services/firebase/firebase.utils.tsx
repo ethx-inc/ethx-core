@@ -63,7 +63,7 @@ export const createUserProfileDoc = async (
 		}
 	}
 	// allways return user ref in case we want to use it later
-	return userRef; // new Promise(resolve => resolve(userRef));
+	return userRef;
 };
 
 export const updateEmail = (email, callback) => {

@@ -4,8 +4,9 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 
 import {LoginProvider} from '../packages/services/context/login-context';
 import { UserContext } from '../packages/services/context/user-context';
+import {FilterProvider} from '../packages/services/context/filter-context';
 
-import {auth, createUserProfileDoc} from '../packages/services/firebase-auth/firebase.utils';
+import {auth, createUserProfileDoc} from '../packages/services/firebase/firebase.utils';
 
 import "regenerator-runtime/runtime";
 
@@ -46,9 +47,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
 	return (
 		<UserContext.Provider value={{ userData, setUserData }}>
-			<LoginProvider>
-				<Component {...pageProps} />
-			</LoginProvider>
+			<FilterProvider>
+				<LoginProvider>
+					<Component {...pageProps} />
+				</LoginProvider>
+			</FilterProvider>
 		</UserContext.Provider>
 	);
 };

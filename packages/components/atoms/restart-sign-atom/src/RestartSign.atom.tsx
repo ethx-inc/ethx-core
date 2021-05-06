@@ -4,14 +4,9 @@ export interface RestartSignProps {
 	onClick?;
 }
 
-export const RestartSign = ({
-	onClick,
-
-}: RestartSignProps): JSX.Element => {
+export const RestartSign = ({ onClick }: RestartSignProps): JSX.Element => {
 	return (
-		<button
-			type='button'
-			onClick={() => onClick()}>
+		<button type='button' onClick={() => onClick()}>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				className='h-6 w-6'

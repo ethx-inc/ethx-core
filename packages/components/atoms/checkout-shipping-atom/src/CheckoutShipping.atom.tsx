@@ -1,8 +1,7 @@
 import React from 'react';
-import { PlusSign } from '../../plus-sign-atom/src'
-import { TextInput } from '../../text-input-atom/src'
-import { ButtonCTA } from '../../button-cta/src'
-
+import { PlusSign } from '../../plus-sign-atom/src';
+import { TextInput } from '../../text-input-atom/src';
+import { ButtonCTA } from '../../button-cta/src';
 
 export interface CheckoutShippingProps {
 	sectionName?: string;
@@ -17,9 +16,20 @@ export const CheckoutShipping = ({
 	return (
 		<div className='flex flex-col lg:flex-row w-full mt-5'>
 			<div className='checkout-details-shipping w-full'>
-				<div className='text-xl mb-1'><h3>{sectionName} </h3></div>	
-				<div className='flex flex-row cursor-pointer underline' onClick={() => setAddAddress(!addAddress)}><PlusSign /><p>Add New</p></div>
-				<form className={` ${addAddress ? 'flex flex-col': 'hidden'} w-full`}>
+				<div className='text-xl mb-1'>
+					<h3>{sectionName} </h3>
+				</div>
+				<button
+					className='flex flex-row cursor-pointer underline'
+					type='button'
+					onClick={() => setAddAddress(!addAddress)}>
+					<PlusSign />
+					<p>Add New</p>
+				</button>
+				<form
+					className={` ${
+						addAddress ? 'flex flex-col' : 'hidden'
+					} w-full`}>
 					<div className='flex flex-col lg:flex-row my-2'>
 						<TextInput
 							placeholder='First Name'
@@ -60,16 +70,13 @@ export const CheckoutShipping = ({
 							type='city'
 							css='mb-2 lg:mb-0 mr-2'
 						/>
-						<TextInput
-							placeholder='State'
-							type='state'
-							css=''
-						/>
+						<TextInput placeholder='State' type='state' css='' />
 					</div>
-					<div className='flex justify-center my-5 w-full w-2/3'><ButtonCTA title={'Save & Continue'} /></div>
+					<div className='flex justify-center my-5 w-full w-2/3'>
+						<ButtonCTA title='Save & Continue' />
+					</div>
 				</form>
 			</div>
-
 		</div>
 	);
 };

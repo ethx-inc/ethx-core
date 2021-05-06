@@ -2,10 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { SignInForm } from '../../components/molecules/sign-in-form-molecule/src';
 
-import {
-	auth,
-	signInWithGoogle,
-} from '../../services/firebase-auth/firebase.utils';
+import { auth, signInWithGoogle } from '../../services/firebase/firebase.utils';
 
 export const SignInFormController = (): JSX.Element => {
 	const router = useRouter();

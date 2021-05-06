@@ -8,14 +8,11 @@ import { RestartSign, RestartSignProps } from './RestartSign.atom';
 export default {
 	title: 'Atom/RestartSign' /* Title of the component  */,
 	component: RestartSign /* component */,
-	argTypes: {
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<RestartSignProps> = args => <RestartSign {...args} />;
 
 export const Base = Template.bind({});
 
-Base.args = {
-};
-
+Base.args = {};

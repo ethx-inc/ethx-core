@@ -17,10 +17,9 @@ export default {
 
 const Template: Story<QuantityPillProps> = args => <QuantityPill {...args} />;
 
-
 export const Base = Template.bind({});
 
 Base.args = {
 	borderColor: 'primary',
-	quantity: '1'
+	quantity: '1',
 };
