@@ -16,7 +16,7 @@ export const CartCheckout = ({
 }: CartCheckoutProps): JSX.Element => {
 	return (
 		<div className='flex flex-col lg:flex-row justify-between mt-10'>
-			<div className={`cart-order-total w-full lg:w-80 lg:border-2 lg:border-gray-300 bg-gray-50 lg:rounded-lg px-3 py-3`}>
+			<div className={`cart-order-total w-full lg:h-80 lg:w-80 lg:border-2 lg:border-gray-300 bg-gray-50 lg:rounded-lg px-3 py-3`}>
 				<div className='flex justify-between text-sm'><h3>Subtotal: </h3><h3>{subtotal}</h3></div>
 				<div className='flex justify-between text-sm'><h3>Shipping: </h3><h3 className='italic'>TBD</h3></div>
 				<div className='flex justify-between text-sm'><h3>Tax: </h3><h3 className='italic'>TBD</h3></div>

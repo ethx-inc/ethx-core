@@ -68,19 +68,19 @@ export const NavBar = ({
 				)}
 				<NavLink
 					label='shop'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
+					href='/shop'
 				/>
 				<NavLink
 					label='sell'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
+					href='/home'
 				/>
 				<NavLink
 					label='shop'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
+					href='/shop'
 				/>
 				<NavLink
 					label='sell'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
+					href='/home'
 				/>
 			</div>
 		</div>
