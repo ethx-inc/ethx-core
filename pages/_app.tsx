@@ -5,6 +5,7 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 import {LoginProvider} from '../packages/services/context/login-context';
 import { UserContext } from '../packages/services/context/user-context';
 import {FilterProvider} from '../packages/services/context/filter-context';
+import {CartProvider} from '../packages/services/context/cart-context';
 
 import {auth, createUserProfileDoc} from '../packages/services/firebase/firebase.utils';
 
@@ -47,11 +48,13 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
 	return (
 		<UserContext.Provider value={{ userData, setUserData }}>
-			<FilterProvider>
-				<LoginProvider>
-					<Component {...pageProps} />
-				</LoginProvider>
-			</FilterProvider>
+			<CartProvider>
+				<FilterProvider>
+					<LoginProvider>
+						<Component {...pageProps} />
+					</LoginProvider>
+				</FilterProvider>
+			</CartProvider>
 		</UserContext.Provider>
 	);
 };
