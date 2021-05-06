@@ -67,18 +67,9 @@ export const NavBar = ({
 					<NavLink label='sign in' href='/signin' css='lg:hidden' />
 				)}
 				<NavLink label='shop' href='/shop' />
-				<NavLink
-					label='sell'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
-				/>
-				<NavLink
-					label='shop'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
-				/>
-				<NavLink
-					label='sell'
-					href='https://web-crunch.com/posts/lets-build-tailwind-css-responsive-navbar'
-				/>
+				<NavLink label='sell' href='/home' />
+				<NavLink label='shop' href='/shop' />
+				<NavLink label='sell' href='/home' />
 			</div>
 		</div>
 	);

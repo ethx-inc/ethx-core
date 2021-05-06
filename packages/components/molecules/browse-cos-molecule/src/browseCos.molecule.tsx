@@ -3,7 +3,7 @@ import { ButtonBrowse } from '../../../atoms/browse-button-atom/src';
 
 export interface BrowseCosProps {
 	/* Props here */
-	browse: string;
+	browse?: string;
 }
 
 export const BrowseCos: FC<BrowseCosProps> = ({ browse }: BrowseCosProps) => {
