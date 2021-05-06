@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 // the data we will be storing and manipulating
-type CartItem = {
+export type CartItem = {
 	name: string;
 	brand: string;
 	price: string;
-	description: string;
+	description?: string;
 	size?: string[];
 	color?: string[];
 	img: string;
-	brandImg: string;
-	brandDescription: string;
+	brandImg?: string;
+	brandDescription?: string;
 };
 export type CartData = {
 	items: CartItem[];

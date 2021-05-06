@@ -9,6 +9,7 @@ import {MdKeyboardArrowRight} from '@react-icons/all-files/md/MdKeyboardArrowRig
 import {MdKeyboardArrowLeft} from '@react-icons/all-files/md/MdKeyboardArrowLeft';
 
 import { FilterContext } from '../../packages/services/context/filter-context';
+import { CartContext, CartItem } from '../../packages/services/context/cart-context';
 
 import {
 	nextPageInQuery,
@@ -21,6 +22,7 @@ export interface ShopItemsProps {
 
 const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
     const router = useRouter();
+    const {cartData, setCartData} = useContext(CartContext);
     const { filterData, setFilterData } = useContext(FilterContext);
     const {items, category, selectedEthx, firstItem, lastItem } = filterData;
 
@@ -62,7 +64,8 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
         }
 	}
 
-    function goToPDP() {
+    function goToPDP(selectedItem: CartItem) {
+        setCartData({...cartData, selectedItem})
         router.push('/pdp');
     }
 
@@ -78,7 +81,7 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                             productName={element.name} 
                             productImg={element.img} 
                             productPrice={element.price} 
-                            onClick={()=> goToPDP()}
+                            onClick={()=> goToPDP({...element})}
                             />)
                     }) :
                     <span>Page failed to load please go back to Shop</span>
