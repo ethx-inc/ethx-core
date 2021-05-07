@@ -3,19 +3,23 @@ import { QuantityPill } from '../../quantity-pill-atom/src';
 
 export interface CartSummaryProps {
 	brandName?: string;
+	productColor?: string;
 	productName?: string;
 	productPrice?: string;
 	productQuantity?: string;
+	productSize?: string;
 	productImg?: string;
 	onClick?;
 }
 
 export const CartSummary = ({
 	brandName,
+	productColor,
 	productName,
 	productPrice,
 	productQuantity,
 	productImg,
+	productSize,
 	onClick,
 }: CartSummaryProps): JSX.Element => {
 	return (
@@ -38,11 +42,19 @@ export const CartSummary = ({
 								className='rounded-lg'
 							/>
 						</div>
-						<div className='product-info flex flex-col justify-evenly -ml-18 lg:-ml-36 text-sm'>
-							<h3 className='font-bold'>{brandName}</h3>
-							<h3>{productName}</h3>
-							<div className='product-quantity flex flex-row italic'>
-								<h3>QTY:</h3>
+						<div className='product-info flex flex-col justify-evenly -ml-14 lg:-ml-32 text-xs'>
+							<h3 className='brand-name text-sm font-bold leading-3'>{brandName}</h3>
+							<h3 className='product-name text-sm'>{productName}</h3>
+							<div className='product-color flex flex-row ml-2'>
+								<h3>Color:</h3>
+								<h3 className='mx-3'>{productColor}</h3>
+							</div>
+							<div className='product-size flex flex-row ml-2'>
+								<h3>Size:</h3>
+								<h3 className='mx-3'>{productSize}</h3>
+							</div>
+							<div className='product-quantity flex flex-row ml-2'>
+								<h3>Quantity:</h3>
 								<h3 className='mx-3'>{productQuantity}</h3>
 							</div>
 						</div>
@@ -50,8 +62,9 @@ export const CartSummary = ({
 							<div className='quantity-pill flex flex-col ml-4'>
 								<QuantityPill quantity={productQuantity} />
 							</div>
-							<div className='product-price flex flex-col ml-16 my-auto lg:my-0'>
+							<div className='product-price text-center flex flex-col ml-16 my-auto lg:my-0'>
 								<h3>{productPrice}</h3>
+								<h3 className='text-xs underline text-center text-gray-500 cursor-pointer mb-4'>REMOVE</h3>
 							</div>
 						</div>
 					</div>
