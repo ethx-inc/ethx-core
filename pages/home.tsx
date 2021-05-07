@@ -37,8 +37,8 @@ const HomePage: FC<HomeProps> = ({
 			<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 			<MainContentContainer >
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
-				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} />
-				<FilterMoc />
+				{/* <IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} /> */}
+				<FilterMoc borderColor={'primary'} color={'gray-50'} title={'black-owned'}/>
 					<div className='flex m-auto justify-center pt-6 lg:w-32'>
 						<ButtonCTA title={'go'}/>
 					</div>
