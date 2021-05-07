@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dropdown } from '../../filter-dropdown-organism/src/Dropdown.organism';
+import { MoreFilter } from '../../../atoms/more-filter-atom/src';
 
 export interface FilterMocProps {
 	borderColor?: string;
@@ -22,22 +22,19 @@ export const FilterMoc = ({
 
 			<div className='flex flex-col justify-between mx-5'>
 				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
+					<MoreFilter
 						color={color}
 						fontColor={fontColor}
 					/>
 				</div>
 				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
+					<MoreFilter
 						color={color}
 						fontColor={fontColor}
 					/>
 				</div>
 				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
+					<MoreFilter
 						color={color}
 						fontColor={fontColor}
 					/>
