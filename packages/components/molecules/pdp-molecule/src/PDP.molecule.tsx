@@ -22,7 +22,12 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 	return (
 		<div>
 			<div className='flex flex-col lg:flex-row lg:flex-start lg:mt-10 mb-3 lg:mb-10'>
-				<PDPImage />
+				<PDPImage
+					pdpImages={[
+						'https://firebasestorage.googleapis.com/v0/b/ethx-6ff0a.appspot.com/o/lipstick.png?alt=media&token=4c3fa991-64c7-47d6-84d6-42248b9f48ee',
+						'https://firebasestorage.googleapis.com/v0/b/ethx-6ff0a.appspot.com/o/maybelline-mascara-lash-sensational-blackest-black-041554420616-o.jpg?alt=media&token=3069a44b-897a-4718-9080-09d3308480d6',
+					]}
+				/>
 				<PDPText
 					bulletOne='short form product info'
 					bulletTwo='short form product info'

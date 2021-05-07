@@ -79,7 +79,7 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                             key={element.id} 
                             brandName={element.brand} 
                             productName={element.name} 
-                            productImg={element.img} 
+                            productImg={element.images[0]} 
                             productPrice={element.price} 
                             onClick={()=> goToPDP({...element})}
                             />)
