@@ -9,11 +9,13 @@ import {MdKeyboardArrowRight} from '@react-icons/all-files/md/MdKeyboardArrowRig
 import {MdKeyboardArrowLeft} from '@react-icons/all-files/md/MdKeyboardArrowLeft';
 
 import { FilterContext } from '../../packages/services/context/filter-context';
-import { CartContext, CartItem } from '../../packages/services/context/cart-context';
+import { CartContext, CartItem, Brand } from '../../packages/services/context/cart-context';
 
 import {
 	nextPageInQuery,
-    prevPageInQuery
+    prevPageInQuery,
+    getProduct,
+    getBrand
 } from '../../packages/services/firebase/firebase.db';
 
 
@@ -40,7 +42,6 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                 category,
                 firstItem: newFirstItem,
                 lastItem: newLastItem,
-                firstItemInCollection: firstItem,
             });
         }
 	}
@@ -59,18 +60,21 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                 category,
                 firstItem: newFirstItem,
                 lastItem: newLastItem,
-                firstItemInCollection: firstItem,
             });
         }
 	}
 
-    function goToPDP(selectedItem: CartItem) {
-        setCartData({...cartData, selectedItem})
+    async function goToPDP(item: CartItem) {
+        const selectedItem = await getProduct(item.id) as CartItem;
+        const brandInfo = await getBrand(selectedItem.brandId) as Brand;
+        if (selectedItem !== null) {
+            setCartData({...cartData, selectedItem: {...selectedItem, brandInfo}})
+        }
         router.push('/pdp');
     }
 
 	return (
-		<div className='h-screen w-full bg-gray-100'>
+		<div className='min-h-screen h-full w-full bg-gray-100'>
 			<NavBarController />
 			<MainContentContainer css="flex flex-col justify-center items-center h-auto mt-10">
                 <ItemCardGrid>
@@ -79,8 +83,8 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                             key={element.id} 
                             brandName={element.brand} 
                             productName={element.name} 
-                            productImg={element.images[0]} 
-                            productPrice={element.price} 
+                            productImg={element.img} 
+                            productPrice={element.minPrice} 
                             onClick={()=> goToPDP({...element})}
                             />)
                     }) :

@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 
-// the data we will be storing and manipulating
+export type Brand = {
+	name: string;
+	description: string;
+	img: string;
+};
+
 export type CartItem = {
 	name: string;
-	brand: string;
-	price: string;
+	id: string;
+	brandId: string;
+	brandInfo: Brand;
+	prices; // key = size, value =  price
 	description?: string;
-	size?: string[];
-	selectedSize?: number;
-	color?: string[];
+	selectedSize?: string;
+	colors?: string[];
+	selectedColor?: string;
 	images: string[];
-	brandImg?: string;
-	brandDescription?: string;
 };
+
 export type CartData = {
 	items: CartItem[];
 	selectedItem: CartItem;
 };
 
-export type FilterProps = {
+export type CartProps = {
 	// access point to the data
 	cartData: CartData;
 	// setter for the data
@@ -26,7 +32,7 @@ export type FilterProps = {
 };
 
 // the created context that can be used elsewhere to gain access to loginData and set it
-export const CartContext = React.createContext<FilterProps>({
+export const CartContext = React.createContext<CartProps>({
 	cartData: {
 		items: [],
 		selectedItem: null,
