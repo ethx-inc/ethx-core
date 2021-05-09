@@ -76,7 +76,7 @@ export const getProduct = async (productId: string) => {
 	const productRef = firestoreDb.collection('products').doc(productId);
 	try {
 		const productSnapShot = await productRef.get();
-		return productSnapShot.data();
+		return { ...productSnapShot.data() };
 	} catch (e) {
 		console.log('error getting product', e.message);
 		return null;
@@ -87,7 +87,7 @@ export const getBrand = async (brandId: string) => {
 	const brandRef = firestoreDb.collection('brands').doc(brandId);
 	try {
 		const brandSnapShot = await brandRef.get();
-		return brandSnapShot.data();
+		return { ...brandSnapShot.data() };
 	} catch (e) {
 		console.log('error getting product', e.message);
 		return null;

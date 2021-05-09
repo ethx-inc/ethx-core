@@ -11,9 +11,13 @@ export type CartItem = {
 	id: string;
 	brandId: string;
 	brandInfo: Brand;
-	prices; // key = size, value =  price
+	minPrice: number;
+	sizes: string[];
+	prices: number[];
+	quantity?: number;
+	bulletPoints?: string[];
 	description?: string;
-	selectedSize?: string;
+	selectedSize?: number;
 	colors?: string[];
 	selectedColor?: string;
 	images: string[];

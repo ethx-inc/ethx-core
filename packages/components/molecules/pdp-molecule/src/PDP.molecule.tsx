@@ -28,14 +28,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 		<div>
 			<div className='flex flex-col lg:flex-row lg:flex-start lg:mt-10 mb-3 lg:mb-10'>
 				<PDPImage pdpImages={selectedItem.images} />
-				<PDPText
-					bulletOne='short form product info'
-					bulletTwo='short form product info'
-					bulletThree='short form product info'
-					fontColor='gray-500'
-					productName='Brightening Moisturizer'
-					productDetails='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tellus sit amet ligula pretium, quis consectetur dui euismod. Pellentesque efficitur eleifend vehicula. Vivamus vulputate leo vitae libero tempor, sed molestie augue pretium. Morbi semper, justo et tincidunt sagittis, magna metus euismod ipsum, at congue odio leo ac dolor.'
-				/>
+				<PDPText fontColor='gray-500' />
 			</div>
 			<div className='flex relative m-auto justify-center lg:w-1/5 lg:bottom-10'>
 				{' '}

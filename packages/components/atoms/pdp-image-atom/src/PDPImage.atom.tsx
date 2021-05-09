@@ -22,7 +22,7 @@ export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
 									<img
 										src={img}
 										alt='flipped-hero'
-										className='rounded-lg mb-3 h-20 w-20'
+										className='rounded-lg mb-3 h-20 w-20 object-scale-down'
 									/>
 								</button>
 							);
@@ -34,7 +34,7 @@ export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
 				<img
 					src={mainImage}
 					alt='flipped-hero'
-					className='lg:rounded-lg max-h-80 w-80 h-80'
+					className='lg:rounded-lg w-80 h-80 object-scale-down'
 				/>
 			</div>
 		</div>
