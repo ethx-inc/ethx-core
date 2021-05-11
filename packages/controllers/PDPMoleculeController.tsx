@@ -11,7 +11,10 @@ export const PDPMoleculeController: FC = () => {
 
 	function onAddToCart() {
 		const newItems = items;
-		const key = selectedItem.id + selectedItem.selectedSize;
+		const key =
+			selectedItem.id +
+			selectedItem.selectedSize +
+			selectedItem.selectedColor;
 		if (key in newItems) {
 			newItems[key].quantity += 1;
 		} else {

@@ -24,9 +24,11 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 			<p className='font-light'>{brandInfo.name}</p>
 			<h3 className='text-lg font-bold mb-2'>{name}</h3>
 			<ul className='list-disc text-sm mb-4 ml-10'>
-				{bulletPoints.map(item => {
-					return <li key={item}>{item}</li>;
-				})}
+				{bulletPoints
+					? bulletPoints.map(item => {
+							return <li key={item}>{item}</li>;
+					  })
+					: ''}
 			</ul>
 			<p className='text-sm'>{description}</p>
 			<div>
