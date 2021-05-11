@@ -22,7 +22,7 @@ export const MoreFilter = ({
 
 	const sampleData: { text: string; id: number }[] = [];
 	for (let index = 0; index < 7; index += 1) {
-		sampleData[index] = { text: 'more filter options', id: index };
+		sampleData[index] = { text: 'shop by category', id: index };
 	}
 	return (
 		<div
@@ -39,9 +39,7 @@ export const MoreFilter = ({
 					</li>
 				))}
 			</ul>
-			<div className=''>
-				<DownArrow onClick={toggleClass} />
-			</div>
+			<div className=''>{/* <DownArrow onClick={toggleClass} /> */}</div>
 		</div>
 	);
 };
