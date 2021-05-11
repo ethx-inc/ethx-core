@@ -24,7 +24,7 @@ export type CartItem = {
 };
 
 export type CartData = {
-	items: CartItem[];
+	items;
 	selectedItem: CartItem;
 };
 
@@ -38,7 +38,7 @@ export type CartProps = {
 // the created context that can be used elsewhere to gain access to loginData and set it
 export const CartContext = React.createContext<CartProps>({
 	cartData: {
-		items: [],
+		items: {},
 		selectedItem: null,
 	},
 	setCartData: cart => console.warn('no login provider'),
@@ -52,7 +52,7 @@ export interface CartProviderProps {
 // this is the provider that wraps the outer most element in your ap to provide context access to nested components
 export const CartProvider = ({ children }: CartProviderProps): JSX.Element => {
 	const [cartData, setCartData] = useState<CartData>({
-		items: [],
+		items: {},
 		selectedItem: null,
 	});
 

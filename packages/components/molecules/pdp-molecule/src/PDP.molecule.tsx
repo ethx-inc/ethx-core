@@ -7,19 +7,14 @@ import { ButtonCTA } from '../../../atoms/button-cta/src';
 import { CartContext } from '../../../../services/context/cart-context';
 
 export interface PDPMoleculeProps {
-	brandDetails?;
-	bulletOne?;
-	bulletTwo?;
-	bulletThree?;
 	fontColor?;
-	productDetails?;
-	productName?;
+	onAddToCart?;
 	/* Props here */
 }
 
 export const PDPMolecule: FC<PDPMoleculeProps> = ({
 	fontColor,
-	brandDetails,
+	onAddToCart,
 }: PDPMoleculeProps) => {
 	const { cartData, setCartData } = useContext(CartContext);
 	const { items, selectedItem } = cartData;
@@ -32,7 +27,10 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				<PDPText fontColor='gray-500' />
 			</div>
 			<div className='flex relative m-auto justify-center lg:w-1/5 lg:bottom-10'>
-				<ButtonCTA title='add to cart' />
+				<ButtonCTA
+					title='add to cart'
+					handleClick={() => onAddToCart()}
+				/>
 			</div>
 			<div>
 				<PDPAbout
@@ -42,12 +40,11 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				/>
 			</div>
 			<div className='mb-10 flex relative justify-center lg:w-1/5 lg:justify-start'>
-				{' '}
 				<ButtonCTA
 					title='shop all'
 					color='gray-50'
 					fontColor='gray-500'
-				/>{' '}
+				/>
 			</div>
 		</div>
 	);
