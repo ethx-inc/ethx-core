@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { NavBarController } from '../packages/controllers/navbar-controller/NavBarController';
 import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src';
-import { PDPMolecule } from '../packages/components/molecules/pdp-molecule/src';
+import {PDPMoleculeController} from '../packages/controllers/PDPMoleculeController';
 
 export interface PDPProps {
 
@@ -15,7 +15,7 @@ const PDP: FC<PDPProps> = ({
             <NavBarController/>
             <MainContentContainer css="flex justify-center items-center h-5/6">
                 <div css='mt-10'>
-                <PDPMolecule />
+                <PDPMoleculeController />
                 </div>
             </MainContentContainer>
         </div>

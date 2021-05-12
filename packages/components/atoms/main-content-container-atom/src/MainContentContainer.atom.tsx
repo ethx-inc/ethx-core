@@ -10,5 +10,7 @@ export const MainContentContainer: FC = ({
 	children,
 	css,
 }: MainContentContainerProps) => {
-	return <div className={`max-w-7xl mx-auto ${css}`}>{children}</div>;
+	return (
+		<div className={`max-w-7xl md:w-10/12 mx-auto ${css}`}>{children}</div>
+	);
 };

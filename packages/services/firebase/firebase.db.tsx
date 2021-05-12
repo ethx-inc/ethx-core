@@ -1,6 +1,8 @@
 import { firestoreDb } from './firebase.utils';
+import { CartItem } from '../context/cart-context';
 
-const pageLimit = 40;
+const pageLimit = 20;
+
 export const nextPageInQuery = async (
 	category: string,
 	filters: string[],
@@ -68,6 +70,28 @@ export const prevPageInQuery = async (
 		firstItem,
 		lastItem,
 	};
+};
+
+export const getProduct = async (productId: string) => {
+	const productRef = firestoreDb.collection('products').doc(productId);
+	try {
+		const productSnapShot = await productRef.get();
+		return { ...productSnapShot.data() };
+	} catch (e) {
+		console.log('error getting product', e.message);
+		return null;
+	}
+};
+
+export const getBrand = async (brandId: string) => {
+	const brandRef = firestoreDb.collection('brands').doc(brandId);
+	try {
+		const brandSnapShot = await brandRef.get();
+		return { ...brandSnapShot.data() };
+	} catch (e) {
+		console.log('error getting product', e.message);
+		return null;
+	}
 };
 
 export const shopQuery = (

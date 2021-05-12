@@ -43,8 +43,12 @@ export const CartSummary = ({
 							/>
 						</div>
 						<div className='product-info flex flex-col justify-evenly -ml-14 lg:-ml-32 text-xs'>
-							<h3 className='brand-name text-sm capitalize font-bold leading-3'>{brandName}</h3>
-							<h3 className='product-name capitalize text-sm'>{productName}</h3>
+							<h3 className='brand-name text-sm capitalize font-bold leading-3'>
+								{brandName}
+							</h3>
+							<h3 className='product-name capitalize text-sm'>
+								{productName}
+							</h3>
 							<div className='product-color capitalize flex flex-row ml-2 mt-1'>
 								<h3>Color:</h3>
 								<h3 className='mx-3'>{productColor}</h3>
@@ -64,7 +68,9 @@ export const CartSummary = ({
 							</div>
 							<div className='product-price text-center flex flex-col ml-16 my-auto lg:my-0'>
 								<h3>{productPrice}</h3>
-								<h3 className='text-xs underline text-center text-gray-500 cursor-pointer mb-4'>REMOVE</h3>
+								<h3 className='text-xs underline text-center text-gray-500 cursor-pointer mb-4'>
+									REMOVE
+								</h3>
 							</div>
 						</div>
 					</div>
