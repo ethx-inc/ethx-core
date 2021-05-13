@@ -46,14 +46,19 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 				<FcGoogle className='mx-2' />
 			</NavButton>
 			<div className='flex justify-center text-primary'>
-				<div className='w-10 border-t-2 border-primary my-3 mx-2'></div><h4>or</h4><div className='w-10 border-t-2 border-primary mt-3 mx-2'></div>
+				<div className='w-10 border-t-2 border-primary my-3 mx-2' />
+				<h4>or</h4>
+				<div className='w-10 border-t-2 border-primary mt-3 mx-2' />
 			</div>
 			<div className='flex flex-row justify-center my-3'>
 				<TextInput
 					placeholder='first name'
 					css='mr-2'
 					onChange={event =>
-						setLoginData({ ...loginData, fname: event.target.value })
+						setLoginData({
+							...loginData,
+							fname: event.target.value,
+						})
 					}
 					required
 					value={fname}
@@ -62,7 +67,10 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 					placeholder='last name'
 					css=''
 					onChange={event =>
-						setLoginData({ ...loginData, lname: event.target.value })
+						setLoginData({
+							...loginData,
+							lname: event.target.value,
+						})
 					}
 					required
 					value={lname}
@@ -79,25 +87,34 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 				value={email}
 			/>
 			<div className='flex flex-row justify-center mb-3'>
-			<TextInput
-				placeholder='password'
-				type='password'
-				css='mr-2'
-				onChange={event => setPassword(event.target.value)}
-				required
-				value={password}
-			/>
-			<TextInput
-				placeholder='confirm password'
-				type='password'
-				css=''
-				onChange={event => setConfirmPassword(event.target.value)}
-				required
-				value={confirmPassword}
-			/>
+				<TextInput
+					placeholder='password'
+					type='password'
+					css='mr-2'
+					onChange={event => setPassword(event.target.value)}
+					required
+					value={password}
+				/>
+				<TextInput
+					placeholder='confirm password'
+					type='password'
+					css=''
+					onChange={event => setConfirmPassword(event.target.value)}
+					required
+					value={confirmPassword}
+				/>
 			</div>
 			<div className='flex flex-row justify-between mb-10 mt-3'>
-				<div className='flex flex-col lg:flex-row mb-2 lg:-mt-4 ml-2'><h3 className='text-gray-500 text-sm'>Already have an account?</h3><NavLink label='Sign In' href='signin' css='underline text-sm -ml-4 lg:-ml-2' /></div>
+				<div className='flex flex-col lg:flex-row mb-2 lg:-mt-4 ml-2'>
+					<h3 className='text-gray-500 text-sm'>
+						Already have an account?
+					</h3>
+					<NavLink
+						label='Sign In'
+						href='signin'
+						css='underline text-sm -ml-4 lg:-ml-2'
+					/>
+				</div>
 				<SubmitButton title='Sign Up' css='w-48 mb-3' />
 			</div>
 		</form>

@@ -36,7 +36,9 @@ export const SignInForm: FC<SignInFormProps> = ({
 				<FcGoogle className='mx-2' />
 			</NavButton>
 			<div className='flex justify-center text-primary'>
-				<div className='w-10 border-t-2 border-primary mt-3 mx-2'></div><h4>or</h4><div className='w-10 border-t-2 border-primary mt-3 mx-2'></div>
+				<div className='w-10 border-t-2 border-primary mt-3 mx-2' />
+				<h4>or</h4>
+				<div className='w-10 border-t-2 border-primary mt-3 mx-2' />
 			</div>
 			<TextInput
 				placeholder='email'
@@ -56,10 +58,15 @@ export const SignInForm: FC<SignInFormProps> = ({
 			/>
 
 			<div className='flex flex-row justify-between items-center mb-4'>
-				<h4 className='underline text-sm text-gray-500 ml-2 lg:-mt-5'>Forgot Password?</h4>
+				<h4 className='underline text-sm text-gray-500 ml-2 lg:-mt-5'>
+					Forgot Password?
+				</h4>
 				<SubmitButton title='Sign In' css='w-48' />
 			</div>
-			<div className='flex flex-row justify-center border-t-2 pt-5 mb-8'><h4 className='text-gray-500'>Don't have an account?</h4><NavLink label='Sign Up' href='signup' css='underline -ml-2'/></div>
+			<div className='flex flex-row justify-center border-t-2 pt-5 mb-8'>
+				<h4 className='text-gray-500'>Don&apos;t have an account?</h4>
+				<NavLink label='Sign Up' href='signup' css='underline -ml-2' />
+			</div>
 		</form>
 	);
 };

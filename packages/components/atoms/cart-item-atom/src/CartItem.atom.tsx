@@ -12,7 +12,9 @@ export interface CartItemProps {
 	colors?: string[];
 	selectedColor?: string;
 	images?: string[];
-	onClick?;
+	onIncrease?;
+	onDecrease?;
+	onRemove?;
 }
 
 export const CartItem = ({
@@ -25,7 +27,9 @@ export const CartItem = ({
 	colors,
 	selectedColor,
 	images = [],
-	onClick,
+	onIncrease,
+	onDecrease,
+	onRemove,
 }: CartItemProps): JSX.Element => {
 	console.log('this is name:', name);
 	return (
@@ -60,7 +64,11 @@ export const CartItem = ({
 
 				<div className='flex flex-col-reverse lg:flex-row'>
 					<div className='quantity-pill flex flex-col ml-4'>
-						<QuantityPill quantity={quantity} />
+						<QuantityPill
+							quantity={quantity}
+							onIncrease={() => onIncrease()}
+							onDecrease={() => onDecrease()}
+						/>
 					</div>
 					<div className='product-price text-center flex flex-col ml-16 my-auto lg:my-0'>
 						<h3>{prices[selectedSize]}</h3>
