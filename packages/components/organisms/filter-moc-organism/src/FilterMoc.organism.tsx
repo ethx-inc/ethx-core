@@ -11,9 +11,9 @@ export const FilterMoc = ({
 	fontColor,
 }: FilterMocProps): JSX.Element => {
 	return (
-		<div className='mx-auto mt-5 w-full lg:w-2/5'>
-			<div className='flex flex-col justify-between lg:my-8 mx-5 lg:-mx-20'>
-				<div className='mb-3'>
+		<div className='mx-auto w-full lg:w-2/5'>
+			<div className='flex flex-col justify-between mb-5 -mt-3 mx-5 lg:-mx-20'>
+				<div className=''>
 					<MoreFilter
 						color={color}
 						fontColor={fontColor}

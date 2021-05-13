@@ -19,35 +19,35 @@ export const IconWrapper = ({
 	return (
 		<div className='flex flex-row justify-center overflow-auto my-5'>
 			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
+				<div className='justify-self-center my-auto'>
 					<IconImage iconImage={'/images/black-owned-icon.png'} borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
 			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
+				<div className='justify-self-center my-auto'>
 					<IconImage iconImage={'/images/black-owned-icon.png'} borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
 			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
+				<div className='justify-self-center my-auto'>
 					<IconImage iconImage={'/images/black-owned-icon.png'} borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
 			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
+				<div className='justify-self-center my-auto'>
 					<IconImage iconImage={'/images/black-owned-icon.png'} borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
 			</div>
 
 			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
+				<div className='justify-self-center my-auto'>
 					<IconImage iconImage={'/images/black-owned-icon.png'} borderColor={borderColor} color={color} />
 					<IconTitle title={title} fontColor={fontColor} />
 				</div>
