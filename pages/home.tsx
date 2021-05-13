@@ -39,7 +39,7 @@ const HomePage: FC<HomeProps> = ({
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
 				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} />
 				<FilterMoc color={'gray-50'}/>
-					<div className='flex m-auto justify-center lg:w-32'>
+					<div className='flex mx-auto justify-center w-40 my-3'>
 						<ButtonCTA title={'go'}/>
 					</div>
 			</MainContentContainer>
