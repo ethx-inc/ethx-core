@@ -18,12 +18,14 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 }: PDPMoleculeProps) => {
 	const { cartData, setCartData } = useContext(CartContext);
 	const { items, selectedItem } = cartData;
-	const { brandInfo } = selectedItem;
+	const { brandInfo } = selectedItem || { brandInfo: null };
 
 	return (
 		<div>
 			<div className='flex flex-col lg:flex-row lg:flex-start lg:mt-10 mb-3 lg:mb-10'>
-				<PDPImage pdpImages={selectedItem.images} />
+				<PDPImage
+					pdpImages={selectedItem ? selectedItem.images : null}
+				/>
 				<PDPText fontColor='gray-500' />
 			</div>
 			<div className='flex relative m-auto justify-center lg:w-1/5 lg:bottom-10'>
@@ -35,8 +37,8 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 			<div>
 				<PDPAbout
 					fontColor='gray-500'
-					brandDetails={brandInfo.description}
-					brandLogo={brandInfo.img}
+					brandDetails={brandInfo ? brandInfo.description : null}
+					brandLogo={brandInfo ? brandInfo.img : null}
 				/>
 			</div>
 			<div className='mb-10 flex relative justify-center lg:w-1/5 lg:justify-start'>

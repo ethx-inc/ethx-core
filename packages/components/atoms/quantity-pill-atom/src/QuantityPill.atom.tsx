@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface QuantityPillProps {
 	borderColor?: string;
-	quantity?: string;
+	quantity?: number;
 	onClick?;
 }
 

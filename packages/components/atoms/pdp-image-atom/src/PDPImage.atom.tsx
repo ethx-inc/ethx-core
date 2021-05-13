@@ -6,7 +6,9 @@ export interface PDPImageProps {
 }
 
 export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
-	const [mainImage, setMainImage] = useState(pdpImages[0]);
+	const [mainImage, setMainImage] = useState(() => {
+		return pdpImages ? pdpImages[0] : null;
+	});
 
 	return (
 		<div className={`bg-${color} flex flex-row`}>

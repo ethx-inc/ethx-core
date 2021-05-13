@@ -12,6 +12,7 @@ export interface NavBarProps {
 	isSignedIn?: boolean;
 	onSignOut?;
 	onUserProfile?;
+	onGoToCart?;
 	count?: number;
 }
 
@@ -21,6 +22,7 @@ export const NavBar = ({
 	isSignedIn,
 	onSignOut,
 	onUserProfile,
+	onGoToCart,
 	count,
 }: NavBarProps): JSX.Element => {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -50,7 +52,7 @@ export const NavBar = ({
 
 				<NavLink label='ethx' href='/' css='text-4xl' />
 
-				<ShoppingBag count={count} />
+				<ShoppingBag count={count} onClick={() => onGoToCart()} />
 			</div>
 
 			<div

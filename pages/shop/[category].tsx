@@ -74,7 +74,7 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
     }
 
 	return (
-		<div className='min-h-screen h-full w-full bg-gray-100'>
+		<div className='min-h-screen h-full w-full bg-white'>
 			<NavBarController />
 			<MainContentContainer css="flex flex-col justify-center items-center h-auto mt-10">
                 <ItemCardGrid>
