@@ -21,7 +21,6 @@ export const BrowseAllController: FC = () => {
 			category,
 			firstItem,
 			lastItem,
-			firstItemInCollection: firstItem,
 		});
 		router.push(`/shop/${category}`);
 	}

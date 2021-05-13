@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // the data we will be storing and manipulating
 export type FilterData = {
@@ -8,7 +8,6 @@ export type FilterData = {
 	items;
 	firstItem?;
 	lastItem?;
-	firstItemInCollection?;
 };
 
 export type FilterProps = {
@@ -27,7 +26,6 @@ export const FilterContext = React.createContext<FilterProps>({
 		items: [],
 		firstItem: null,
 		lastItem: null,
-		firstItemInCollection: null,
 	},
 	setFilterData: filter => console.warn('no login provider'),
 });
@@ -41,15 +39,26 @@ export interface FilterProviderProps {
 export const FilterProvider = ({
 	children,
 }: FilterProviderProps): JSX.Element => {
-	const [filterData, setFilterData] = useState<FilterData>({
-		category: '',
-		selectedEthx: [],
-		preferredEthx: [],
-		items: [],
-		firstItem: null,
-		lastItem: null,
-		firstItemInCollection: null,
+	const [filterData, setFilterData] = useState<FilterData>(() => {
+		if (typeof window !== 'undefined') {
+			const stickyFilter = window.localStorage.getItem('filter');
+			if (stickyFilter !== null) {
+				return JSON.parse(stickyFilter);
+			}
+		}
+		return {
+			category: '',
+			selectedEthx: [],
+			preferredEthx: [],
+			items: [],
+			firstItem: null,
+			lastItem: null,
+		};
 	});
+
+	useEffect(() => {
+		window.localStorage.setItem('filter', JSON.stringify(filterData));
+	}, [filterData]);
 
 	return (
 		<FilterContext.Provider value={{ filterData, setFilterData }}>

@@ -3,7 +3,7 @@ import React from 'react';
 import { HiOutlineShoppingBag } from '@react-icons/all-files/hi/HiOutlineShoppingBag';
 
 export interface ShoppingBagProps {
-	count?: 0;
+	count?: number;
 	color?: 'black' | 'gray-400' | 'white' | 'primary';
 	onClick?;
 }

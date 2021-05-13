@@ -1,35 +1,65 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { CartContext } from '../../../../services/context/cart-context';
 
 export interface PDPTextProps {
-	bulletOne?: string;
-	bulletTwo?: string;
-	bulletThree?: string;
 	fontColor?: string;
-	productDetails?: string;
-	productName?: string;
 }
 
-export const PDPText = ({
-	bulletOne,
-	bulletTwo,
-	bulletThree,
-	fontColor,
-	productDetails,
-	productName,
-}: PDPTextProps): JSX.Element => {
+export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
+	const { cartData, setCartData } = useContext(CartContext);
+	const { selectedItem } = cartData;
+	const {
+		brandInfo,
+		name,
+		bulletPoints,
+		description,
+		sizes,
+		prices,
+		selectedSize,
+	} = selectedItem;
 	return (
 		<div
 			className={`text-${fontColor} relative lg:w-2/5 mx-5 mt-5 lg:mt-0`}>
-			<p className='font-light'>The Most Ethical Brand</p>
-			<h3 className='text-lg font-bold mb-2'>{productName}</h3>
+			<p className='font-light'>{brandInfo.name}</p>
+			<h3 className='text-lg font-bold mb-2'>{name}</h3>
 			<ul className='list-disc text-sm mb-4 ml-10'>
-				<li>{bulletOne}</li>
-				<li>{bulletTwo}</li>
-				<li>{bulletThree}</li>
+				{bulletPoints
+					? bulletPoints.map(item => {
+							return <li key={item}>{item}</li>;
+					  })
+					: ''}
 			</ul>
-			<p className='text-sm'>{productDetails}</p>
-			<p className='font-light my-3'>Size: 0.67 fl oz / 20 mL </p>
-			<p className='font-bold my-5'>$40 USD</p>
+			<p className='text-sm'>{description}</p>
+			<div>
+				<span>Sizes: </span>
+
+				{sizes.map((size, i) => {
+					return (
+						<label htmlFor={size} className='mr-3' key={size}>
+							<input
+								key={size}
+								type='radio'
+								name='size'
+								value={prices[i]}
+								onChange={() =>
+									setCartData({
+										...cartData,
+										selectedItem: {
+											...selectedItem,
+											selectedSize: i,
+										},
+									})
+								}
+								id={size}
+								checked={selectedSize === i}
+							/>
+							{size}
+						</label>
+					);
+				})}
+			</div>
+			<p className='font-bold my-5'>{prices[selectedSize]}</p>
 		</div>
 	);
 };

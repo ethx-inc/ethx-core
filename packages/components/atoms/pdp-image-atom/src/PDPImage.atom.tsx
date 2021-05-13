@@ -1,50 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export interface PDPImageProps {
 	color?: string;
+	pdpImages?: string[];
 }
 
-export const PDPImage = ({ color }: PDPImageProps): JSX.Element => {
+export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
+	const [mainImage, setMainImage] = useState(pdpImages[0]);
+
 	return (
 		<div className={`bg-${color} flex flex-row`}>
 			<div className='hidden lg:flex flex-col overflow-auto h-4/5 mr-3'>
-				<img
-					src='/images/flipped-hero-image.jpg'
-					alt='flipped-hero'
-					width={100}
-					height={100}
-					className='rounded-lg mb-3'
-				/>
-				<img
-					src='/images/flipped-hero-image.jpg'
-					alt='flipped-hero'
-					width={100}
-					height={100}
-					className='rounded-lg mb-3'
-				/>
-				<img
-					src='/images/flipped-hero-image.jpg'
-					alt='flipped-hero'
-					width={100}
-					height={100}
-					className='rounded-lg mb-3'
-				/>
-				<img
-					src='/images/flipped-hero-image.jpg'
-					alt='flipped-hero'
-					width={100}
-					height={100}
-					className='rounded-lg mb-3'
-				/>
+				{pdpImages
+					? pdpImages.map(img => {
+							return (
+								<button
+									type='button'
+									onClick={() => setMainImage(img)}
+									className='focus:outline-none'
+									key={img}>
+									<img
+										src={img}
+										alt='flipped-hero'
+										className='rounded-lg mb-3 h-20 w-20 object-scale-down'
+									/>
+								</button>
+							);
+					  })
+					: null}
 			</div>
 
 			<div className={`bg-${color}`}>
 				<img
-					src='/images/flipped-hero-image.jpg'
+					src={mainImage}
 					alt='flipped-hero'
-					width={400}
-					height={200}
-					className='lg:rounded-lg'
+					className='lg:rounded-lg w-80 h-80 object-scale-down'
 				/>
 			</div>
 		</div>
