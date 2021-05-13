@@ -27,11 +27,16 @@ export const NavBarController = (): JSX.Element => {
 		return total;
 	};
 
+	const goToCart = () => {
+		router.push('/cart');
+	};
+
 	return (
 		<NavBar
 			isSignedIn={!!auth.currentUser}
 			onSignOut={() => signOut()}
 			onUserProfile={() => goToUserProfile()}
+			onGoToCart={goToCart}
 			count={getCount()}
 		/>
 	);

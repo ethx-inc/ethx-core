@@ -32,7 +32,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 			</ul>
 			<p className='text-sm'>{description}</p>
 			<div>
-				<span>Sizes: </span>
+				<span>{sizes.length > 0 ? 'Sizes: ' : ''} </span>
 
 				{sizes.map((size, i) => {
 					return (
