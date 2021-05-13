@@ -38,7 +38,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                 {revealForm === null ? 
                     <div className='flex flex-col lg:rounded-lg lg:bg-white lg:border-2 lg:h-80 lg:w-3/5 lg:mt-12'>
                         <div className='flex flex-col lg:flex-row lg:justify-center lg:mt-14'>
-                            <div className='border-2 border-dotted h-52 w-72 text-xs mt-2 lg:mt-0 pt-20 bg-white'>
+                            <div className='border-2 border-dashed h-52 w-72 text-xs mt-2 lg:mt-0 pt-20 bg-white'>
                                 <h3 className='text-sm text-center font-medium'>Upload Image</h3>
                                 <div className='text-center'><Download /></div>
                             </div>
