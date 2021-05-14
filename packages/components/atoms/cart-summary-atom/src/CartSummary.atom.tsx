@@ -15,7 +15,7 @@ export const CartSummary = ({ onClick }: CartSummaryProps): JSX.Element => {
 	const onRemove = key => {
 		const newItems = items;
 		delete newItems[key];
-		setCartData({ items: newItems, selectedItem });
+		setCartData({ items: { ...newItems }, selectedItem });
 	};
 
 	const onChange = (key, val) => {
@@ -24,7 +24,7 @@ export const CartSummary = ({ onClick }: CartSummaryProps): JSX.Element => {
 		if (newItems[key].quantity < 1) {
 			onRemove(key);
 		} else {
-			setCartData({ items: newItems, selectedItem });
+			setCartData({ items: { ...newItems }, selectedItem });
 		}
 	};
 

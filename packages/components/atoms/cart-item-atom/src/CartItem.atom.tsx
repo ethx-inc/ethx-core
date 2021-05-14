@@ -31,7 +31,6 @@ export const CartItem = ({
 	onDecrease,
 	onRemove,
 }: CartItemProps): JSX.Element => {
-	console.log('this is name:', name);
 	return (
 		<div className='grid grid-cols-2 lg:grid-cols-4 my-5 border-b-2 pb-5'>
 			<img src={images[0]} alt={name} className='rounded-lg w-20' />
