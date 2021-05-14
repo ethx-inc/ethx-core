@@ -3,9 +3,14 @@ import React, { useState } from 'react';
 export interface PDPImageProps {
 	color?: string;
 	pdpImages?: string[];
+	productName;
 }
 
-export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
+export const PDPImage = ({
+	color,
+	pdpImages,
+	productName,
+}: PDPImageProps): JSX.Element => {
 	const [mainImage, setMainImage] = useState(() => {
 		return pdpImages ? pdpImages[0] : null;
 	});
@@ -35,7 +40,7 @@ export const PDPImage = ({ color, pdpImages }: PDPImageProps): JSX.Element => {
 			<div className={`bg-${color}`}>
 				<img
 					src={mainImage}
-					alt='flipped-hero'
+					alt={productName}
 					className='lg:rounded-lg w-80 h-80 object-scale-down'
 				/>
 			</div>
