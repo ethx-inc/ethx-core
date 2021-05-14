@@ -61,7 +61,7 @@ export const CartProvider = ({ children }: CartProviderProps): JSX.Element => {
 		}
 		return {
 			items: {},
-			selectedItem: null,
+			selectedItem: {},
 		};
 	});
 

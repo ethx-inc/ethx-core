@@ -15,7 +15,7 @@ export const CartSummary = ({ onClick }: CartSummaryProps): JSX.Element => {
 	const onRemove = key => {
 		const newItems = items;
 		delete newItems[key];
-		setCartData({ items: newItems, selectedItem });
+		setCartData({ items: { ...newItems }, selectedItem });
 	};
 
 	const onChange = (key, val) => {
@@ -24,12 +24,12 @@ export const CartSummary = ({ onClick }: CartSummaryProps): JSX.Element => {
 		if (newItems[key].quantity < 1) {
 			onRemove(key);
 		} else {
-			setCartData({ items: newItems, selectedItem });
+			setCartData({ items: { ...newItems }, selectedItem });
 		}
 	};
 
 	return (
-		<div className='flex flex-col lg:flex-row w-full md:w-1/2 mt-2 md:mt-10'>
+		<div className='flex flex-col lg:flex-row w-full lg:w-1/2 mt-2 md:mt-10'>
 			<div className='cart-order-basket w-full px-3'>
 				<div className='text-2xl font-light mb-1'>
 					<h3>Your Basket </h3>

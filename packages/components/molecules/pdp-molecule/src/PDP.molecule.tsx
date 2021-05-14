@@ -25,6 +25,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 			<div className='flex flex-col lg:flex-row lg:flex-start lg:mt-10 mb-3 lg:mb-10'>
 				<PDPImage
 					pdpImages={selectedItem ? selectedItem.images : null}
+					productName={selectedItem.name}
 				/>
 				<PDPText fontColor='gray-500' />
 			</div>

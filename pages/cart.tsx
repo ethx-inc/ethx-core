@@ -16,8 +16,8 @@ const Cart: FC<CartProps> = ({
         <div>
             <NavBarController/>
             <MainContentContainer css="flex flex-col lg:flex-row lg:justify-center h-5/6">
-                <CartSummary brandName={'the best brand'} productColor={'N/A'} productImg={'/images/flipped-hero-image.jpg'} productName={'moisturizer'} productSize={'0.34 fl oz'}productPrice={'$20.99'} productQuantity={'1'}/>
-                <CartCheckout estTotal={'$20.99'}subtotal={'$20.99'}/>
+                <CartSummary />
+                <CartCheckout />
             </MainContentContainer>
         </div>
 

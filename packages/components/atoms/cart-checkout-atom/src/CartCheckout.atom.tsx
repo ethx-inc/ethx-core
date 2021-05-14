@@ -1,25 +1,49 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ButtonCTA } from '../../button-cta/src';
+
+import { CartContext } from '../../../../services/context/cart-context';
 
 export interface CartCheckoutProps {
 	borderColor?: string;
-	estTotal?: string;
-	subtotal?: string;
+	shipping?: number;
+	tax?: number;
 	onClick?;
 }
 
 export const CartCheckout = ({
 	borderColor,
-	estTotal,
-	subtotal,
+	shipping = 0,
+	tax = 0,
 	onClick,
 }: CartCheckoutProps): JSX.Element => {
+	const { cartData } = useContext(CartContext);
+	const { items } = cartData;
+	const [subTotal, setSubTotal] = useState(0);
+	const [estTotal, setEstTotal] = useState(0);
+
+	useEffect(() => {
+		const keys = Object.keys(items);
+		let total = 0;
+		keys.forEach(key => {
+			const product = items[key];
+			const { quantity } = product;
+			const price = product.prices[product.selectedSize];
+			total += quantity * price;
+			console.log(quantity, price, quantity * price);
+		});
+		setSubTotal(parseFloat(total.toFixed(2)));
+	}, [items]);
+
+	useEffect(() => {
+		setEstTotal(subTotal + shipping + tax);
+	}, [subTotal, shipping, tax]);
+
 	return (
 		<div className='flex flex-col lg:flex-row justify-between mt-10'>
 			<div className='cart-order-total w-full lg:h-80 lg:w-80 lg:border-2 lg:border-gray-300 bg-gray-50 lg:rounded-lg px-3 py-3'>
 				<div className='flex justify-between text-sm'>
 					<h3>Subtotal: </h3>
-					<h3>{subtotal}</h3>
+					<h3>{subTotal}</h3>
 				</div>
 				<div className='flex justify-between text-sm'>
 					<h3>Shipping: </h3>
@@ -39,14 +63,14 @@ export const CartCheckout = ({
 				<div className='flex relative justify-center my-4'>
 					<ButtonCTA title='Checkout' />
 				</div>
-				<div className='flex relative justify-center my-4'>
+				{/* <div className='flex relative justify-center my-4'>
 					<ButtonCTA
 						borderColor='yellow-400'
 						color='yellow-400'
 						fontColor='black'
 						title='Pay with Paypal'
 					/>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

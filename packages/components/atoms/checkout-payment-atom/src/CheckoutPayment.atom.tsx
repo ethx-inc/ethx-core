@@ -9,7 +9,7 @@ export interface CheckoutPaymentProps {
 }
 
 export const CheckoutPayment = ({
-	sectionName,
+	sectionName = 'bobo',
 	onClick,
 }: CheckoutPaymentProps): JSX.Element => {
 	const [addCreditCard, setAddCreditCard] = React.useState(false);
