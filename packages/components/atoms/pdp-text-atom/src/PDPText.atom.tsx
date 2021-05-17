@@ -31,7 +31,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 					: ''}
 			</ul>
 			<p className='text-sm'>{description}</p>
-			<div>
+			<div className='mt-3 italic'>
 				<span>{sizes && sizes.length > 0 ? 'Sizes: ' : null} </span>
 
 				{sizes
@@ -65,7 +65,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 					: null}
 			</div>
 			<p className='font-bold my-5'>
-				{prices ? prices[selectedSize] : null}
+				${prices ? prices[selectedSize] : null}
 			</p>
 		</div>
 	);
