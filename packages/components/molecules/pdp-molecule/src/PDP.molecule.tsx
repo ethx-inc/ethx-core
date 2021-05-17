@@ -29,7 +29,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				/>
 				<PDPText fontColor='gray-500' />
 			</div>
-			<div className='flex relative m-auto justify-center lg:w-1/5 lg:bottom-10'>
+			<div className='flex relative mx-auto justify-center lg:w-1/5 lg:bottom-32 lg:right-16'>
 				<ButtonCTA
 					title='add to cart'
 					handleClick={() => onAddToCart()}
