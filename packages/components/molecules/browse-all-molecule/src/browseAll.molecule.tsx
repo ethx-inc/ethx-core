@@ -19,7 +19,7 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 		}
 	}
 	return (
-		<div id='browseall' className='flex flex-col lg:flex-row'>
+		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-3 m-auto'>
 			<div id='makeup'>
 				<ButtonBrowse
 					title='makeup'
@@ -27,15 +27,27 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 				/>
 			</div>
 			<div id='hair'>
-				<ButtonBrowse title='hair' />
+				<ButtonBrowse title='hair care' />
+			</div>
+			<div id='skin'>
+				<ButtonBrowse title='skin care' />
+			</div>
+			<div id='self care'>
+				<ButtonBrowse title='self care' />
+			</div>
+			<div id='suncare'>
+				<ButtonBrowse title='sun care' />
+			</div>
+			<div id='personalcare'>
+				<ButtonBrowse title='personal care' />
+			</div>
+			<div id='bath'>
+				<ButtonBrowse title='bath' />
 			</div>
 			<div id='fragrance'>
 				<ButtonBrowse title='fragrance' />
 			</div>
-			<div id='skin'>
-				<ButtonBrowse title='skin' />
-			</div>
-			<div id='shopall'>
+			<div id='trending'>
 				<ButtonBrowse title='trending' />
 			</div>
 		</div>

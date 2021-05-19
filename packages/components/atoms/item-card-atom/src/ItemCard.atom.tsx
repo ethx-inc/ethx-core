@@ -26,10 +26,10 @@ export const ItemCard = ({
 				alt={`Card for ${productName}`}
 			/>
 
-			<div className='flex flex-col text-md text-center mt-2'>
-				<div className='font-bold'>{brandName}</div>
+			<div className='flex flex-col text-sm text-center mt-2'>
+				<div className='font-bold text-xs'>{brandName}</div>
 				<div>{productName}</div>
-				<div className='font-bold'>{productPrice}</div>
+				<div className='font-bold'>${productPrice}</div>
 			</div>
 		</button>
 	);
