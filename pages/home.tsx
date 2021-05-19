@@ -4,7 +4,6 @@ import { HeroText } from '../packages/components/atoms/hero-text/src';
 import { SectionText } from '../packages/components/atoms/section-text/src';
 import { IconWrapper } from '../packages/components/organisms/icon-wrapper-organism/src/IconWrapper.organism';
 import { FilterMoc } from '../packages/components/organisms/filter-moc-organism/src/FilterMoc.organism';
-import { ButtonCTA } from '../packages/components/atoms/button-cta/src';
 import { TestimonialController} from '../packages/controllers/testimonials-controller/TestimonialController';
 import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src'
 
@@ -37,11 +36,9 @@ const HomePage: FC<HomeProps> = ({
 			<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 			<MainContentContainer >
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
-				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} title={'black-owned'} />
+				<div><h4 className='text-xs text-gray-500 font-medium -mt-1 text-center lg:text-left'>*GB = Giving Back</h4></div>
+				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} />
 				<FilterMoc color={'gray-50'}/>
-					<div className='flex mx-auto justify-center w-40 my-3'>
-						<ButtonCTA title={'go'}/>
-					</div>
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
 

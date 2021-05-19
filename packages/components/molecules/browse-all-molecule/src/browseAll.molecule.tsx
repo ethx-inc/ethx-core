@@ -26,13 +26,13 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 					onClick={() => onClick('makeup')}
 				/>
 			</div>
-			<div id='hair'>
+			<div id='haircare'>
 				<ButtonBrowse title='hair care' />
 			</div>
-			<div id='skin'>
+			<div id='skincare'>
 				<ButtonBrowse title='skin care' />
 			</div>
-			<div id='self care'>
+			<div id='selfcare'>
 				<ButtonBrowse title='self care' />
 			</div>
 			<div id='suncare'>
