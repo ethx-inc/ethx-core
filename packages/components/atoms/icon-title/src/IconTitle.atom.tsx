@@ -12,7 +12,7 @@ export const IconTitle = ({
 	return (
 		<div className='mt-2 text-center'>
 			<h4
-				className={`font-bold text-xs
+				className={`font-bold text-xs break-normal
 			${fontColor ? `text-${fontColor}` : 'text-primary'}
 			`}>
 				{title}

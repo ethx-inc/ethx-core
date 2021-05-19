@@ -13,13 +13,13 @@ export const IconImage = ({
 }: IconImageProps): JSX.Element => {
 	return (
 		<div
-			className={`rounded-full border-2 border-${borderColor} bg-${color} w-24 h-24`}>
+			className={`rounded-full border-2 border-${borderColor} bg-${color} w-24 h-24 m-auto`}>
 			<img
 				src={iconImage}
-				alt='black-owned'
-				width={60}
-				height={60}
-				className='m-auto pt-3'
+				alt='filter-icon'
+				width={92}
+				height={80}
+				className='m-auto'
 			/>
 		</div>
 	);
