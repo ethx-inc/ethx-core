@@ -29,7 +29,6 @@ export const CartCheckout = ({
 			const { quantity } = product;
 			const price = product.prices[product.selectedSize];
 			total += quantity * price;
-			console.log(quantity, price, quantity * price);
 		});
 		setSubTotal(parseFloat(total.toFixed(2)));
 	}, [items]);
@@ -61,7 +60,7 @@ export const CartCheckout = ({
 					Shipping and taxes calculated at checkout
 				</h3>
 				<div className='flex relative justify-center my-4'>
-					<ButtonCTA title='Checkout' />
+					<ButtonCTA title='Checkout' handleClick={() => onClick()} />
 				</div>
 				{/* <div className='flex relative justify-center my-4'>
 					<ButtonCTA

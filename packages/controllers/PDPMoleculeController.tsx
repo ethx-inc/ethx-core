@@ -21,7 +21,7 @@ export const PDPMoleculeController: FC = () => {
 			newItems[key] = selectedItem;
 			newItems[key].quantity = 1;
 		}
-		setCartData({ items: newItems, selectedItem });
+		setCartData({ items: { ...newItems }, selectedItem });
 		router.back();
 	}
 
