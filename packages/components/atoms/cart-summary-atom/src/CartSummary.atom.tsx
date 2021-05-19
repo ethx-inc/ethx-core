@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CartItem } from '../../cart-item-atom/src';
 
 import { CartContext } from '../../../../services/context/cart-context';
+import { CartItem } from '../../cart-item-atom/src';
 
 export interface CartSummaryProps {
 	onClick?;
