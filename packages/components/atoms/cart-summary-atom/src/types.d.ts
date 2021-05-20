@@ -1,1 +1,2 @@
-export { CartSummaryAtom, CartSummaryAtomProps } from './CartSummary.atom';
+export { CartSummary } from './CartSummary.atom';
+export type { CartSummaryProps } from './CartSummary.atom';
