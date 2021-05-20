@@ -58,7 +58,7 @@ export const CartItem = ({
 						<h3 className='ml-1'>{quantity}</h3>
 					</div>
 				</div>
-				
+
 				<div className='quantity-pill flex flex-col lg:mx-20 lg:mt-4 lg:mb-0'>
 					<QuantityPill
 						quantity={quantity}
@@ -77,7 +77,6 @@ export const CartItem = ({
 					Remove
 				</button>
 			</div>
-			
 		</div>
 	);
 };

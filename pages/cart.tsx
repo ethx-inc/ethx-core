@@ -10,8 +10,9 @@ import {createStripeCheckout} from '../packages/services/firebase/firebase.utils
 import { Stripe, loadStripe } from '@stripe/stripe-js';
 
 let stripePromise: Promise<Stripe>
-const getStripe = () => {
+const getStripe = async () => {
     if (!stripePromise) {
+        console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
         stripePromise =  loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
     }
     return stripePromise;
@@ -29,7 +30,6 @@ const Cart: FC<CartProps> = ({
 	const { items } = cartData;
     
     const makePurchase = async (data?, context?) => {
-        console.log(data);
         createStripeCheckout(data).then(response => {
             const sessionId = response.data.id;
             getStripe().then(elem => elem.redirectToCheckout({sessionId: sessionId}));

@@ -1,6 +1,8 @@
 const functions = require('firebase-functions');
 const stripe = require('stripe');
-// const admin = require('firebase-admin');
+const Admin = require('firebase-admin');
+
+const admin = Admin.initializeApp();
 // const { addSyntheticLeadingComment } = require("typescript");
 
 // // Create and Deploy Your First Cloud Functions
@@ -11,12 +13,15 @@ const stripe = require('stripe');
 //   response.send("Hello from Firebase!");
 // });
 
-/*
-exports.createStripeCustomer = functions.auth.user().onCreate(async (user) => {
-    const customer = await stripe.customers.create({email: user.email});
-    await admin.firestore().collection('stripe_customers')
-    .doc(user.uid).set({customer_id: customer.id});
-});*/
+exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
+	const stripeInst = stripe(functions.config().stripe.secret_key);
+	const customer = await stripeInst.customers.create({ email: user.email });
+	return admin
+		.firestore()
+		.collection('stripe_customers')
+		.doc(user.uid)
+		.set({ customer_id: customer.id });
+});
 
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	// stripe init
@@ -56,6 +61,9 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		mode: 'payment',
 		success_url: 'http://localhost:3000',
 		cancel_url: 'http://localhost:3000/cart',
+		shipping_address_collection: {
+			allowed_countries: ['US'],
+		},
 		line_items: items,
 	});
 	return {
