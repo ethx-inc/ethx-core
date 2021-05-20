@@ -9,15 +9,6 @@ import {CartContext} from '../packages/services/context/cart-context';
 import {createStripeCheckout} from '../packages/services/firebase/firebase.utils';
 import { Stripe, loadStripe } from '@stripe/stripe-js';
 
-let stripePromise: Promise<Stripe>
-const getStripe = async () => {
-    if (!stripePromise) {
-        console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
-        stripePromise =  loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
-    }
-    return stripePromise;
-}
-
 
 export interface CartProps {
 
@@ -28,6 +19,15 @@ const Cart: FC<CartProps> = ({
 }: CartProps) => {
     const { cartData } = useContext(CartContext);
 	const { items } = cartData;
+
+    let stripePromise: Promise<Stripe>
+    const getStripe = async () => {
+        if (!stripePromise) {
+            console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
+            stripePromise =  loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
+        }
+        return stripePromise;
+    }
     
     const makePurchase = async (data?, context?) => {
         createStripeCheckout(data).then(response => {
