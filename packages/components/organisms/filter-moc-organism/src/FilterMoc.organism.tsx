@@ -3,13 +3,10 @@ import { MoreFilter } from '../../../atoms/more-filter-atom/src';
 import { ButtonCTA } from '../../../atoms/button-cta/src';
 
 export interface FilterMocProps {
-	color?: string;
-	fontColor?: string;
 }
 
 export const FilterMoc = ({
-	color,
-	fontColor,
+
 }: FilterMocProps): JSX.Element => {
 
 	return (
