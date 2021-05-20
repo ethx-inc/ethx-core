@@ -37,8 +37,8 @@ const HomePage: FC<HomeProps> = ({
 			<MainContentContainer >
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
 				<div><h4 className='text-xs text-gray-500 font-medium -mt-1 text-center lg:text-left'>*GB = Giving Back</h4></div>
-				<IconWrapper fontColor={'primary'} borderColor={'primary'} color={'gray-50'} />
-				<FilterMoc color={'gray-50'}/>
+				<IconWrapper />
+				<FilterMoc />
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
 
