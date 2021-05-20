@@ -35,8 +35,8 @@ export const CartItem = ({
 		<div className='flex justify-between my-2 pb-4 lg:pb-1 border-b-2'>
 			<img src={images[0]} alt={name} className='rounded-lg w-28' />
 
-			<div className='flex flex-col -ml-36 lg:-ml-0 justify-between lg:flex-row '>
-				<div className='flex flex-col text-xs mt-4  lg:-ml-8 items-start'>
+			<div className='flex flex-col -ml-6 md:-ml-80 lg:-ml-16 justify-between lg:flex-row '>
+				<div className='flex flex-col text-xs mt-4 items-start'>
 					<h3 className='text-sm capitalize font-bold leading-3'>
 						{brandInfo ? brandInfo.name : null}
 					</h3>
@@ -58,8 +58,7 @@ export const CartItem = ({
 						<h3 className='ml-1'>{quantity}</h3>
 					</div>
 				</div>
-
-				<div className='quantity-pill flex flex-col lg:mx-20 lg:mt-4 lg:mb-0'>
+				<div className='quantity-pill flex flex-col lg:mx-10 lg:mt-4 lg:mb-0'>
 					<QuantityPill
 						quantity={quantity}
 						onIncrease={() => onIncrease()}

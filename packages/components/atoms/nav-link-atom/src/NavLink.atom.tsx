@@ -20,8 +20,8 @@ export const NavLink = ({
 			{/* eslint-disable-next-line */}
 			<a
 				className={`font-regular ${
-					color ? `text-${color}` : 'text-primary'
-				} ${css} px-4`}>
+					color ? `text-${color}` : 'text-white'
+				} lg:text-primary ${css} px-4`}>
 				{label}
 			</a>
 		</Link>
