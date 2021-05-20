@@ -50,14 +50,14 @@ export const NavBar = ({
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
 
-				<NavLink label='ethx' href='/' css='text-4xl' />
+				<NavLink label='ethx' href='/' css='text-4xl font-light text-primary' />
 
 				<ShoppingBag count={count} onClick={() => onGoToCart()} />
 			</div>
 
 			<div
-				className={`lg:flex items-start justify-evenly mt-1 ${
-					navbarOpen ? 'flex flex-col lg:flex-row' : ' hidden'
+				className={`lg:flex items-center justify-evenly py-2 ${
+					navbarOpen ? 'flex flex-col lg:flex-row bg-primary lg:bg-white' : ' hidden'
 				}`}>
 				{isSignedIn ? (
 					<div className='lg:hidden'>
@@ -68,12 +68,10 @@ export const NavBar = ({
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (
-					<NavLink label='sign in' href='/signin' css='lg:hidden' />
+					<NavLink label='sign in' href='/signin' css='text-2xl font-light lg:hidden' />
 				)}
-				<NavLink label='shop' href='/shop' />
-				<NavLink label='sell' href='/home' />
-				<NavLink label='shop' href='/shop' />
-				<NavLink label='sell' href='/home' />
+				<NavLink css='font-light lg:font-normal text-2xl lg:text-lg' label='shop' href='/shop' />
+				<NavLink css='font-light lg:font-normal text-2xl lg:text-lg' label='sell' href='/home' />
 			</div>
 		</div>
 	);

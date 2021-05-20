@@ -1,15 +1,10 @@
 import React from 'react';
-import { DownArrow } from '../../down-arrow-atom/src';
 
 export interface MoreFilterProps {
-	color?: string;
-	fontColor?: string;
 	onClick?;
 }
 
 export const MoreFilter = ({
-	color,
-	fontColor,
 	onClick,
 }: MoreFilterProps): JSX.Element => {
 
@@ -17,14 +12,12 @@ export const MoreFilter = ({
 
 	return (
 		<div
-			className={`h-10 text-md overflow-scroll lg:text-lg border-2 text-${fontColor} border-primary flex justify-between rounded-full m-auto px-5 py-1 w-full lg:w-3/5 
-			${color ? `bg-${color}` : 'bg-gray-50'}
-			${fontColor ? `text-${fontColor}` : 'text-gray-500'} `}
+			className={`h-12 text-md overflow-scroll lg:text-lg border-2 border-primary bg-gray-50 text-gray-500 flex rounded-full m-auto px-5 py-1 w-full lg:w-3/5`}
 			style={{ fontFamily: 'Roboto' }}>
 			<ul className=''>
 				{byCategory.map((category) => (
 					<li
-					className={`text-${fontColor} cursor-pointer`}
+					className={`cursor-pointer`}
 					onClick={() => onClick()}>
 						{category}
 					</li>
