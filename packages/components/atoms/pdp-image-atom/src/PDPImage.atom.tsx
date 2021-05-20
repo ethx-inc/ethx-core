@@ -16,7 +16,7 @@ export const PDPImage = ({
 	});
 
 	return (
-		<div className={`bg-${color} flex flex-row`}>
+		<div className={`bg-${color} flex flex-row m-auto lg:m-0`}>
 			<div className='hidden lg:flex flex-col overflow-auto h-4/5 mr-3'>
 				{pdpImages
 					? pdpImages.map(img => {

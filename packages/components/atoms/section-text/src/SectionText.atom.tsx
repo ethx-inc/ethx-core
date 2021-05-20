@@ -17,7 +17,7 @@ export const SectionText = ({
 				{title}
 			</h2>
 			<h4
-				className={`font-regular mx-10 lg:mx-0 text-xs lg:text-lg 
+				className={`font-regular mb-2 lg:mb-0 w-44 lg:w-full mx-auto lg:mx-0 text-xs lg:text-lg 
 				${fontColor ? `text-${fontColor}` : 'text-gray-500'}`}>
 				{subtitle}
 			</h4>
