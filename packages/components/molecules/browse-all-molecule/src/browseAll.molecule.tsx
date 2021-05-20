@@ -21,10 +21,7 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	return (
 		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-3 m-auto'>
 			<div id='makeup'>
-				<ButtonBrowse
-					title='makeup'
-					onClick={() => onClick('makeup')}
-				/>
+				<ButtonBrowse title='makeup' onClick={() => onClick('makeup')} />
 			</div>
 			<div id='haircare'>
 				<ButtonBrowse title='hair care' />

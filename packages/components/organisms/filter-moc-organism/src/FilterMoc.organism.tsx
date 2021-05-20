@@ -19,7 +19,7 @@ export const FilterMoc = ({
 					<MoreFilter color={color} fontColor={fontColor} />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-						<ButtonCTA title={'go'}/>
+					<ButtonCTA title='go' />
 				</div>
 			</div>
 		</div>

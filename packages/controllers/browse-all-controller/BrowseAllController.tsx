@@ -11,10 +11,7 @@ export const BrowseAllController: FC = () => {
 	const { filterData, setFilterData } = useContext(FilterContext);
 
 	async function handleClick(category) {
-		const { items, firstItem, lastItem } = await nextPageInQuery(
-			category,
-			[],
-		);
+		const { items, firstItem, lastItem } = await nextPageInQuery(category, []);
 		setFilterData({
 			...filterData,
 			items,
