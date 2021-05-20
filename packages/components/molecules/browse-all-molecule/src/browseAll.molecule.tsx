@@ -27,29 +27,50 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 				/>
 			</div>
 			<div id='haircare'>
-				<ButtonBrowse title='hair care' />
+				<ButtonBrowse
+					title='hair care'
+					onClick={() => onClick('hair care')}
+				/>
 			</div>
 			<div id='skincare'>
-				<ButtonBrowse title='skin care' />
+				<ButtonBrowse
+					title='skin care'
+					onClick={() => onClick('skin care')}
+				/>
 			</div>
 			<div id='selfcare'>
-				<ButtonBrowse title='self care' />
+				<ButtonBrowse
+					title='self care'
+					onClick={() => onClick('self care')}
+				/>
 			</div>
 			<div id='suncare'>
-				<ButtonBrowse title='sun care' />
+				<ButtonBrowse
+					title='sun care'
+					onClick={() => onClick('sun care')}
+				/>
 			</div>
 			<div id='personalcare'>
-				<ButtonBrowse title='personal care' />
+				<ButtonBrowse
+					title='personal care'
+					onClick={() => onClick('personal care')}
+				/>
 			</div>
 			<div id='bath'>
-				<ButtonBrowse title='bath' />
+				<ButtonBrowse title='bath' onClick={() => onClick('bath')} />
 			</div>
 			<div id='fragrance'>
-				<ButtonBrowse title='fragrance' />
+				<ButtonBrowse
+					title='fragrance'
+					onClick={() => onClick('fragrance')}
+				/>
 			</div>
-			<div id='trending'>
-				<ButtonBrowse title='trending' />
-			</div>
+			{/* <div id='trending'>
+				<ButtonBrowse 
+					title='trending' 
+					onClick={() => onClick('trending')}
+				/>
+			</div> */}
 		</div>
 	);
 };

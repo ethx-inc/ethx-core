@@ -23,6 +23,31 @@ exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
 		.set({ customer_id: customer.id });
 });
 
+exports.addPaymentSource = functions.firestore
+	.document('/stripe_customers/{userId}/tokens/{autoId}')
+	.onWrite(async (change, context) => {
+		const data = change.after.data();
+		if (data === null) { return null}
+		const token = data.token;
+		const customer = getCustomerId(context.params.userId);
+		const response = await stripe.customers.createSource(customer, {source: token});
+		return admin.firestore()
+			.collection('stripe_customers')
+			.doc(context.params.userId)
+			.collection('sources')
+			.doc(response.fingerprint)
+			.set(response, {merge: true});
+	})
+
+const getCustomerId = async (userId) => {
+	const snapShot = await admin.firestore()
+		.collection('stripe_customers')
+		.doc(userId)
+		.get();
+	return snapShot.data().customer_id;
+}
+	
+
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	// stripe init
 	const stripeInst = stripe(functions.config().stripe.secret_key);
@@ -31,7 +56,6 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 
 	const convertValue = num => {
 		const remainder = (num % 1).toFixed(2) * 100;
-		console.log(remainder);
 		const wholeValue = Math.floor(num);
 		if (remainder === 0) {
 			return num * 100;
@@ -53,9 +77,9 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 				},
 			},
 		};
-
 		items.push(newItem);
 	});
+
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',

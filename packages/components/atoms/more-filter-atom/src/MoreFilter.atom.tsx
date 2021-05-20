@@ -12,8 +12,15 @@ export const MoreFilter = ({
 	fontColor,
 	onClick,
 }: MoreFilterProps): JSX.Element => {
-
-	const byCategory: string[] = ['Makeup', 'Hair Care', 'Skin Care', 'Sun Care', 'Personal Care', 'Bath', 'Fragrance' ];
+	const byCategory: string[] = [
+		'Makeup',
+		'Hair Care',
+		'Skin Care',
+		'Sun Care',
+		'Personal Care',
+		'Bath',
+		'Fragrance',
+	];
 
 	return (
 		<div
@@ -21,15 +28,17 @@ export const MoreFilter = ({
 			${color ? `bg-${color}` : 'bg-gray-50'}
 			${fontColor ? `text-${fontColor}` : 'text-gray-500'} `}
 			style={{ fontFamily: 'Roboto' }}>
-			<ul className=''>
-				{byCategory.map((category) => (
-					<li
-					className={`text-${fontColor} cursor-pointer`}
-					onClick={() => onClick()}>
+			<div className='flex flex-col w-full'>
+				{byCategory.map(category => (
+					<button
+						type='button'
+						key={category}
+						className={`text-${fontColor} text-xl cursor-pointer`}
+						onClick={() => onClick()}>
 						{category}
-					</li>
+					</button>
 				))}
-			</ul>
+			</div>
 		</div>
 	);
 };

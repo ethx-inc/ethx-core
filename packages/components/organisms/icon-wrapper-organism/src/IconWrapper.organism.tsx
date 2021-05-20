@@ -19,71 +19,83 @@ export const IconWrapper = ({
 	return (
 		<div className='flex flex-row justify-center overflow-x-scroll mx-auto my-5'>
 			<div className='flex flex-row mx-10'>
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/black-owned-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'Black Owned'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/black-owned-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle title='Black Owned' fontColor={fontColor} />
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/veteran-owned-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'Veteran Owned'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/veteran-owned-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle
+							title='Veteran Owned'
+							fontColor={fontColor}
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/sustainable-packaging-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'Sustainable Packaging'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/sustainable-packaging-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle
+							title='Sustainable Packaging'
+							fontColor={fontColor}
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/GB-covid-relief-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'GB Covid Relief'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/GB-covid-relief-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle
+							title='GB Covid Relief'
+							fontColor={fontColor}
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/GB-animal-welfare-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'GB Animal Welfare'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/GB-animal-welfare-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle
+							title='GB Animal Welfare'
+							fontColor={fontColor}
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center my-auto'>
-					<IconImage
-						iconImage='/images/LGBT-icon.png'
-						borderColor={borderColor}
-						color={color}
-					/>
-					<IconTitle title={'LGBTQIA+'} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<IconImage
+							iconImage='/images/LGBT-icon.png'
+							borderColor={borderColor}
+							color={color}
+						/>
+						<IconTitle title='LGBTQIA+' fontColor={fontColor} />
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	);
