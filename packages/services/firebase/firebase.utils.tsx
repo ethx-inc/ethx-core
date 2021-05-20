@@ -4,7 +4,8 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import 'regenerator-runtime/runtime';
 
-// import { DocumentReference } from '@firebase/firestore-types';
+require('firebase');
+require('firebase/functions');
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -96,6 +97,9 @@ export const changePassword = (newPassword, callback) => {
 			console.log(error);
 		});
 };
+
+export const createStripeCheckout = data =>
+	firebase.functions().httpsCallable('createStripeCheckout')(data);
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });

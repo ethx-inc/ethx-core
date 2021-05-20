@@ -28,22 +28,17 @@ export const MoreFilter = ({
 			${color ? `bg-${color}` : 'bg-gray-50'}
 			${fontColor ? `text-${fontColor}` : 'text-gray-500'} `}
 			style={{ fontFamily: 'Roboto' }}>
-			{/* 
-			TODO: ul > li is not suppose to have an onClick on it we need to find a 
-			way to get the same functionality from use select > option
-			*/}
-			<ul className=''>
+			<div className='flex flex-col w-full'>
 				{byCategory.map(category => (
-					// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-					<li
+					<button
+						type='button'
 						key={category}
-						className={`text-${fontColor} cursor-pointer`}
-						onClick={() => onClick()}
-						onKeyPress={() => onClick()}>
+						className={`text-${fontColor} text-xl cursor-pointer`}
+						onClick={() => onClick()}>
 						{category}
-					</li>
+					</button>
 				))}
-			</ul>
+			</div>
 		</div>
 	);
 };
