@@ -1,6 +1,9 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { MoreFilter } from '../../../atoms/more-filter-atom/src';
 import { ButtonCTA } from '../../../atoms/button-cta/src';
+
+import { onboardVendor } from '../../../../services/firebase/firebase.utils';
 
 export interface FilterMocProps {
 	color?: string;
@@ -19,7 +22,10 @@ export const FilterMoc = ({
 					<MoreFilter color={color} fontColor={fontColor} />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-					<ButtonCTA title='go' />
+					<ButtonCTA
+						title='go'
+						handleClick={() => onboardVendor().then(link => console.log(link))}
+					/>
 				</div>
 			</div>
 		</div>
