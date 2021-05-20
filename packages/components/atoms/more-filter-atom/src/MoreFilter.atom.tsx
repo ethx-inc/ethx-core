@@ -12,8 +12,15 @@ export const MoreFilter = ({
 	fontColor,
 	onClick,
 }: MoreFilterProps): JSX.Element => {
-
-	const byCategory: string[] = ['Makeup', 'Hair Care', 'Skin Care', 'Sun Care', 'Personal Care', 'Bath', 'Fragrance' ];
+	const byCategory: string[] = [
+		'Makeup',
+		'Hair Care',
+		'Skin Care',
+		'Sun Care',
+		'Personal Care',
+		'Bath',
+		'Fragrance',
+	];
 
 	return (
 		<div
@@ -21,11 +28,18 @@ export const MoreFilter = ({
 			${color ? `bg-${color}` : 'bg-gray-50'}
 			${fontColor ? `text-${fontColor}` : 'text-gray-500'} `}
 			style={{ fontFamily: 'Roboto' }}>
+			{/* 
+			TODO: ul > li is not suppose to have an onClick on it we need to find a 
+			way to get the same functionality from use select > option
+			*/}
 			<ul className=''>
-				{byCategory.map((category) => (
+				{byCategory.map(category => (
+					// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
 					<li
-					className={`text-${fontColor} cursor-pointer`}
-					onClick={() => onClick()}>
+						key={category}
+						className={`text-${fontColor} cursor-pointer`}
+						onClick={() => onClick()}
+						onKeyPress={() => onClick()}>
 						{category}
 					</li>
 				))}

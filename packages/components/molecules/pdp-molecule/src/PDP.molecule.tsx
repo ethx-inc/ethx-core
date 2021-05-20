@@ -30,10 +30,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				<PDPText fontColor='gray-500' />
 			</div>
 			<div className='flex relative mx-auto justify-center lg:w-1/5 lg:bottom-16 lg:right-16'>
-				<ButtonCTA
-					title='add to cart'
-					handleClick={() => onAddToCart()}
-				/>
+				<ButtonCTA title='add to cart' handleClick={() => onAddToCart()} />
 			</div>
 			<div>
 				<PDPAbout
@@ -43,11 +40,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 				/>
 			</div>
 			<div className='mb-10 flex relative justify-center lg:w-1/5 lg:justify-start'>
-				<ButtonCTA
-					title='shop all'
-					color='gray-50'
-					fontColor='gray-500'
-				/>
+				<ButtonCTA title='shop all' color='gray-50' fontColor='gray-500' />
 			</div>
 		</div>
 	);

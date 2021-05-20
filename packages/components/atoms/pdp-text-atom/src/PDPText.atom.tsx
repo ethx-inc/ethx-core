@@ -19,8 +19,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 		selectedSize,
 	} = selectedItem;
 	return (
-		<div
-			className={`text-${fontColor} relative lg:w-2/5 mx-5 mt-5 lg:mt-0`}>
+		<div className={`text-${fontColor} relative lg:w-2/5 mx-5 mt-5 lg:mt-0`}>
 			<p className='font-light'>{brandInfo ? brandInfo.name : null}</p>
 			<h3 className='text-lg font-bold mb-2'>{name}</h3>
 			<ul className='list-disc text-sm mb-4 ml-10'>
@@ -37,10 +36,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 				{sizes
 					? sizes.map((size, i) => {
 							return (
-								<label
-									htmlFor={size}
-									className='mr-3'
-									key={size}>
+								<label htmlFor={size} className='mr-3' key={size}>
 									<input
 										key={size}
 										type='radio'
@@ -64,9 +60,7 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 					  })
 					: null}
 			</div>
-			<p className='font-bold my-5'>
-				${prices ? prices[selectedSize] : null}
-			</p>
+			<p className='font-bold my-5'>${prices ? prices[selectedSize] : null}</p>
 		</div>
 	);
 };
