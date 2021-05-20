@@ -28,9 +28,7 @@ export const NavBar = ({
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
 		<div
-			className={`${
-				backgroundColor ? `bg-${backgroundColor}` : 'bg-white'
-			} 
+			className={`${backgroundColor ? `bg-${backgroundColor}` : 'bg-white'} 
 			${
 				color ? `text-${color}` : 'text-primary'
 			} border-b border-t flex-col items-center pt-2 lg:py-2`}>
@@ -41,11 +39,7 @@ export const NavBar = ({
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (
-					<NavLink
-						label='sign in'
-						href='/signin'
-						css='hidden lg:flex'
-					/>
+					<NavLink label='sign in' href='/signin' css='hidden lg:flex' />
 				)}
 
 				<Hamburger onClick={() => setNavbarOpen(!navbarOpen)} />
@@ -61,10 +55,7 @@ export const NavBar = ({
 				}`}>
 				{isSignedIn ? (
 					<div className='lg:hidden'>
-						<NavButton
-							label='view profile'
-							onClick={() => onUserProfile()}
-						/>
+						<NavButton label='view profile' onClick={() => onUserProfile()} />
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (

@@ -26,21 +26,14 @@ export const CheckoutShipping = ({
 					<PlusSign />
 					<p>Add New</p>
 				</button>
-				<form
-					className={` ${
-						addAddress ? 'flex flex-col' : 'hidden'
-					} w-full`}>
+				<form className={` ${addAddress ? 'flex flex-col' : 'hidden'} w-full`}>
 					<div className='flex flex-col lg:flex-row my-2'>
 						<TextInput
 							placeholder='First Name'
 							type='first-name'
 							css='mb-2 lg:mb-0 mr-2'
 						/>
-						<TextInput
-							placeholder='Last Name'
-							type='last-name'
-							css=''
-						/>
+						<TextInput placeholder='Last Name' type='last-name' css='' />
 					</div>
 					<div className=''>
 						<TextInput
@@ -65,11 +58,7 @@ export const CheckoutShipping = ({
 							type='zip-code'
 							css='mb-2 lg:mb-0 mr-2'
 						/>
-						<TextInput
-							placeholder='City'
-							type='city'
-							css='mb-2 lg:mb-0 mr-2'
-						/>
+						<TextInput placeholder='City' type='city' css='mb-2 lg:mb-0 mr-2' />
 						<TextInput placeholder='State' type='state' css='' />
 					</div>
 					<div className='flex justify-center my-5 w-full w-2/3'>

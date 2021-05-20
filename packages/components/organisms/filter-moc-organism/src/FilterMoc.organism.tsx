@@ -19,8 +19,8 @@ export const FilterMoc = ({
 					<h4 className='text-primary text-center mb-2'>By Category</h4>
 					<MoreFilter />
 				</div>
-				<div id='go-button' className='flex mx-auto justify-center w-40 my-3'>
-						<ButtonCTA title={'go'}/>
+				<div className='flex mx-auto justify-center w-40 my-3'>
+					<ButtonCTA title='go' />
 				</div>
 			</div>
 		</div>

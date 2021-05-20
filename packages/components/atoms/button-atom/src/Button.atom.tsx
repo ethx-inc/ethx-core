@@ -18,9 +18,7 @@ export const Button = ({
 	return (
 		<button
 			type='button'
-			className={`font-regular ${
-				bgColor ? `bg-${bgColor}` : 'bg-primary'
-			} 
+			className={`font-regular ${bgColor ? `bg-${bgColor}` : 'bg-primary'} 
 				${
 					color ? `text-${color}` : 'text-white'
 				} lg:text-lg px-4 py-1 rounded-full focus:outline-none ${css}`}
