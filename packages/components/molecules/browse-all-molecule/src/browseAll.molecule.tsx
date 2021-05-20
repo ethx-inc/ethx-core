@@ -21,34 +21,19 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	return (
 		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-3 m-auto'>
 			<div id='makeup'>
-				<ButtonBrowse
-					title='makeup'
-					onClick={() => onClick('makeup')}
-				/>
+				<ButtonBrowse title='makeup' onClick={() => onClick('makeup')} />
 			</div>
 			<div id='haircare'>
-				<ButtonBrowse
-					title='hair care'
-					onClick={() => onClick('hair care')}
-				/>
+				<ButtonBrowse title='hair care' onClick={() => onClick('hair care')} />
 			</div>
 			<div id='skincare'>
-				<ButtonBrowse
-					title='skin care'
-					onClick={() => onClick('skin care')}
-				/>
+				<ButtonBrowse title='skin care' onClick={() => onClick('skin care')} />
 			</div>
 			<div id='selfcare'>
-				<ButtonBrowse
-					title='self care'
-					onClick={() => onClick('self care')}
-				/>
+				<ButtonBrowse title='self care' onClick={() => onClick('self care')} />
 			</div>
 			<div id='suncare'>
-				<ButtonBrowse
-					title='sun care'
-					onClick={() => onClick('sun care')}
-				/>
+				<ButtonBrowse title='sun care' onClick={() => onClick('sun care')} />
 			</div>
 			<div id='personalcare'>
 				<ButtonBrowse
@@ -60,10 +45,7 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 				<ButtonBrowse title='bath' onClick={() => onClick('bath')} />
 			</div>
 			<div id='fragrance'>
-				<ButtonBrowse
-					title='fragrance'
-					onClick={() => onClick('fragrance')}
-				/>
+				<ButtonBrowse title='fragrance' onClick={() => onClick('fragrance')} />
 			</div>
 			{/* <div id='trending'>
 				<ButtonBrowse 

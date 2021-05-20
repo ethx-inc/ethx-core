@@ -17,6 +17,5 @@ export const NavBar = Template.bind({});
 
 NavBar.args = {
 	label: 'home',
-	href:
-		'https://nextjs.org/learn/basics/navigate-between-pages/link-component',
+	href: 'https://nextjs.org/learn/basics/navigate-between-pages/link-component',
 };

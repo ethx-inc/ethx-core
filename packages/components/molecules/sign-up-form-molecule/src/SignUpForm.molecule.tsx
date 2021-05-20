@@ -106,9 +106,7 @@ export const SignUpForm: FC<SignUpFormProps> = ({
 			</div>
 			<div className='flex flex-row justify-between mb-10 mt-3'>
 				<div className='flex flex-col lg:flex-row mb-2 lg:-mt-4 ml-2'>
-					<h3 className='text-gray-500 text-sm'>
-						Already have an account?
-					</h3>
+					<h3 className='text-gray-500 text-sm'>Already have an account?</h3>
 					<NavLink
 						label='Sign In'
 						href='signin'

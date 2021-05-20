@@ -69,7 +69,8 @@ export const createUserProfileDoc = async (
 
 export const updateEmail = (email, callback) => {
 	const user = auth.currentUser;
-	user.updateEmail(email)
+	user
+		.updateEmail(email)
 		.then(() => {
 			// update successful
 			callback();
@@ -84,7 +85,8 @@ export const updateEmail = (email, callback) => {
 export const changePassword = (newPassword, callback) => {
 	const user = auth.currentUser;
 	// check getProviderData() see if .getProviderId() is google.com
-	user.updatePassword(newPassword)
+	user
+		.updatePassword(newPassword)
 		.then(() => {
 			// Update successful.
 			callback();

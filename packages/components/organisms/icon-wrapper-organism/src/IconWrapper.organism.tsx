@@ -37,10 +37,7 @@ export const IconWrapper = ({
 							borderColor={borderColor}
 							color={color}
 						/>
-						<IconTitle
-							title='Veteran Owned'
-							fontColor={fontColor}
-						/>
+						<IconTitle title='Veteran Owned' fontColor={fontColor} />
 					</div>
 				</div>
 
@@ -51,10 +48,7 @@ export const IconWrapper = ({
 							borderColor={borderColor}
 							color={color}
 						/>
-						<IconTitle
-							title='Sustainable Packaging'
-							fontColor={fontColor}
-						/>
+						<IconTitle title='Sustainable Packaging' fontColor={fontColor} />
 					</div>
 				</div>
 
@@ -65,10 +59,7 @@ export const IconWrapper = ({
 							borderColor={borderColor}
 							color={color}
 						/>
-						<IconTitle
-							title='GB Covid Relief'
-							fontColor={fontColor}
-						/>
+						<IconTitle title='GB Covid Relief' fontColor={fontColor} />
 					</div>
 				</div>
 
@@ -79,10 +70,7 @@ export const IconWrapper = ({
 							borderColor={borderColor}
 							color={color}
 						/>
-						<IconTitle
-							title='GB Animal Welfare'
-							fontColor={fontColor}
-						/>
+						<IconTitle title='GB Animal Welfare' fontColor={fontColor} />
 					</div>
 				</div>
 

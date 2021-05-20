@@ -26,8 +26,7 @@ RoseText.args = {
 	bulletTwo: 'short form product details',
 	bulletThree: 'short form product details',
 	fontColor: 'primary',
-	productDetails:
-		'long form product description (benefits, ingredients, etc.)',
+	productDetails: 'long form product description (benefits, ingredients, etc.)',
 	productName: 'Brightening Moisturizer',
 };
 
@@ -37,7 +36,6 @@ GrayText.args = {
 	bulletTwo: 'short form product details',
 	bulletThree: 'short form product details',
 	fontColor: 'gray-500',
-	productDetails:
-		'long form product description (benefits, ingredients, etc.)',
+	productDetails: 'long form product description (benefits, ingredients, etc.)',
 	productName: 'Brightening Moisturizer',
 };
