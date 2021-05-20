@@ -14,6 +14,7 @@ export const FilterMoc = ({
 	color,
 	fontColor,
 }: FilterMocProps): JSX.Element => {
+	const router = useRouter();
 	return (
 		<div className='mx-auto w-full lg:w-2/5'>
 			<div className='flex flex-col justify-between mb-5 -mt-3 mx-5 lg:-mx-20'>
@@ -24,7 +25,9 @@ export const FilterMoc = ({
 				<div className='flex mx-auto justify-center w-40 my-3'>
 					<ButtonCTA
 						title='go'
-						handleClick={() => onboardVendor().then(link => console.log(link))}
+						handleClick={() =>
+							onboardVendor().then(link => router.push(link.data.url))
+						}
 					/>
 				</div>
 			</div>
