@@ -3,7 +3,7 @@ import React from 'react';
 export interface FilterIconProps {
 	isActive?: boolean;
 	imgSource?: string;
-	onClick?
+	onClick?;
 	title?: string;
 }
 
@@ -17,7 +17,8 @@ export const FilterIcon = ({
 	
 	return (
 		<div>
-			<div
+			<button
+				type='button'
 				id={'icon-image'}
 				className={`rounded-full border-2 bg-gray-50 w-24 h-24 m-auto
 				${isActive ? 'border-4 border-gray-500' : 'border-2 border-primary'}
@@ -30,7 +31,7 @@ export const FilterIcon = ({
 					height={80}
 					className='m-auto'
 				/>
-			</div>
+			</button>
 			<div className='mt-2 text-center'>
 				<h4
 					className={`font-bold text-xs break-normal
@@ -38,7 +39,6 @@ export const FilterIcon = ({
 					{title}
 				</h4>
 			</div>
-
 		</div>
 	);
 };

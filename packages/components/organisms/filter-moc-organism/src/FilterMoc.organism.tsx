@@ -1,14 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { MoreFilter } from '../../../atoms/more-filter-atom/src';
 import { ButtonCTA } from '../../../atoms/button-cta/src';
 
-export interface FilterMocProps {
-}
+import { onboardVendor } from '../../../../services/firebase/firebase.utils';
 
-export const FilterMoc = ({
+export interface FilterMocProps {}
 
-}: FilterMocProps): JSX.Element => {
-
+export const FilterMoc = (): JSX.Element => {
+	const router = useRouter();
 	return (
 		<div className='mx-auto w-full lg:w-2/5'>
 			<div className='flex flex-col justify-between mb-5 -mt-3 mx-5 lg:-mx-20'>
@@ -17,7 +17,12 @@ export const FilterMoc = ({
 					<MoreFilter />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-					<ButtonCTA title='go' />
+					<ButtonCTA
+						title='go'
+						handleClick={() =>
+							onboardVendor().then(link => router.push(link.data.url))
+						}
+					/>
 				</div>
 			</div>
 		</div>

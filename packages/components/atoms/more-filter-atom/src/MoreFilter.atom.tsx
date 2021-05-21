@@ -4,9 +4,7 @@ export interface MoreFilterProps {
 	onClick?;
 }
 
-export const MoreFilter = ({
-	onClick,
-}: MoreFilterProps): JSX.Element => {
+export const MoreFilter = ({ onClick }: MoreFilterProps): JSX.Element => {
 	const byCategory: string[] = [
 		'Makeup',
 		'Hair Care',
@@ -19,7 +17,7 @@ export const MoreFilter = ({
 
 	return (
 		<div
-			className={`h-12 text-md overflow-scroll lg:text-lg border-2 border-primary bg-gray-50 text-gray-500 flex rounded-full m-auto px-5 py-1 w-full lg:w-3/5`}
+			className='h-12 text-md overflow-scroll lg:text-lg border-2 border-primary bg-gray-50 text-gray-500 flex rounded-full m-auto px-5 py-1 w-full lg:w-3/5'
 			style={{ fontFamily: 'Roboto' }}>
 			<div className='flex flex-col w-full'>
 				{byCategory.map(category => (

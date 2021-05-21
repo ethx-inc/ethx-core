@@ -8,14 +8,10 @@ import { FilterIcon, FilterIconProps } from './FilterIcon.atom';
 export default {
 	title: 'Atom/FilterIcon' /* Title of the component  */,
 	component: FilterIcon /* component */,
-	argTypes: {
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<FilterIconProps> = args => <FilterIcon {...args} />;
 
 export const Base = Template.bind({});
-Base.args = {
-
-};
-
+Base.args = {};

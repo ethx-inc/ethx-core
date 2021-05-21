@@ -4,7 +4,7 @@ import { FilterIconController } from '../../../../controllers/filter-icon-contro
 
 export interface IconWrapperProps {
 	imgSource?: string;
-	onClick?
+	onClick?;
 	title?: string;
 }
 
@@ -13,8 +13,6 @@ export const IconWrapper = ({
 	onClick,
 	title,
 }: IconWrapperProps): JSX.Element => {
-
-
 	return (
 		<div className='flex flex-row justify-center overflow-x-scroll mx-auto my-5'>
 			<div className='flex flex-row mx-10'>
