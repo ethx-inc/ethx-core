@@ -51,7 +51,9 @@ export const NavBar = ({
 
 			<div
 				className={`lg:flex items-center justify-evenly py-2 ${
-					navbarOpen ? 'flex flex-col lg:flex-row bg-primary lg:bg-white' : ' hidden'
+					navbarOpen
+						? 'flex flex-col lg:flex-row bg-primary lg:bg-white'
+						: ' hidden'
 				}`}>
 				{isSignedIn ? (
 					<div className='lg:hidden'>
@@ -59,10 +61,22 @@ export const NavBar = ({
 						<NavButton label='sign out' onClick={onSignOut} />
 					</div>
 				) : (
-					<NavLink label='sign in' href='/signin' css='text-2xl font-light lg:hidden' />
+					<NavLink
+						label='sign in'
+						href='/signin'
+						css='text-2xl font-light lg:hidden'
+					/>
 				)}
-				<NavLink css='font-light lg:font-normal text-2xl lg:text-lg' label='shop' href='/shop' />
-				<NavLink css='font-light lg:font-normal text-2xl lg:text-lg' label='sell' href='/home' />
+				<NavLink
+					css='font-light lg:font-normal text-2xl lg:text-lg'
+					label='shop'
+					href='/shop'
+				/>
+				<NavLink
+					css='font-light lg:font-normal text-2xl lg:text-lg'
+					label='sell'
+					href='/home'
+				/>
 			</div>
 		</div>
 	);

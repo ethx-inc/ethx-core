@@ -3,6 +3,7 @@ const stripe = require('stripe');
 const Admin = require('firebase-admin');
 
 const admin = Admin.initializeApp();
+const stripeInst = stripe(functions.config().stripe.secret_key);
 // const { addSyntheticLeadingComment } = require("typescript");
 
 // // Create and Deploy Your First Cloud Functions
@@ -14,7 +15,6 @@ const admin = Admin.initializeApp();
 // });
 
 exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
-	const stripeInst = stripe(functions.config().stripe.secret_key);
 	const customer = await stripeInst.customers.create({ email: user.email });
 	return admin
 		.firestore()
@@ -23,34 +23,37 @@ exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
 		.set({ customer_id: customer.id });
 });
 
-exports.addPaymentSource = functions.firestore
-	.document('/stripe_customers/{userId}/tokens/{autoId}')
-	.onWrite(async (change, context) => {
-		const data = change.after.data();
-		if (data === null) { return null}
-		const token = data.token;
-		const customer = getCustomerId(context.params.userId);
-		const response = await stripe.customers.createSource(customer, {source: token});
-		return admin.firestore()
-			.collection('stripe_customers')
-			.doc(context.params.userId)
-			.collection('sources')
-			.doc(response.fingerprint)
-			.set(response, {merge: true});
-	})
-
-const getCustomerId = async (userId) => {
-	const snapShot = await admin.firestore()
+const getCustomerId = async userId => {
+	const snapShot = await admin
+		.firestore()
 		.collection('stripe_customers')
 		.doc(userId)
 		.get();
 	return snapShot.data().customer_id;
-}
-	
+};
+
+exports.addPaymentSource = functions.firestore
+	.document('/stripe_customers/{userId}/tokens/{autoId}')
+	.onWrite(async (change, context) => {
+		const data = change.after.data();
+		if (data === null) {
+			return null;
+		}
+		const { token } = data;
+		const customer = getCustomerId(context.params.userId);
+		const response = await stripe.customers.createSource(customer, {
+			source: token,
+		});
+		return admin
+			.firestore()
+			.collection('stripe_customers')
+			.doc(context.params.userId)
+			.collection('sources')
+			.doc(response.fingerprint)
+			.set(response, { merge: true });
+	});
 
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
-	// stripe init
-	const stripeInst = stripe(functions.config().stripe.secret_key);
 	const items = [];
 	const keys = Object.keys(data);
 
@@ -74,6 +77,8 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 				unit_amount: convertValue(price),
 				product_data: {
 					name: item.name,
+					metadata: { brand: item.brand },
+					description: item.brand,
 				},
 			},
 		};
@@ -93,4 +98,26 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	return {
 		id: session.id,
 	};
+});
+
+const generateAccountLink = accountID => {
+	return stripeInst.accountLinks
+		.create({
+			type: 'account_onboarding',
+			account: accountID,
+			refresh_url: 'http://localhost:3000/refresh',
+			return_url: 'http://localhost:3000',
+		})
+		.then(link => link.url);
+};
+
+exports.onboardVendor = functions.https.onCall(async (data, context) => {
+	try {
+		const account = await stripeInst.accounts.create({ type: 'express' });
+
+		const accountLinkURL = await generateAccountLink(account.id);
+		return { url: accountLinkURL };
+	} catch (err) {
+		return null;
+	}
 });

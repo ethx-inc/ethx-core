@@ -11,10 +11,7 @@ export const IconWrapperController: FC = () => {
 	const { filterData, setFilterData } = useContext(FilterContext);
 
 	async function handleClick(category) {
-		const { items, firstItem, lastItem } = await nextPageInQuery(
-			category,
-			[],
-		);
+		const { items, firstItem, lastItem } = await nextPageInQuery(category, []);
 		setFilterData({
 			...filterData,
 			items,
@@ -25,6 +22,5 @@ export const IconWrapperController: FC = () => {
 		router.push(`/shop/filter-results`);
 	}
 
-	return <IconWrapper onClick={category => handleClick(category)} />
-	;
+	return <IconWrapper onClick={category => handleClick(category)} />;
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface FilterIconProps {
 	imgSource?: string;
-	onClick?
+	onClick?;
 	title?: string;
 }
 
@@ -11,14 +11,14 @@ export const FilterIcon = ({
 	onClick,
 	title,
 }: FilterIconProps): JSX.Element => {
-
 	const [selectedIcon, setSelectedIcon] = React.useState(false);
-	
+
 	return (
 		<div>
-			<div
-				id={'icon-image'}
-				className={`rounded-full border-2 bg-gray-50 w-24 h-24 m-auto
+			<button
+				type='button'
+				id='icon-image'
+				className={`rounded-full border-2 bg-gray-50 w-24 h-24 m-auto focus:outline-none
 				${selectedIcon ? 'border-4 border-gray-500' : 'border-2 border-primary'}`}
 				onClick={() => setSelectedIcon(!selectedIcon)}>
 				<img
@@ -28,7 +28,7 @@ export const FilterIcon = ({
 					height={80}
 					className='m-auto'
 				/>
-			</div>
+			</button>
 			<div className='mt-2 text-center'>
 				<h4
 					className={`font-bold text-xs break-normal
@@ -36,7 +36,6 @@ export const FilterIcon = ({
 					{title}
 				</h4>
 			</div>
-
 		</div>
 	);
 };

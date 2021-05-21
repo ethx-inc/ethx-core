@@ -101,6 +101,9 @@ export const changePassword = (newPassword, callback) => {
 export const createStripeCheckout = data =>
 	firebase.functions().httpsCallable('createStripeCheckout')(data);
 
+export const onboardVendor = () =>
+	firebase.functions().httpsCallable('onboardVendor')();
+
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = (callback?) => {
