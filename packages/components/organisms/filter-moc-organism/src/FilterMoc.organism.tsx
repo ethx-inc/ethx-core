@@ -20,7 +20,7 @@ export const FilterMoc = (): JSX.Element => {
 					<ButtonCTA
 						title='go'
 						handleClick={() =>
-							onboardVendor().then(link => router.push(link.data.url))
+							onboardVendor().then(obj => router.push(obj.data.url))
 						}
 					/>
 				</div>
