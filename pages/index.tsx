@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePage from "./home";
 
+
 export interface HomeProps {
 	color?: string;
 	fontColor?: string;

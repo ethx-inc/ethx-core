@@ -1,55 +1,70 @@
 import React from 'react';
 
-import { IconImage } from '../../../atoms/icon-image/src/IconImage.atom';
-import { IconTitle } from '../../../atoms/icon-title/src/IconTitle.atom';
+import { FilterIcon } from '../../../atoms/filter-icon/src/FilterIcon.atom';
 
 export interface IconWrapperProps {
-	borderColor?: string;
-	color?: string;
-	fontColor?: string;
+	imgSource?: string;
+	onClick?;
 	title?: string;
 }
 
 export const IconWrapper = ({
-	borderColor,
-	color,
-	fontColor,
+	imgSource,
+	onClick,
 	title,
 }: IconWrapperProps): JSX.Element => {
 	return (
-		<div className='flex flex-row justify-center overflow-auto mt-5'>
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
-					<IconImage borderColor={borderColor} color={color} />
-					<IconTitle title={title} fontColor={fontColor} />
+		<div className='flex flex-row justify-center overflow-x-scroll mx-auto my-5'>
+			<div className='flex flex-row mx-10'>
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon
+							imgSource='/images/black-owned-icon.png'
+							title='Black Owned'
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
-					<IconImage borderColor={borderColor} color={color} />
-					<IconTitle title={title} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon
+							imgSource='/images/veteran-owned-icon.png'
+							title='Veteran Owned'
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
-					<IconImage borderColor={borderColor} color={color} />
-					<IconTitle title={title} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon
+							imgSource='/images/sustainable-packaging-icon.png'
+							title='Sustainable Packaging'
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
-					<IconImage borderColor={borderColor} color={color} />
-					<IconTitle title={title} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon
+							imgSource='/images/GB-covid-relief-icon.png'
+							title='GB Covid Relief'
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-				<div className='justify-self-center'>
-					<IconImage borderColor={borderColor} color={color} />
-					<IconTitle title={title} fontColor={fontColor} />
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon
+							imgSource='/images/GB-animal-welfare-icon.png'
+							title='GB Animal Welfare'
+						/>
+					</div>
+				</div>
+
+				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
+					<div className='justify-self-center my-auto'>
+						<FilterIcon imgSource='/images/LGBT-icon.png' title='LGBTQIA+' />
+					</div>
 				</div>
 			</div>
 		</div>

@@ -5,17 +5,17 @@
 We are using
 
 - Next.js:
-    This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-    [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-    [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+  [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+  [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - Typescript:
-    [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+  [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - Storybook:
-    [Storybook What's a Story](https://storybook.js.org/docs/react/get-started/whats-a-story)
+  [Storybook What's a Story](https://storybook.js.org/docs/react/get-started/whats-a-story)
 - TailwindCSS:
-    [Documentation](https://tailwindcss.com/docs)
+  [Documentation](https://tailwindcss.com/docs)
 
-    Everything should be created using Atomic Design for more details the full book is found online [here](https://atomicdesign.bradfrost.com/table-of-contents/) and a quick reference guide of core concepts can be found [here](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/), [here](https://bradfrost.com/blog/post/atomic-web-design/), storybook version [here](https://storybook.js.org/blog/storybook-addons-to-manage-data-state/), and video of the author of Atomic Design System can be found [here](https://www.youtube.com/watch?v=W-h1FtNYim4)
+  Everything should be created using Atomic Design for more details the full book is found online [here](https://atomicdesign.bradfrost.com/table-of-contents/) and a quick reference guide of core concepts can be found [here](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/), [here](https://bradfrost.com/blog/post/atomic-web-design/), storybook version [here](https://storybook.js.org/blog/storybook-addons-to-manage-data-state/), and video of the author of Atomic Design System can be found [here](https://www.youtube.com/watch?v=W-h1FtNYim4)
 
 ## Getting Started
 

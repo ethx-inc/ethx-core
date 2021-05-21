@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -17,11 +17,15 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "sourceMap": true,
+    "outDir": "dist"
   },
   "ts-node": {
     // ts-node options here
     "transpileOnly": true,
+    "compiler": "ttypescript",
+    "module": "CommonJS",
     // ts-node-specific overrides for compilerOptions
     // any compilerOptions specified here will override the values specified above, *only* when running in ts-node
     "compilerOptions": {},

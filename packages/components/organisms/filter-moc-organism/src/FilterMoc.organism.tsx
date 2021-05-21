@@ -1,45 +1,27 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import { MoreFilter } from '../../../atoms/more-filter-atom/src';
+import { ButtonCTA } from '../../../atoms/button-cta/src';
 
-import { Dropdown } from '../../filter-dropdown-organism/src/Dropdown.organism';
+import { onboardVendor } from '../../../../services/firebase/firebase.utils';
 
-export interface FilterMocProps {
-	borderColor?: string;
-	color?: string;
-	fontColor?: string;
-	title?: string;
-}
+export interface FilterMocProps {}
 
-export const FilterMoc = ({
-	borderColor,
-	color,
-	fontColor,
-}: FilterMocProps): JSX.Element => {
+export const FilterMoc = (): JSX.Element => {
+	const router = useRouter();
 	return (
-		<div>
-			{/* <div>
-				<IconWrapper borderColor={borderColor} fontColor={fontColor} title={title} />
-			</div> */}
-
-			<div className='flex flex-col justify-between mx-5'>
-				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
-						color={color}
-						fontColor={fontColor}
-					/>
+		<div className='mx-auto w-full lg:w-2/5'>
+			<div className='flex flex-col justify-between mb-5 -mt-3 mx-5 lg:-mx-20'>
+				<div className='flex flex-col'>
+					<h4 className='text-primary text-center mb-2'>By Category</h4>
+					<MoreFilter />
 				</div>
-				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
-						color={color}
-						fontColor={fontColor}
-					/>
-				</div>
-				<div className='mb-8'>
-					<Dropdown
-						borderColor={borderColor}
-						color={color}
-						fontColor={fontColor}
+				<div className='flex mx-auto justify-center w-40 my-3'>
+					<ButtonCTA
+						title='go'
+						handleClick={() =>
+							onboardVendor().then(link => router.push(link.data.url))
+						}
 					/>
 				</div>
 			</div>

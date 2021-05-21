@@ -10,6 +10,7 @@ export default {
 	component: ButtonCTA /* component */,
 	argTypes: {
 		color: { control: 'color' },
+		borderColor: { control: 'primary' },
 		fontColor: { control: 'text-white' },
 		// font: { control: 'Roboto' | 'Consola' },
 	},
