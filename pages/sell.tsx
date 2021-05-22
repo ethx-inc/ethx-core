@@ -16,7 +16,7 @@ const SellPage: FC<SellPageProps> = ({
 	fontColor,
 	title,
 	subtitle
-}: HomeProps) => {
+}: SellPage) => {
 
 
 	return (
