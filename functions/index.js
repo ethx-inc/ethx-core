@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const stripe = require('stripe');
 const Admin = require('firebase-admin');
+const { v4: uuidv4 } = require('uuid');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
@@ -74,19 +75,22 @@ const createTransferMap = data => {
 
 const createTransferGroup = async transferMap => {
 	const keys = Object.keys(transferMap);
-	keys.forEach(key => {
+	const transferGroup = uuidv4();
+	keys.forEach(connectedAccountUID => {
 		const transfer = await stripeInst.transfers.create({
-			amount: transferMap[key],
+			amount: transferMap[connectedAccountUID],
 			currency: 'usd',
-			destination: key,
-			transfer_group: 
+			destination: connectedAccountUID,
+			transfer_group: transferGroup
 		})
-	})
+	});
+	return transferGroup;
 }
 
 //create a checkout
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const items = [];
+	let total = 0;
 	const keys = Object.keys(data);
 
 	const convertValue = num => {
@@ -102,11 +106,12 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
+		const convertedPrice = convertValue(price)
 		const newItem = {
 			quantity: item.quantity,
 			price_data: {
 				currency: 'usd',
-				unit_amount: convertValue(price),
+				unit_amount: convertedPrice,
 				product_data: {
 					name: item.name,
 					metadata: { brand: item.brand },
@@ -115,7 +120,10 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 			},
 		};
 		items.push(newItem);
+		total += item.quantity * convertedPrice;
 	});
+	const transferMap = createTransferMap(data);
+	const transferGroup = createTransferGroup(transferMap);
 	//actuall where session is created
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
@@ -126,6 +134,10 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 			allowed_countries: ['US'],
 		},
 		line_items: items,
+		payment_intent_data: {
+			application_fee_amount: (total * .08).toFixed(2),
+			transfer_group: transferGroup,
+		}
 	});
 	return {
 		id: session.id,

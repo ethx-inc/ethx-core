@@ -11,7 +11,7 @@ export interface CartItemProps {
 	selectedSize?: number;
 	colors?: string[];
 	selectedColor?: string;
-	images?: string[];
+	images: string[];
 	onIncrease?;
 	onDecrease?;
 	onRemove?;
