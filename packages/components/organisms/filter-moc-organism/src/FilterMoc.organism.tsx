@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { MoreFilter } from '../../../atoms/more-filter-atom/src';
+import { CategoryList } from '../../../atoms/category-list-atom/src';
 import { ButtonCTA } from '../../../atoms/button-cta/src';
 
 import { onboardVendor } from '../../../../services/firebase/firebase.utils';
@@ -14,7 +14,7 @@ export const FilterMoc = (): JSX.Element => {
 			<div className='flex flex-col justify-between mb-5 -mt-3 mx-5 lg:-mx-20'>
 				<div className='flex flex-col'>
 					<h4 className='text-primary text-center mb-2'>By Category</h4>
-					<MoreFilter />
+					<CategoryList />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
 					<ButtonCTA
