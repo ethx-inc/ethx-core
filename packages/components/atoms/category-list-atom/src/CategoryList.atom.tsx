@@ -28,11 +28,11 @@ export const CategoryList = ({
 				{byCategory.map(category => (
 					// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
 					<button
+						type='button'
 						key={category}
 						className={`cursor-pointer px-5
-						${isActive === category ? 'text-black' : 'text-gray-500'}`}
-						onClick={() => handleClick(category)}
-						type='button'>
+					${isActive === category ? 'text-black' : 'text-gray-500'}`}
+						onClick={() => handleClick(category)}>
 						{category}
 					</button>
 				))}

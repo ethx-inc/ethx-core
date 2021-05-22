@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { CategoryList } from '../../components/atoms/category-list-atom/src';
+import React, { useContext, useState } from 'react';
 
+import { CategoryList } from '../../components/atoms/category-list-atom/src';
 import { FilterContext } from '../../services/context/filter-context';
 
-export const FilterIconController = (): JSX.Element => {
+export const CategoryListController = (): JSX.Element => {
 	const [selected, setSelected] = useState('');
 	const { filterData, setFilterData } = useContext(FilterContext);
 
