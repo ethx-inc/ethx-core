@@ -23,10 +23,11 @@ export const MoreFilter = ({ onClick }: MoreFilterProps): JSX.Element => {
 				{byCategory.map(category => (
 					// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
 					<li
-						key={category}
-						className='cursor-pointer'
-						onClick={() => onClick()}
-						onKeyPress={() => onClick()}>
+          			key={category}
+					className={`list-none cursor-pointer px-5`}
+					onClick={() => onClick()}
+          			onKeyPress={() => onClick()}
+          			>
 						{category}
 					</li>
 				))}
