@@ -11,15 +11,9 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	browse,
 	onClick,
 }: BrowseAllProps) => {
-	function showCos() {
-		if (document.getElementById('makeup')) {
-			document.getElementById('browseall').style.display = 'none';
-			document.getElementById('browsemakeup').style.display = 'flex';
-			document.getElementById('restart').style.display = 'flex';
-		}
-	}
+
 	return (
-		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-3 m-auto'>
+		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-4 m-auto'>
 			<div id='makeup'>
 				<ButtonBrowse title='makeup' onClick={() => onClick('makeup')} />
 			</div>
