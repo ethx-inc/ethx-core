@@ -19,7 +19,4 @@ const Template: Story<CategoryListProps> = args => <CategoryList {...args} />;
 
 export const Base = Template.bind({});
 
-Base.args = {
-
-};
-
+Base.args = {};

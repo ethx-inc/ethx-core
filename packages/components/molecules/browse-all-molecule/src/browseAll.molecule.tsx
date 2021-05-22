@@ -11,7 +11,6 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	browse,
 	onClick,
 }: BrowseAllProps) => {
-
 	return (
 		<div id='browseall' className='grid grid-cols-2 lg:grid-cols-4 m-auto'>
 			<div id='makeup'>

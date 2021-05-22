@@ -13,13 +13,11 @@ export const FilterIcon = ({
 	onClick,
 	title,
 }: FilterIconProps): JSX.Element => {
-
-	
 	return (
 		<div>
 			<button
 				type='button'
-				id={'icon-image'}
+				id='icon-image'
 				className={`rounded-full border-2 bg-gray-50 w-24 h-24 m-auto
 				${isActive ? 'border-4 border-gray-500' : 'border-2 border-primary'}
 				`}
