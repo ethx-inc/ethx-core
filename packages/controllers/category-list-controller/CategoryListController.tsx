@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { CategoryList } from '../../components/atoms/category-list-atom/src';
 
+import { CategoryList } from '../../components/atoms/category-list-atom/src';
 import { FilterContext } from '../../services/context/filter-context';
 
 export const CategoryListController = (): JSX.Element => {
