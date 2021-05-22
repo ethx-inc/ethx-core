@@ -1,23 +1,24 @@
 import React, { FC } from 'react';
+
 import { QuantityPill } from '../../quantity-pill-atom/src';
 
 export interface CartItemProps {
 	/* Props here */
-	name?: string;
-	brandInfo?;
+	name: string;
+	brandInfo: Record<string, unknown>;
 	sizes?: string[];
-	prices?: number[];
-	quantity?: number;
-	selectedSize?: number;
+	prices: number[];
+	quantity: number;
+	selectedSize: number;
 	colors?: string[];
 	selectedColor?: string;
-	images?: string[];
-	onIncrease?;
-	onDecrease?;
-	onRemove?;
+	images: string[];
+	onIncrease: () => unknown;
+	onDecrease: () => unknown;
+	onRemove: () => unknown;
 }
 
-export const CartItem = ({
+export const CartItem: FC<CartItemProps> = ({
 	name,
 	brandInfo,
 	sizes = [],
