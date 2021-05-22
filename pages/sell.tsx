@@ -1,22 +1,15 @@
 import React, { FC } from 'react';
 import { NavBarController } from '../packages/controllers/navbar-controller/NavBarController';
 import { HeroText } from '../packages/components/atoms/hero-text/src';
-import { MainContentContainer } from '../packages/components/atoms/main-content-container-atom/src'
 import { NavLink } from '../packages/components/atoms/nav-link-atom/src'
 
 export interface SellPageProps {
-	color?: string;
-	fontColor?: string;
-	title?: string;
-	subtitle?: string;
+
 }
 
 const SellPage: FC<SellPageProps> = ({
-	color,
-	fontColor,
-	title,
-	subtitle
-}: SellPage) => {
+
+}: SellPageProps) => {
 
 
 	return (
