@@ -54,59 +54,60 @@ exports.addPaymentSource = functions.firestore
 			.set(response, { merge: true });
 	});
 
+const convertValue = num => {
+	const remainder = (num % 1).toFixed(2) * 100;
+	const wholeValue = Math.floor(num);
+	if (remainder === 0) {
+		return num * 100;
+	}
+	const numString = wholeValue.toString();
+	const remainderString = remainder.toString();
+	return Number(numString + remainderString);
+};
+
 const createTransferMap = data => {
-	const brandToTotal = {};
+	const idToTotal = {};
 	const keys = Object.keys(data);
 
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
-		const connectedAccountId = item.brandInfo.connectedAccountId; //should instead be connected stripe account id
-		const quantity = item.quantity;
-		if (brand in brandToTotal) {
-			brandToTotal[connectedAccountId] += price * quantity
-		}
-		else {
-			brandToTotal[connectedAccountId] = price * quantity
+		const { connectedAccountId } = item.brandInfo;
+		const { quantity } = item;
+		if (connectedAccountId in idToTotal) {
+			idToTotal[connectedAccountId] += price * quantity;
+		} else {
+			idToTotal[connectedAccountId] = price * quantity;
 		}
 	});
-	return brandToTotal;
-}
+	return idToTotal;
+};
 
-const createTransferGroup = async transferMap => {
+const createTransferGroup = async (transferMap, transferGroupId) => {
 	const keys = Object.keys(transferMap);
-	const transferGroup = uuidv4();
 	keys.forEach(connectedAccountId => {
-		const transfer = await stripeInst.transfers.create({
-			amount: transferMap[connectedAccountId],
+		const totalAmount = convertValue(transferMap[connectedAccountId]);
+
+		const adjustedAmount = totalAmount - Math.floor(totalAmount * 0.08);
+		stripeInst.transfers.create({
+			amount: adjustedAmount,
 			currency: 'usd',
 			destination: connectedAccountId,
-			transfer_group: transferGroup
-		})
+			// source_transaction: chargeId,
+			transfer_group: transferGroupId,
+		});
 	});
-	return transferGroup;
-}
+};
 
-//create a checkout
+// create a checkout
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const items = [];
-	let total = 0;
 	const keys = Object.keys(data);
 
-	const convertValue = num => {
-		const remainder = (num % 1).toFixed(2) * 100;
-		const wholeValue = Math.floor(num);
-		if (remainder === 0) {
-			return num * 100;
-		}
-		const numString = wholeValue.toString();
-		const remainderString = remainder.toString();
-		return Number(numString + remainderString);
-	};
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
-		const convertedPrice = convertValue(price)
+		const convertedPrice = convertValue(price);
 		const newItem = {
 			quantity: item.quantity,
 			price_data: {
@@ -120,11 +121,10 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 			},
 		};
 		items.push(newItem);
-		total += item.quantity * convertedPrice;
 	});
 	const transferMap = createTransferMap(data);
-	const transferGroup = createTransferGroup(transferMap);
-	//actuall where session is created
+	const transferGroupId = uuidv4();
+	// actuall where session is created
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',
@@ -135,15 +135,15 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		},
 		line_items: items,
 		payment_intent_data: {
-			application_fee_amount: (total * .08).toFixed(2),
-			transfer_group: transferGroup,
-		}
+			transfer_group: transferGroupId,
+		},
 	});
+	createTransferGroup(transferMap, transferGroupId);
 	return {
 		id: session.id,
 	};
 });
-//end of create session
+// end of create session
 const generateAccountLink = accountID => {
 	return stripeInst.accountLinks
 		.create({
