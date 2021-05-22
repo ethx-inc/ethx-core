@@ -5,6 +5,7 @@ export type Brand = {
 	name: string;
 	description: string;
 	img: string;
+	connectedAccountId: string;
 };
 
 export type CartItem = {

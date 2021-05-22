@@ -61,13 +61,13 @@ const createTransferMap = data => {
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
-		const brand = item.brandInfo.name; //should instead be connected stripe account id
+		const connectedAccountId = item.brandInfo.connectedAccountId; //should instead be connected stripe account id
 		const quantity = item.quantity;
 		if (brand in brandToTotal) {
-			brandToTotal[brand] += price * quantity
+			brandToTotal[connectedAccountId] += price * quantity
 		}
 		else {
-			brandToTotal[brand] = price * quantity
+			brandToTotal[connectedAccountId] = price * quantity
 		}
 	});
 	return brandToTotal;
@@ -76,11 +76,11 @@ const createTransferMap = data => {
 const createTransferGroup = async transferMap => {
 	const keys = Object.keys(transferMap);
 	const transferGroup = uuidv4();
-	keys.forEach(connectedAccountUID => {
+	keys.forEach(connectedAccountId => {
 		const transfer = await stripeInst.transfers.create({
-			amount: transferMap[connectedAccountUID],
+			amount: transferMap[connectedAccountId],
 			currency: 'usd',
-			destination: connectedAccountUID,
+			destination: connectedAccountId,
 			transfer_group: transferGroup
 		})
 	});
