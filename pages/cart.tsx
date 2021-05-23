@@ -15,7 +15,6 @@ const Cart: FC = () => {
 	let stripePromise: Promise<Stripe>;
 	const getStripe = async () => {
 		if (!stripePromise) {
-			console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
 			stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 		}
 		return stripePromise;
@@ -25,7 +24,7 @@ const Cart: FC = () => {
 	const makePurchase = async (data?, context?) => {
 		createStripeCheckout(data).then(response => {
 			const sessionId = response.data.id;
-			getStripe().then(elem => elem.redirectToCheckout(sessionId));
+			getStripe().then(elem => elem.redirectToCheckout({sessionId: sessionId}));
 		});
 	};
 

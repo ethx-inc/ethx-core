@@ -3,8 +3,6 @@ import { useRouter } from 'next/router';
 import { CategoryListController } from '../../../../controllers/category-list-controller/CategoryListController';
 import { ButtonCTA } from '../../../atoms/button-cta/src';
 
-import { onboardVendor } from '../../../../services/firebase/firebase.utils';
-
 export interface FilterMocProps {}
 
 export const FilterMoc = (): JSX.Element => {
@@ -17,12 +15,7 @@ export const FilterMoc = (): JSX.Element => {
 					<CategoryListController />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-					<ButtonCTA
-						title='go'
-						handleClick={() =>
-							onboardVendor().then(obj => router.push(obj.data.url))
-						}
-					/>
+					<ButtonCTA title='go' handleClick={() => null} />
 				</div>
 			</div>
 		</div>

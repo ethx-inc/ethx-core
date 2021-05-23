@@ -6,6 +6,7 @@ export type UserData = {
 	lname: string;
 	email: string;
 	uid: string;
+	isVendor: boolean;
 };
 
 export type UserProps = {
@@ -17,7 +18,7 @@ export type UserProps = {
 
 // the created context that can be used elsewhere to gain access to loginData and set it
 export const UserContext = React.createContext<UserProps>({
-	userData: { fname: '', lname: '', email: '', uid: '' },
+	userData: { fname: '', lname: '', email: '', uid: '', isVendor: false },
 	setUserData: user => console.warn('no user provider'),
 });
 
@@ -33,6 +34,7 @@ export const UserProvider = ({ children }: UserProviderProps): JSX.Element => {
 		lname: '',
 		email: '',
 		uid: '',
+		isVendor: false,
 	});
 
 	return (

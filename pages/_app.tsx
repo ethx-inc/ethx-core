@@ -17,6 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 		lname: '',
 		email: '',
 		uid: '',
+		isVendor: false
 	});
 
 

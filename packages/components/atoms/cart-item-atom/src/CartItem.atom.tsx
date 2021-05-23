@@ -25,13 +25,14 @@ export const CartItem: FC<CartItemProps> = ({
 	prices = [],
 	quantity,
 	selectedSize,
-	colors,
+	colors = [],
 	selectedColor,
 	images = [],
 	onIncrease,
 	onDecrease,
 	onRemove,
 }: CartItemProps): JSX.Element => {
+	console.log(selectedColor);
 	return (
 		<div className='flex justify-between my-2 pb-4 lg:pb-1 border-b-2'>
 			<img src={images[0]} alt={name} className='rounded-lg w-28' />
@@ -42,10 +43,10 @@ export const CartItem: FC<CartItemProps> = ({
 						{brandInfo ? brandInfo.name : null}
 					</h3>
 					<h3 className='capitalize text-sm mb-1'>{name}</h3>
-					{selectedColor ? (
+					{colors.length > 0 ? (
 						<div className='capitalize flex flex-row'>
 							<h3>Color:</h3>
-							<h3 className='ml-1'>{selectedColor}</h3>
+							<h3 className='ml-1'>{colors[selectedColor]}</h3>
 						</div>
 					) : null}
 					{sizes.length > 0 ? (

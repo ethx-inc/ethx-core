@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const stripe = require('stripe');
 const Admin = require('firebase-admin');
+const { v4: uuidv4 } = require('uuid');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
@@ -53,60 +54,65 @@ exports.addPaymentSource = functions.firestore
 			.set(response, { merge: true });
 	});
 
+const convertValue = num => {
+	const remainder = (num % 1).toFixed(2) * 100;
+	const wholeValue = Math.floor(num);
+	if (remainder === 0) {
+		return num * 100;
+	}
+	const numString = wholeValue.toString();
+	const remainderString = remainder.toString();
+	return Number(numString + remainderString);
+};
+
 const createTransferMap = data => {
-	const brandToTotal = {};
+	const connectedAccountIdToTotal = {};
 	const keys = Object.keys(data);
 
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
-		const brand = item.brandInfo.name; //should instead be connected stripe account id
-		const quantity = item.quantity;
-		if (brand in brandToTotal) {
-			brandToTotal[brand] += price * quantity
-		}
-		else {
-			brandToTotal[brand] = price * quantity
+		const { connectedAccountId } = item.brandInfo;
+		const { quantity } = item;
+		if (connectedAccountId in connectedAccountIdToTotal) {
+			connectedAccountIdToTotal[connectedAccountId] += price * quantity;
+		} else {
+			connectedAccountIdToTotal[connectedAccountId] = price * quantity;
 		}
 	});
-	return brandToTotal;
-}
+	return connectedAccountIdToTotal;
+};
 
-const createTransferGroup = async transferMap => {
+const createTransferGroup = async (transferMap, transferGroupId) => {
 	const keys = Object.keys(transferMap);
-	keys.forEach(key => {
-		const transfer = await stripeInst.transfers.create({
-			amount: transferMap[key],
-			currency: 'usd',
-			destination: key,
-			transfer_group: 
-		})
-	})
-}
+	keys.forEach(connectedAccountId => {
+		const totalAmount = convertValue(transferMap[connectedAccountId]);
 
-//create a checkout
+		const adjustedAmount = totalAmount - Math.floor(totalAmount * 0.08);
+		stripeInst.transfers.create({
+			amount: adjustedAmount,
+			currency: 'usd',
+			destination: connectedAccountId,
+			// source_transaction: chargeId,
+			transfer_group: transferGroupId,
+		});
+	});
+};
+
+// create a checkout
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const items = [];
 	const keys = Object.keys(data);
 
-	const convertValue = num => {
-		const remainder = (num % 1).toFixed(2) * 100;
-		const wholeValue = Math.floor(num);
-		if (remainder === 0) {
-			return num * 100;
-		}
-		const numString = wholeValue.toString();
-		const remainderString = remainder.toString();
-		return Number(numString + remainderString);
-	};
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
+		const convertedPrice = convertValue(price);
 		const newItem = {
 			quantity: item.quantity,
 			price_data: {
 				currency: 'usd',
-				unit_amount: convertValue(price),
+				unit_amount: convertedPrice,
 				product_data: {
 					name: item.name,
 					metadata: { brand: item.brand },
@@ -116,7 +122,9 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		};
 		items.push(newItem);
 	});
-	//actuall where session is created
+	const transferMap = createTransferMap(data);
+	const transferGroupId = uuidv4();
+	// actuall where session is created
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',
@@ -126,12 +134,16 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 			allowed_countries: ['US'],
 		},
 		line_items: items,
+		payment_intent_data: {
+			transfer_group: transferGroupId,
+		},
 	});
+	createTransferGroup(transferMap, transferGroupId);
 	return {
 		id: session.id,
 	};
 });
-//end of create session
+// end of create session
 const generateAccountLink = accountID => {
 	return stripeInst.accountLinks
 		.create({
