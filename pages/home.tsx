@@ -22,12 +22,9 @@ const HomePage: FC<HomeProps> = ({
 }: HomeProps) => {
 
     let testimonials = [
-        {name:'Blake' , quote:'I like eggs and other things wow ok great', 
+        {name:'Ruby Dove, Founder' , quote:'Welcome! We appreciate your patience as we work to create a platform that facilitates a simple & meaningful experience.', 
 		  img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 0},
-        {name:'Blake' , quote:'I like eggs', 
-		  img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 1},
-        {name:'Blake' , quote:'I like eggs and other things wow ok great', 
-		  img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 2}
+
     ];
 
 	return (

@@ -75,7 +75,7 @@ export const NavBar = ({
 				<NavLink
 					css='font-light lg:font-normal text-2xl lg:text-lg'
 					label='sell'
-					href='/home'
+					href='/sell'
 				/>
 			</div>
 		</div>

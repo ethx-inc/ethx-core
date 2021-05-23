@@ -55,6 +55,38 @@ exports.addPaymentSource = functions.firestore
 			.set(response, { merge: true });
 	});
 
+const createTransferMap = data => {
+	const brandToTotal = {};
+	const keys = Object.keys(data);
+
+	keys.forEach(key => {
+		const item = data[key];
+		const price = item.prices[item.selectedSize];
+		const brand = item.brandInfo.name; //should instead be connected stripe account id
+		const quantity = item.quantity;
+		if (brand in brandToTotal) {
+			brandToTotal[brand] += price * quantity
+		}
+		else {
+			brandToTotal[brand] = price * quantity
+		}
+	});
+	return brandToTotal;
+}
+
+const createTransferGroup = async transferMap => {
+	const keys = Object.keys(transferMap);
+	keys.forEach(key => {
+		const transfer = await stripeInst.transfers.create({
+			amount: transferMap[key],
+			currency: 'usd',
+			destination: key,
+			transfer_group: 
+		})
+	})
+}
+
+//create a checkout
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const items = [];
 	const keys = Object.keys(data);
@@ -86,7 +118,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		};
 		items.push(newItem);
 	});
-
+	//actuall where session is created
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',
@@ -101,7 +133,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		id: session.id,
 	};
 });
-
+//end of create session
 const generateAccountLink = accountID => {
 	return stripeInst.accountLinks
 		.create({
@@ -118,7 +150,7 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 		const account = await stripeInst.accounts.create({ type: 'express' });
 
 		const accountLinkURL = await generateAccountLink(account.id);
-		return { url: accountLinkURL };
+		return { url: accountLinkURL, accountId: account.id };
 	} catch (err) {
 		return null;
 	}
