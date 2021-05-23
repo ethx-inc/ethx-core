@@ -4,6 +4,8 @@ const Admin = require('firebase-admin');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
+const shippo = require('shippo')('');
+
 // const { addSyntheticLeadingComment } = require("typescript");
 
 // // Create and Deploy Your First Cloud Functions

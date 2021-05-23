@@ -11872,6 +11872,11 @@ shell-quote@1.7.2:
   resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
+shippo@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/shippo/-/shippo-1.6.0.tgz#15c2eb1c4a0743d1a4ff33a6b273745d86dd8a0c"
+  integrity sha512-iIOumUuXwnLdYvpG1nwi4rvSheBTfOZMLlfEdw7KjPUCNIlgs7rPHwVINGqcwlDttnzG0xp5L8iRJQq774Xpaw==
+
 side-channel@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz"
