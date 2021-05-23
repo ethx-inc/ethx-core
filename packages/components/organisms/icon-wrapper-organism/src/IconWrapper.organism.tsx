@@ -14,8 +14,8 @@ export const IconWrapper = ({
 	title,
 }: IconWrapperProps): JSX.Element => {
 	return (
-		<div className='flex flex-row justify-center overflow-x-scroll mx-auto my-5'>
-			<div className='flex flex-row mx-10'>
+		<div className='flex flex-row justify-between overflow-x-scroll mx-auto my-5'>
+			<div className='flex flex-row lg:mx-10'>
 				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 					<div className='justify-self-center my-auto'>
 						<FilterIconController
