@@ -12,26 +12,26 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 	const {
 		brandInfo,
 		name,
-		bulletPoints,
+		bulletPoints = [],
 		description,
-		sizes,
-		prices,
-		selectedSize,
+		sizes = [],
+		selectedSize = 0,
+		colors = [],
+		selectedColor = 0,
+		prices = [],
 	} = selectedItem;
 	return (
 		<div className={`text-${fontColor} relative lg:w-2/5 mx-5 mt-5 lg:mt-0`}>
 			<p className='font-light'>{brandInfo ? brandInfo.name : null}</p>
 			<h3 className='text-lg font-bold mb-2'>{name}</h3>
 			<ul className='list-disc text-sm mb-4 ml-10'>
-				{bulletPoints
-					? bulletPoints.map(item => {
-							return <li key={item}>{item}</li>;
-					  })
-					: ''}
+				{bulletPoints.map(item => {
+					return <li key={item}>{item}</li>;
+				})}
 			</ul>
 			<p className='text-sm'>{description}</p>
 			<div className='mt-3 italic'>
-				<span>{sizes && sizes.length > 0 ? 'Sizes: ' : null} </span>
+				<span>{sizes.length > 0 ? 'Sizes: ' : null} </span>
 
 				{sizes
 					? sizes.map((size, i) => {
@@ -53,6 +53,36 @@ export const PDPText = ({ fontColor }: PDPTextProps): JSX.Element => {
 										}
 										id={size}
 										checked={selectedSize === i}
+									/>
+									{size}
+								</label>
+							);
+					  })
+					: null}
+			</div>
+			<div className='mt-3 italic'>
+				<span>{colors.length > 0 ? 'Colors: ' : null} </span>
+
+				{colors
+					? colors.map((size, i) => {
+							return (
+								<label htmlFor={size} className='mr-3' key={size}>
+									<input
+										key={size}
+										type='radio'
+										name='color'
+										value={prices[i]}
+										onChange={() =>
+											setCartData({
+												...cartData,
+												selectedItem: {
+													...selectedItem,
+													selectedColor: i,
+												},
+											})
+										}
+										id={size}
+										checked={selectedColor === i}
 									/>
 									{size}
 								</label>

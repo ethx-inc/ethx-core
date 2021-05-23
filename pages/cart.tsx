@@ -24,7 +24,7 @@ const Cart: FC = () => {
 	const makePurchase = async (data?, context?) => {
 		createStripeCheckout(data).then(response => {
 			const sessionId = response.data.id;
-			getStripe().then(elem => elem.redirectToCheckout(sessionId));
+			getStripe().then(elem => elem.redirectToCheckout({sessionId: sessionId}));
 		});
 	};
 

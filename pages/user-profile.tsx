@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useContext } from 'react';
 import {NavBarController} from '../packages/controllers/navbar-controller/NavBarController';
 import {MainContentContainer} from '../packages/components/atoms/main-content-container-atom/src';
 import {NavButton} from '../packages/components/atoms/nav-button-atom/src';
@@ -14,6 +14,8 @@ import {
 	auth,
 } from '../packages/services/firebase/firebase.utils';
 
+import {UserContext} from '../packages/services/context/user-context';
+
 
 
 export interface UserProfileProps {
@@ -26,6 +28,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
     const [revealForm, setRevealForm] = useState(null)
     const router = useRouter();
     const currentUser = auth.currentUser;
+    const {userData} = useContext(UserContext);
 
     useEffect(() => {
 		if (currentUser == null) {
@@ -51,7 +54,14 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                 <div className='flex flex-col align-center'>
                                     <NavButton label='change email' color='white' bgColor='primary' css='mb-3' onClick={() => setRevealForm('email')}/>
                                     <NavButton label='change password' color='white' bgColor='primary' css='mb-3' onClick={() => setRevealForm('password')}/>
-                                    <NavButton label='become a seller' color='white' bgColor='primary' onClick={() => onboardVendor().then(obj => router.push(obj.data.url))}/>
+                                    {userData.isVendor ? 
+                                    <NavButton 
+                                        label='become a seller' 
+                                        color='white' 
+                                        bgColor='primary' 
+                                        onClick={() => onboardVendor().then(obj => router.push(obj.data.url))}
+                                    /> : 
+                                    null}
                                 </div>
                             </div>
                         </div>

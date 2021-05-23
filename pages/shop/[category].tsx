@@ -68,7 +68,7 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
         const selectedItem = await getProduct(item.id) as CartItem;
         const brandInfo = await getBrand(selectedItem.brandId) as Brand;
         if (selectedItem !== null) {
-            setCartData({...cartData, selectedItem: {...selectedItem, minPrice: item.minPrice, id:item.id,  brandInfo, selectedSize: 0}})
+            setCartData({...cartData, selectedItem: {...selectedItem, minPrice: item.minPrice, id:item.id,  brandInfo, selectedSize: 0, selectedColor: 0}})
         }
         router.push('/pdp');
     }
