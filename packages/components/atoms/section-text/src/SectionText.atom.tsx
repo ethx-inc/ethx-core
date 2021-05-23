@@ -13,7 +13,7 @@ export const SectionText = ({
 }: SectionTextProps): JSX.Element => {
 	return (
 		<div className='w-4/5 text-center m-auto lg:ml-0 lg:text-left mt-5'>
-			<h2 className='font-regular text-3xl lg:text-4xl text-primary'>
+			<h2 className='font-light text-3xl lg:text-4xl text-primary'>
 				{title}
 			</h2>
 			<h4

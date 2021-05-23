@@ -32,7 +32,7 @@ export const TestimonialQuote: FC<TestimonialQuoteProps> = ({
 			<div
 				className={`${
 					color ? `text-${color}` : ''
-				} font-semibold text-center px-6`}>
+				} font-regular text-center px-6`}>
 				{quote}
 			</div>
 			<span className={`text-${quoteColor} text-xl self-end font-serif`}>

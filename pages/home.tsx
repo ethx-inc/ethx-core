@@ -33,7 +33,7 @@ const HomePage: FC<HomeProps> = ({
 			<HeroText fontColor={'primary'} subtitle={'simplified ecommerce for the conscious consumer'} title={'ethx'} />
 			<MainContentContainer >
 				<SectionText fontColor={'gray-500'} subtitle={'discover brands that align with what you care about'} title={'our ethical filter'} />
-				<div><h4 className='text-xs text-gray-500 font-medium -mt-1 text-center lg:text-left'>*GB = Giving Back</h4></div>
+				<div className='hidden'><h4 className='text-xs text-gray-500 font-medium -mt-1 text-center lg:text-left'>*GB = Giving Back</h4></div>
 				<IconWrapper />
 				<FilterMoc />
 			</MainContentContainer>
