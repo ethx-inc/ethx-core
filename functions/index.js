@@ -66,7 +66,7 @@ const convertValue = num => {
 };
 
 const createTransferMap = data => {
-	const idToTotal = {};
+	const connectedAccountIdToTotal = {};
 	const keys = Object.keys(data);
 
 	keys.forEach(key => {
@@ -74,13 +74,13 @@ const createTransferMap = data => {
 		const price = item.prices[item.selectedSize];
 		const { connectedAccountId } = item.brandInfo;
 		const { quantity } = item;
-		if (connectedAccountId in idToTotal) {
-			idToTotal[connectedAccountId] += price * quantity;
+		if (connectedAccountId in connectedAccountIdToTotal) {
+			connectedAccountIdToTotal[connectedAccountId] += price * quantity;
 		} else {
-			idToTotal[connectedAccountId] = price * quantity;
+			connectedAccountIdToTotal[connectedAccountId] = price * quantity;
 		}
 	});
-	return idToTotal;
+	return connectedAccountIdToTotal;
 };
 
 const createTransferGroup = async (transferMap, transferGroupId) => {

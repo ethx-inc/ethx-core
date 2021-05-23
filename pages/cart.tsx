@@ -15,7 +15,6 @@ const Cart: FC = () => {
 	let stripePromise: Promise<Stripe>;
 	const getStripe = async () => {
 		if (!stripePromise) {
-			console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
 			stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 		}
 		return stripePromise;

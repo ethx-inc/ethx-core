@@ -6,6 +6,8 @@ import {Download} from '../packages/components/atoms/download-atom/src';
 
 import {ChangeEmailFormController} from '../packages/controllers/change-email-form-controller/ChangeEmailFormController'
 
+import { onboardVendor } from  '../packages/services/firebase/firebase.utils';
+
 import { useRouter } from 'next/router';
 
 import {
@@ -31,6 +33,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
         }
 	}, [currentUser])
 
+
 	return (
         <div className='h-screen w-full bg-gray-100'>
             <NavBarController/>
@@ -45,9 +48,10 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                             <div className='lg:mx-5'>
                                 <div className='flex flex-row border-b-2 pb-2 my-2 lg:w-72 w-full font-lg font-light'><h3 className=''>Welcome </h3><h3 className='ml-1'>Dahlia</h3></div>
                                 <div className='font-light italic text-sm mb-4'><h3>Thanks for shopping ethically!</h3></div>
-                                <div className='flex flex-row align-center'>
-                                    <NavButton label='change email' color='white' bgColor='primary' css='mr-3' onClick={() => setRevealForm('email')}/>
-                                    <NavButton label='change password' color='white' bgColor='primary' onClick={() => setRevealForm('password')}/>
+                                <div className='flex flex-col align-center'>
+                                    <NavButton label='change email' color='white' bgColor='primary' css='mb-3' onClick={() => setRevealForm('email')}/>
+                                    <NavButton label='change password' color='white' bgColor='primary' css='mb-3' onClick={() => setRevealForm('password')}/>
+                                    <NavButton label='become a seller' color='white' bgColor='primary' onClick={() => onboardVendor().then(obj => router.push(obj.data.url))}/>
                                 </div>
                             </div>
                         </div>

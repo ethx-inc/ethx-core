@@ -28,7 +28,7 @@ export const NavButton = ({
 				color ? `text-${color}` : 'text-primary'
 			} ${
 				bgColor ? `bg-${bgColor}` : ''
-			} lg:text-lg px-4 py-1 items-center rounded-full flex`}>
+			} lg:text-lg px-4 py-1 items-center text-center justify-center rounded-full flex`}>
 			{flip ? children : label}
 			{flip ? label : children}
 		</button>
