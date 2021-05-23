@@ -1,10 +1,10 @@
-const functions = require('firebase-functions');
-const stripe = require('stripe');
 const Admin = require('firebase-admin');
+const functions = require('firebase-functions');
+const shippo = require('shippo')('<YOUR_PRIVATE_KEY');
+const stripe = require('stripe');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
-const shippo = require('shippo')('');
 
 // const { addSyntheticLeadingComment } = require("typescript");
 
@@ -55,38 +55,6 @@ exports.addPaymentSource = functions.firestore
 			.set(response, { merge: true });
 	});
 
-const createTransferMap = data => {
-	const brandToTotal = {};
-	const keys = Object.keys(data);
-
-	keys.forEach(key => {
-		const item = data[key];
-		const price = item.prices[item.selectedSize];
-		const brand = item.brandInfo.name; //should instead be connected stripe account id
-		const quantity = item.quantity;
-		if (brand in brandToTotal) {
-			brandToTotal[brand] += price * quantity
-		}
-		else {
-			brandToTotal[brand] = price * quantity
-		}
-	});
-	return brandToTotal;
-}
-
-const createTransferGroup = async transferMap => {
-	const keys = Object.keys(transferMap);
-	keys.forEach(key => {
-		const transfer = await stripeInst.transfers.create({
-			amount: transferMap[key],
-			currency: 'usd',
-			destination: key,
-			transfer_group: 
-		})
-	})
-}
-
-//create a checkout
 exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const items = [];
 	const keys = Object.keys(data);
@@ -118,7 +86,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		};
 		items.push(newItem);
 	});
-	//actuall where session is created
+
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',
@@ -133,7 +101,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		id: session.id,
 	};
 });
-//end of create session
+
 const generateAccountLink = accountID => {
 	return stripeInst.accountLinks
 		.create({
@@ -150,8 +118,96 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 		const account = await stripeInst.accounts.create({ type: 'express' });
 
 		const accountLinkURL = await generateAccountLink(account.id);
-		return { url: accountLinkURL, accountId: account.id };
+		return { url: accountLinkURL };
 	} catch (err) {
 		return null;
 	}
+});
+
+exports.shipOrderWithShippo = functions.https.onCall(async (data, context) => {
+	// get user address from checkout
+	const addressFrom = {
+		name: 'Ms Hippo',
+		company: 'Shippo',
+		street1: '215 Clayton St.',
+		city: 'San Francisco',
+		state: 'CA',
+		zip: '94117',
+		country: 'US', // iso2 country code
+		phone: '+1 555 341 9393',
+		email: 'support@goshippo.com',
+	};
+
+	// example address_to object dict
+	const addressTo = {
+		name: 'Ms Hippo',
+		company: 'Shippo',
+		street1: '803 Clayton St.',
+		city: 'San Francisco',
+		state: 'CA',
+		zip: '94117',
+		country: 'US', // iso2 country code
+		phone: '+1 555 341 9393',
+		email: 'support@goshippo.com',
+	};
+
+	// parcel object dict
+	/* for each parcel in order */
+	const parcelOne = {
+		length: '5',
+		width: '5',
+		height: '5',
+		distance_unit: 'in',
+		weight: '2',
+		mass_unit: 'lb',
+	};
+
+	const parcelTwo = {
+		length: '5',
+		width: '5',
+		height: '5',
+		distance_unit: 'in',
+		weight: '2',
+		mass_unit: 'lb',
+	};
+
+	const shipment = {
+		address_from: addressFrom,
+		address_to: addressTo,
+		parcels: [parcelOne, parcelTwo],
+	};
+
+	shippo.transaction
+		.create({
+			shipment,
+			servicelevel_token: 'ups_ground',
+			carrier_account: '558c84bbc25a4f609f9ba02da9791fe4',
+			label_file_type: 'png',
+		})
+		.then(
+			transaction => {
+				shippo.transaction
+					.list({
+						rate: transaction.rate,
+					})
+					.then(mpsTransactions => {
+						mpsTransactions.results.forEach(mpsTransaction => {
+							if (mpsTransaction.status === 'SUCCESS') {
+								console.log('Label URL: %s', mpsTransaction.label_url);
+								console.log(
+									'Tracking Number: %s',
+									mpsTransaction.tracking_number,
+								);
+							} else {
+								// hanlde error transactions
+								console.log('Message: %s', mpsTransactions.messages);
+							}
+						});
+					});
+			},
+			err => {
+				// Deal with an error
+				console.log('There was an error creating transaction : %s', err.detail);
+			},
+		);
 });
