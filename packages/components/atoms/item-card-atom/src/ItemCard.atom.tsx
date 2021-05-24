@@ -21,7 +21,7 @@ export const ItemCard = ({
 			type='button'
 			onClick={() => onClick()}>
 			<img
-				className='w-20 max-h-52 mx-auto'
+				className='rounded-lg w-32 h-32 object-cover mx-auto'
 				src={productImg}
 				alt={`Card for ${productName}`}
 			/>
