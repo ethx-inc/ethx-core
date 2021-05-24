@@ -41,7 +41,7 @@ export const PDPImage = ({
 				<img
 					src={mainImage}
 					alt={productName}
-					className='lg:rounded-lg w-80 h-80 object-scale-down'
+					className='lg:rounded-lg w-80 h-80 object-cover'
 				/>
 			</div>
 		</div>
