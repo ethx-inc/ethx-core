@@ -14,12 +14,12 @@ export const IconWrapper = ({
 	title,
 }: IconWrapperProps): JSX.Element => {
 	return (
-		<div className='flex flex-row justify-center overflow-x-scroll mx-auto my-5'>
-			<div className='flex flex-row mx-10'>
+		<div className='flex flex-row justify-between overflow-x-scroll mx-auto my-5'>
+			<div className='flex flex-row lg:mx-10'>
 				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 					<div className='justify-self-center my-auto'>
 						<FilterIconController
-							imgSource='/images/skincare-icon.png'
+							imgSource='/images/asian-owned-icon.png'
 							title='Asian Owned'
 						/>
 					</div>
@@ -37,14 +37,14 @@ export const IconWrapper = ({
 				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
 					<div className='justify-self-center my-auto'>
 						<FilterIconController
-							imgSource='/images/skincare-icon.png'
+							imgSource='/images/mom-owned-icon.png'
 							title='Mom Owned'
 						/>
 					</div>
 				</div>
 
 				<div className='grid justify-items-stretch w-40 h-40 mx-5'>
-					<div className='justify-self-center my-auto'>
+					<div className='justify-self-center my-auto mx-10'>
 						<FilterIconController
 							imgSource='/images/sustainable-packaging-icon.png'
 							title='Sustainable Packaging'
