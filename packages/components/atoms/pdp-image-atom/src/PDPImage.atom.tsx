@@ -29,7 +29,7 @@ export const PDPImage = ({
 									<img
 										src={img}
 										alt='flipped-hero'
-										className='rounded-lg mb-3 h-20 w-20 object-scale-down'
+										className='rounded-lg mb-3 h-20 w-20 object-cover'
 									/>
 								</button>
 							);
