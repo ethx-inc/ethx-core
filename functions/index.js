@@ -128,8 +128,8 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
 		mode: 'payment',
-		success_url: 'http://localhost:3000',
-		cancel_url: 'http://localhost:3000/cart',
+		success_url: 'https://ethx.vercel.app/success/purchase-success',
+		cancel_url: 'https://ethx.vercel.app/cart',
 		shipping_address_collection: {
 			allowed_countries: ['US'],
 		},
@@ -149,8 +149,8 @@ const generateAccountLink = accountID => {
 		.create({
 			type: 'account_onboarding',
 			account: accountID,
-			refresh_url: 'http://localhost:3000/refresh',
-			return_url: 'http://localhost:3000',
+			refresh_url: 'https://ethx.vercel.app/user-profile',
+			return_url: 'https://ethx.vercel.app/success/onboarding-success',
 		})
 		.then(link => link.url);
 };
