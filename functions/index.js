@@ -1,10 +1,12 @@
+// TODO: refactor this to TS
 const Admin = require('firebase-admin');
 const functions = require('firebase-functions');
-const shippo = require('shippo')('<YOUR_PRIVATE_KEY');
+const shippo = require('shippo');
 const stripe = require('stripe');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
+// const shippoInstance = shippo('<YOUR_PRIVATE_KEY');
 
 // const { addSyntheticLeadingComment } = require("typescript");
 
@@ -124,8 +126,13 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 	}
 });
 
+// TODO: email vender and customer of successful purchase
+
+// TODO: add successful purchase to customer and vender history
+
+// TODO: add redirect for both successful purchase and failed purchase
+
 exports.shipOrderWithShippo = functions.https.onCall(async (data, context) => {
-	// get user address from checkout
 	const addressFrom = {
 		name: 'Ms Hippo',
 		company: 'Shippo',
@@ -138,6 +145,7 @@ exports.shipOrderWithShippo = functions.https.onCall(async (data, context) => {
 		email: 'support@goshippo.com',
 	};
 
+	// get user address from checkout
 	// example address_to object dict
 	const addressTo = {
 		name: 'Ms Hippo',
