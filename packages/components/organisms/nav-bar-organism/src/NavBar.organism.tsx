@@ -57,8 +57,18 @@ export const NavBar = ({
 				}`}>
 				{isSignedIn ? (
 					<div className='lg:hidden flex flex-col'>
-						<NavButton css='text-xl font-light -mb-3' color={'white'} label='view profile' onClick={() => onUserProfile()} />
-						<NavButton css='text-xl font-light' color={'white'} label='sign out' onClick={onSignOut} />
+						<NavButton
+							css='text-xl font-light -mb-3'
+							color='white'
+							label='view profile'
+							onClick={() => onUserProfile()}
+						/>
+						<NavButton
+							css='text-xl font-light'
+							color='white'
+							label='sign out'
+							onClick={onSignOut}
+						/>
 					</div>
 				) : (
 					<NavLink
