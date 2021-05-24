@@ -48,8 +48,8 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                 <h3 className='text-sm text-center font-medium'>Upload Image</h3>
                                 <div className='text-center'><Download /></div>
                             </div>
-                            <div className='lg:mx-5'>
-                                <div className='flex flex-row border-b-2 pb-2 my-2 lg:w-72 w-full font-lg font-light'><h3 className=''>Welcome </h3><h3 className='ml-1'>Dahlia</h3></div>
+                            <div className='mt-10 lg:mt-0 lg:mx-5'>
+                                <div className='flex flex-row border-b-2 pb-2 my-2 lg:w-72 w-full font-lg font-light'><h3 className=''>Welcome </h3><h3 className='capitalize ml-1'>{userData.fname}</h3></div>
                                 <div className='font-light italic text-sm mb-4'><h3>Thanks for shopping ethically!</h3></div>
                                 <div className='flex flex-col align-center'>
                                     <NavButton label='change email' color='white' bgColor='primary' css='mb-3' onClick={() => setRevealForm('email')}/>
