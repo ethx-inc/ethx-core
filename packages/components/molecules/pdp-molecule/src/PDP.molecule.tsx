@@ -2,6 +2,7 @@ import React, { FC, useContext } from 'react';
 import { PDPImage } from '../../../atoms/pdp-image-atom/src';
 import { PDPText } from '../../../atoms/pdp-text-atom/src';
 import { PDPAbout } from '../../../atoms/pdp-about-atom/src';
+import { PDPIngredient } from '../../../atoms/pdp-ingredient-atom/src'
 import { ButtonCTA } from '../../../atoms/button-cta/src';
 
 import { CartContext } from '../../../../services/context/cart-context';
@@ -28,9 +29,15 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 					productName={selectedItem.name}
 				/>
 				<PDPText fontColor='gray-500' />
+				<div className='flex m-auto justify-center w-full lg:w-1/5 lg:mt-8'>
+					<ButtonCTA title='add to cart' handleClick={() => onAddToCart()} />
+				</div>
 			</div>
-			<div className='flex relative mx-auto justify-center lg:w-1/5 lg:bottom-16 lg:right-16'>
-				<ButtonCTA title='add to cart' handleClick={() => onAddToCart()} />
+
+			<div>
+				<PDPIngredient 
+					fontColor='gray-500' 
+					productIL='Coming Soon!'/>
 			</div>
 			<div>
 				<PDPAbout
@@ -38,9 +45,6 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 					brandDetails={brandInfo ? brandInfo.description : null}
 					brandLogo={brandInfo ? brandInfo.img : null}
 				/>
-			</div>
-			<div className='mb-10 flex relative justify-center lg:w-1/5 lg:justify-start'>
-				<ButtonCTA title='shop all' color='gray-50' fontColor='gray-500' />
 			</div>
 		</div>
 	);
