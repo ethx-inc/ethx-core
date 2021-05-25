@@ -15,7 +15,7 @@ const SellPage: FC<SellPageProps> = ({
 	return (
 		<div className='mx-auto'>
 			<NavBarController />
-			<HeroText fontColor={'primary'} subtitle={'Launching Summer 2021'} title={'Seller Portal Coming Soon'} />
+			<HeroText fontColor={'white'} subtitle={'Launching Summer 2021'} title={'Seller Portal Coming Soon'} />
                 <div className='flex flex-col justify-center pt-20 w-full'>
                     <h4 className='text-lg text-primary font-medium text-center'>Submit your shop to be considered!</h4>
                     <NavLink label={'Ethx Merchant Application'} href={'https://docs.google.com/forms/d/1sM0MjJd8VO83919ObcpMGZHc2_YGT55zCNvAq-mkws0/edit?usp=drive_web'} css={'text-center'}/>
