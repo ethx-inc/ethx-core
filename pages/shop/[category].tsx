@@ -92,11 +92,11 @@ const ShopItemsPage: FC<ShopItemsProps> = ({}: ShopItemsProps) => {
                     }
                 </ItemCardGrid>
                 <div className='flex flex-row my-10 w-full sm:w-4/12 justify-around'>
-                    <NavButton label='Last' color='white' bgColor='primary' css={'w-24'} flip onClick={()=>prevPage(category)}>
-                        <MdKeyboardArrowLeft className='text-2xl mt-0.5'/>
+                    <NavButton label='Last' color='gray-500' bgColor='gray-50' css={'w-24 border-2 border-primary'} flip onClick={()=>prevPage(category)}>
+                        <MdKeyboardArrowLeft className='text-2xl mt-0.5 mr-1'/>
                     </NavButton>
-                    <NavButton label='Next' color='white' bgColor='primary' css={'w-24 justify-end'} onClick={()=>nextPage(category)}>
-                        <MdKeyboardArrowRight className='text-2xl mt-0.5'/>
+                    <NavButton label='Next' color='gray-500' bgColor='gray-50' css={'w-24 border-2 border-primary'} onClick={()=>nextPage(category)}>
+                        <MdKeyboardArrowRight className='text-2xl mt-0.5 ml-1'/>
                     </NavButton>
                 </div>
 			</MainContentContainer>

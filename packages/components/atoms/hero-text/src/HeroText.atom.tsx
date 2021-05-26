@@ -14,9 +14,9 @@ export const HeroText = ({
 	subtitle,
 }: HeroTextProps): JSX.Element => {
 	return (
-		<div className='text-left bg-hero-home bg-center bg-cover bg-no-repeat max-w-screen'>
+		<div className='text-left bg-hero-home bg-center bg-cover bg-no-repeat max-w-screen h-80 lg:h-96 -mt-1'>
 			<MainContentContainer>
-				<div className='py-40'>
+				<div className='pt-24 lg:pt-40'>
 					<h2 className='font-light ml-6 lg:ml-0 text-5xl text-white'>
 						{title}
 					</h2>

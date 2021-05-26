@@ -14,7 +14,7 @@ export const ButtonBrowse = ({
 	return (
 		<button
 			type='button'
-			className={`font-regular lowercase w-44 h-32 m-8 border-2 border-transparent hover:border-primary bg-gray-200 rounded-lg ${
+			className={`font-regular lowercase w-44 h-32 border-2 border-transparent hover:border-primary bg-gray-200 rounded-lg ${
 				fontColor ? `text-${fontColor}` : 'text-gray-500'
 			}`}
 			style={{ fontFamily: 'Roboto' }}

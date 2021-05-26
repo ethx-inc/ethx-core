@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface NavButtonProps {
 	label?: string;
-	color?: 'black' | 'gray-400' | 'white';
+	color?: 'black' | 'gray-400' | 'white' | 'gray-500';
 	bgColor?: 'white' | 'black' | 'gray-50' | 'primary' | 'secondary';
 	css?: string;
 	flip?: boolean;
