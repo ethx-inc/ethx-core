@@ -22,7 +22,7 @@ module.exports = {
 			'10r': '10rem',
 		},
 		backgroundImage: theme => ({
-			'hero-home': "url('/images/flipped-hero-image.jpg')",
+			'hero-home': "url('/images/ETHX-Header-Smile.jpg')",
 		}),
 	},
 	variants: {

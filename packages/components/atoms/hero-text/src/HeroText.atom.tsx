@@ -17,7 +17,7 @@ export const HeroText = ({
 		<div className='text-left bg-hero-home bg-center bg-cover bg-no-repeat max-w-screen'>
 			<MainContentContainer>
 				<div className='py-40'>
-					<h2 className='font-light ml-6 lg:ml-0 text-5xl text-primary'>
+					<h2 className='font-light ml-6 lg:ml-0 text-5xl text-white'>
 						{title}
 					</h2>
 					<h4
