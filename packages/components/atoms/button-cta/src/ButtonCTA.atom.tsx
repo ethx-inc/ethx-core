@@ -2,7 +2,6 @@ import React from 'react';
 
 export interface ButtonCTAProps {
 	borderColor?: string;
-	buttonLogo?: string;
 	title?: string;
 	color?: string;
 	fontColor?: string;
@@ -11,7 +10,6 @@ export interface ButtonCTAProps {
 
 export const ButtonCTA = ({
 	borderColor,
-	buttonLogo,
 	title,
 	color,
 	fontColor,

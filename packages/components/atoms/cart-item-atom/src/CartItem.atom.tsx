@@ -34,10 +34,10 @@ export const CartItem: FC<CartItemProps> = ({
 }: CartItemProps): JSX.Element => {
 	console.log(selectedColor);
 	return (
-		<div className='flex justify-between my-2 pb-4 lg:pb-1 border-b-2'>
-			<img src={images[0]} alt={name} className='rounded-lg w-28 my-2' />
+		<div className='grid grid-cols-3 my-2 pb-4 lg:pb-1 border-b-2 h-40'>
+			<img src={images[0]} alt={name} className='rounded-lg max-w-28 h-32 m-auto' />
 
-			<div className='flex flex-col -ml-6 md:-ml-80 lg:-ml-16 justify-between lg:flex-row '>
+			<div className='grid grid-col justify-between w-full ml-4 lg:mx-4'>
 				<div className='flex flex-col text-xs mt-4 items-start'>
 					<h3 className='text-sm capitalize font-bold leading-3'>
 						{brandInfo ? brandInfo.name : null}
@@ -60,7 +60,7 @@ export const CartItem: FC<CartItemProps> = ({
 						<h3 className='ml-1'>{quantity}</h3>
 					</div>
 				</div>
-				<div className='quantity-pill flex flex-col lg:mx-10 mt-2 lg:mt-4 lg:mb-0'>
+				<div className='quantity-pill flex flex-col mt-2 lg:my-2'>
 					<QuantityPill
 						quantity={quantity}
 						onIncrease={() => onIncrease()}
