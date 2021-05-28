@@ -5,6 +5,18 @@ const { v4: uuidv4 } = require('uuid');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
+const axios = require('axios');
+
+const URL =
+	'https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING';
+const accessToken = 'shippo_test_0409678586dd9b81acb7a493034612c50dc243bf';
+// const ORDERSENDPOINT = 'https://api.goshippo.com/orders/';
+const clientId = process.env.CLIENT_ID;
+const randomString = Math.random()
+	.toString(36)
+	.replace(/[^a-z]+/g, '')
+	.substr(0, 5);
+
 // const { addSyntheticLeadingComment } = require("typescript");
 
 // // Create and Deploy Your First Cloud Functions
@@ -164,4 +176,23 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 	} catch (err) {
 		return null;
 	}
+});
+
+// Sending user to onboard Shippo
+exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
+	axios
+		.get(URL, {
+			headers: {
+				Authorization: `ShippoToken ${accessToken}`,
+				client_id: `${clientId}`,
+				scope: '*',
+				state: `${randomString}`,
+			},
+		})
+		.then(res => {
+			return res.config.url;
+		})
+		.catch(error => {
+			console.error(error);
+		});
 });

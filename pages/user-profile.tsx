@@ -6,7 +6,7 @@ import {Download} from '../packages/components/atoms/download-atom/src';
 
 import {ChangeEmailFormController} from '../packages/controllers/change-email-form-controller/ChangeEmailFormController'
 
-import { onboardVendor } from  '../packages/services/firebase/firebase.utils';
+import { onboardVendor, shippoOnboarding } from  '../packages/services/firebase/firebase.utils';
 
 import { useRouter } from 'next/router';
 
@@ -60,6 +60,14 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                         color='white' 
                                         bgColor='primary' 
                                         onClick={() => onboardVendor().then(obj => router.push(obj.data.url))}
+                                    /> : 
+                                    null}
+                                    {userData.isVendor ? 
+                                    <NavButton 
+                                        label='set up shipping' 
+                                        color='white' 
+                                        bgColor='primary' 
+                                        onClick={() => shippoOnboarding().then(url => console.log(url))}
                                     /> : 
                                     null}
                                 </div>

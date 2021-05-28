@@ -104,6 +104,10 @@ export const createStripeCheckout = data =>
 export const onboardVendor = () =>
 	firebase.functions().httpsCallable('onboardVendor')();
 
+	export const shippoOnboarding = () =>
+firebase.functions().httpsCallable('shippoOnboarding')();
+
+
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = (callback?) => {
