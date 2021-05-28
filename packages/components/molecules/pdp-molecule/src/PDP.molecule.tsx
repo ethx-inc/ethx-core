@@ -10,12 +10,15 @@ import { CartContext } from '../../../../services/context/cart-context';
 export interface PDPMoleculeProps {
 	fontColor?;
 	onAddToCart?;
+	ingredients?;
 	/* Props here */
 }
 
 export const PDPMolecule: FC<PDPMoleculeProps> = ({
 	fontColor,
 	onAddToCart,
+	ingredients,
+
 }: PDPMoleculeProps) => {
 	const { cartData, setCartData } = useContext(CartContext);
 	const { items, selectedItem } = cartData;
@@ -37,7 +40,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 			<div>
 				<PDPIngredient 
 					fontColor='gray-500' 
-					productIL='Coming Soon!'/>
+					productIL={ingredients}/>
 			</div>
 			<div>
 				<PDPAbout

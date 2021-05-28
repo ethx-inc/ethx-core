@@ -8,6 +8,9 @@ import { NavBarController } from '../packages/controllers/navbar-controller/NavB
 import { CartContext } from '../packages/services/context/cart-context';
 import { createStripeCheckout } from '../packages/services/firebase/firebase.utils';
 
+import { CartEmpty } from '../packages/components/atoms/cart-empty-atom/src';
+
+
 const Cart: FC = () => {
 	const { cartData } = useContext(CartContext);
 	const { items } = cartData;
@@ -31,9 +34,13 @@ const Cart: FC = () => {
 	return (
 		<div>
 			<NavBarController />
-			<MainContentContainer css='flex flex-col lg:flex-row lg:justify-center h-5/6'>
-				<CartSummary />
-				<CartCheckout onClick={() => makePurchase(items)} />
+			<MainContentContainer>
+			{ Object.keys(items).length > 0 ?	
+				<div className='flex flex-col lg:flex-row lg:justify-center h-5/6'>		
+					<CartSummary />
+					<CartCheckout onClick={() => makePurchase(items)} />
+				</div>	 
+			: <CartEmpty /> }
 			</MainContentContainer>
 		</div>
 	);
