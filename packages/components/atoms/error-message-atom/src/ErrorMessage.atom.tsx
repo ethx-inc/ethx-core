@@ -1,17 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
+
 import { NavLink } from '../../nav-link-atom/src';
 
-export interface CartEmptyProps {}
-
-export const CartEmpty: FC<CartEmptyProps> = (): JSX.Element => {
+export const ErrorMessage = (): JSX.Element => {
 	return (
 		<div className='flex flex-col mt-16'>
-			<h4 className='font-light text-primary text-3xl text-center'>
+			<h4 className='font-light text-5xl text-primary text-center'> 404</h4>
+			<h4 className='font-medium text-primary text-2xl text-center mb-6'>
 				{' '}
-				Your basket is empty.
-			</h4>
-			<h4 className='text-center text-sm text-primary font-light italic mb-6'>
-				Thanks for shopping ethically!{' '}
+				We all get lost sometimes!
 			</h4>
 			<NavLink
 				label='shop all'

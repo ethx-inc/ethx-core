@@ -5,7 +5,7 @@ import Link from 'next/link';
 export interface NavLinkProps {
 	label: string;
 	href: string;
-	color?: 'black' | 'gray-400' | 'white';
+	color?: 'black' | 'gray-400' | 'white' | 'gray-500';
 	css?;
 }
 
