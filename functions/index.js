@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
-const axios = require('axios');
 
 const URL =
 	'https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING';
@@ -18,7 +17,7 @@ const randomString = Math.random()
 	.substr(0, 5);
 const fetch = require('node-fetch');
 
-const { addSyntheticLeadingComment } = require("typescript");
+// const { addSyntheticLeadingComment } = require('typescript');
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -181,33 +180,15 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 
 // Sending user to onboard Shippo
 exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
+	const response = await fetch(URL, {
+		method: 'Get',
+		headers: {
+			Authorization: `ShippoToken ${accessToken}`,
+			client_id: `${clientId}`,
+			scope: '*',
+			state: `${randomString}`,
+		},
+	});
 
-
-		// 	function getUrl()
-		// {
-		// 	return fetch(URL, {
-		// 		method: 'Get',
-		// 		headers: {
-		// 			Authorization: `ShippoToken ${accessToken}`,
-		// 			client_id: `${clientId}`,
-		// 			scope: '*',
-		// 			state: `${randomString}`,
-		// 		}
-		// 	}).then(response =>{
-		// 		const site = response.url;
-		// 		try{
-		// 			return {url: site}
-		// 		}catch (err) {
-		// 			return null;
-		// 		}
-		// 	}).catch(function(err) {
-		// 		console.info(err + " url: " + url);
-		// 	});
-			
-		// }
-
-		// return getUrl();
-
-		
-
+	return response;
 });

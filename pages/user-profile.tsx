@@ -67,10 +67,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                         label='set up' 
                                         color='white' 
                                         bgColor='primary' 
-                                        onClick={() => {
-                                            router.push("https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING");
-                                            // shippoOnboarding().then(obj => console.log(obj))
-                                        }}
+                                        onClick={() => router.push("https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING")}
                                     /> : 
                                     null}
                                 </div>
