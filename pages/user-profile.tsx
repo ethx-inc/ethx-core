@@ -64,10 +64,13 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                     null}
                                     {userData.isVendor ? 
                                     <NavButton 
-                                        label='set up shipping' 
+                                        label='set up' 
                                         color='white' 
                                         bgColor='primary' 
-                                        onClick={() => shippoOnboarding().then(url => console.log(url))}
+                                        onClick={() => {
+                                            router.push("https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING");
+                                            // shippoOnboarding().then(obj => console.log(obj))
+                                        }}
                                     /> : 
                                     null}
                                 </div>

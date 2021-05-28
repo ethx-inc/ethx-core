@@ -16,12 +16,13 @@ const randomString = Math.random()
 	.toString(36)
 	.replace(/[^a-z]+/g, '')
 	.substr(0, 5);
+const fetch = require('node-fetch');
 
-// const { addSyntheticLeadingComment } = require("typescript");
+const { addSyntheticLeadingComment } = require("typescript");
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
+// Create and Deploy Your First Cloud Functions
+// https://firebase.google.com/docs/functions/write-firebase-functions
+
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
@@ -180,19 +181,33 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 
 // Sending user to onboard Shippo
 exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
-	axios
-		.get(URL, {
-			headers: {
-				Authorization: `ShippoToken ${accessToken}`,
-				client_id: `${clientId}`,
-				scope: '*',
-				state: `${randomString}`,
-			},
-		})
-		.then(res => {
-			return res.config.url;
-		})
-		.catch(error => {
-			console.error(error);
-		});
+
+
+		// 	function getUrl()
+		// {
+		// 	return fetch(URL, {
+		// 		method: 'Get',
+		// 		headers: {
+		// 			Authorization: `ShippoToken ${accessToken}`,
+		// 			client_id: `${clientId}`,
+		// 			scope: '*',
+		// 			state: `${randomString}`,
+		// 		}
+		// 	}).then(response =>{
+		// 		const site = response.url;
+		// 		try{
+		// 			return {url: site}
+		// 		}catch (err) {
+		// 			return null;
+		// 		}
+		// 	}).catch(function(err) {
+		// 		console.info(err + " url: " + url);
+		// 	});
+			
+		// }
+
+		// return getUrl();
+
+		
+
 });
