@@ -23,5 +23,5 @@ export const PDPMoleculeController: FC = () => {
 		router.back();
 	}
 
-	return <PDPMolecule onAddToCart={() => onAddToCart()} />;
+	return <PDPMolecule onAddToCart={() => onAddToCart()} ingredients={selectedItem.ingredients}/>;
 };

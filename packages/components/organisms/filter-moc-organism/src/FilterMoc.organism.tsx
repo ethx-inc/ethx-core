@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { CategoryListController } from '../../../../controllers/category-list-controller/CategoryListController';
-import { ButtonCTA } from '../../../atoms/button-cta/src';
+import { GoButtonController } from '../../../../controllers/go-button-controller/GoButtonController';
 
 export interface FilterMocProps {}
 
@@ -15,7 +15,7 @@ export const FilterMoc = (): JSX.Element => {
 					<CategoryListController />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-					<ButtonCTA title='go' handleClick={() => null} />
+					<GoButtonController  />
 				</div>
 			</div>
 		</div>

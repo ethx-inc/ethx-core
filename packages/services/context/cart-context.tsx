@@ -23,6 +23,7 @@ export type CartItem = {
 	colors?: string[];
 	selectedColor?: number;
 	images: string[];
+	ingredients: string;
 };
 
 export type CartData = {
