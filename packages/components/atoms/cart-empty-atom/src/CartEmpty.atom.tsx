@@ -16,17 +16,17 @@ export const CartEmpty: FC<CartEmptyProps> = (): JSX.Element => {
 			<NavLink
 				label='shop all'
 				href='/shop'
-				css='text-center font-bold border-2 rounded-full border-primary bg-gray-50 w-1/5 py-2 mx-auto mb-3'
-			/>
-			<NavLink
-				label='merchant application'
-				href='https://forms.gle/PZPe967F9HRHh18u7'
-				css='text-center font-bold border-2 rounded-full border-primary bg-gray-50 w-1/5 py-2 mx-auto mb-3'
+				css='text-center font-bold border-2 rounded-full border-primary bg-primary lg:bg-gray-50 w-3/5 lg:w-1/5 py-2 mx-auto mb-3'
 			/>
 			<NavLink
 				label='home'
 				href='/'
-				css='text-center font-bold border-2 rounded-full border-primary bg-gray-50 w-1/5 py-2 mx-auto mb-4'
+				css='text-center font-bold border-2 rounded-full border-primary bg-primary lg:bg-gray-50 w-3/5 lg:w-1/5 py-2 mx-auto mb-3'
+			/>
+			<NavLink
+				label='merchant application'
+				href='https://forms.gle/PZPe967F9HRHh18u7'
+				css='text-center font-bold border-2 rounded-full border-primary bg-primary lg:bg-gray-50 w-3/5 lg:w-1/5 py-2 mx-auto mb-3'
 			/>
 		</div>
 	);
