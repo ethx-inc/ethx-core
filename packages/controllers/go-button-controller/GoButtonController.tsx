@@ -11,7 +11,10 @@ export const GoButtonController: FC = () => {
 	const { filterData, setFilterData } = useContext(FilterContext);
 
 	async function handleClick() {
-		const { items, firstItem, lastItem } = await nextPageInQuery(filterData.category, filterData.selectedEthx);
+		const { items, firstItem, lastItem } = await nextPageInQuery(
+			filterData.category,
+			filterData.selectedEthx,
+		);
 		setFilterData({
 			...filterData,
 			items,

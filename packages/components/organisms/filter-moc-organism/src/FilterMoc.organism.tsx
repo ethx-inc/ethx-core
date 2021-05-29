@@ -15,7 +15,7 @@ export const FilterMoc = (): JSX.Element => {
 					<CategoryListController />
 				</div>
 				<div className='flex mx-auto justify-center w-40 my-3'>
-					<GoButtonController  />
+					<GoButtonController />
 				</div>
 			</div>
 		</div>

@@ -1,15 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
+
 import { NavLink } from '../../nav-link-atom/src';
 
-export interface ErrorMessageProps {}
-
-export const ErrorMessage = ({}: ErrorMessageProps): JSX.Element => {
+export const ErrorMessage = (): JSX.Element => {
 	return (
 		<div className='flex flex-col mt-16'>
-			<h4 className='font-light text-5xl text-primary text-center'>
-				{' '}
-				404
-			</h4>
+			<h4 className='font-light text-5xl text-primary text-center'> 404</h4>
 			<h4 className='font-medium text-primary text-2xl text-center mb-6'>
 				{' '}
 				We all get lost sometimes!

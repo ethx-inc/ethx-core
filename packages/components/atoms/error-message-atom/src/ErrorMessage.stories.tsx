@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { ErrorMessage, ErrorMessageProps } from './ErrorMessage.atom';
+import { ErrorMessage } from './ErrorMessage.atom';
 
 export default {
 	title: 'Atom/ErrorMessage',
@@ -11,7 +11,7 @@ export default {
 	},
 } as Meta;
 
-const Template: Story<ErrorMessageProps> = args => <ErrorMessage {...args} />;
+const Template: Story = args => <ErrorMessage {...args} />;
 
 export const Base = Template.bind({});
 

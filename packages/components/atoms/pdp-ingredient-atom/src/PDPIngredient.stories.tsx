@@ -8,15 +8,10 @@ import { PDPIngredient, PDPIngredientProps } from './PDPIngredient.atom';
 export default {
 	title: 'Atom/PDPIngredient' /* Title of the component  */,
 	component: PDPIngredient /* component */,
-	argTypes: {
-
-	},
+	argTypes: {},
 } as Meta;
 
 const Template: Story<PDPIngredientProps> = args => <PDPIngredient {...args} />;
 
 export const Base = Template.bind({});
-Base.args = {
-
-};
-
+Base.args = {};
