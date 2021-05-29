@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+// export enum ethxCategory {
+// 	makeup,
+// 	hairCare,
+// 	skinCare,
+// 	selfCare,
+// 	sunCare,
+// 	personalCare,
+// 	bath,
+// 	fragrance,
+// }
 
 // the data we will be storing and manipulating
-export type FilterData = {
+export interface FilterData {
 	category: string;
 	selectedEthx: string[];
 	preferredEthx: string[];
 	items;
 	firstItem?;
 	lastItem?;
-};
+}
 
 export type FilterProps = {
 	// access point to the data
@@ -27,7 +38,7 @@ export const FilterContext = React.createContext<FilterProps>({
 		firstItem: null,
 		lastItem: null,
 	},
-	setFilterData: filter => console.warn('no login provider'),
+	setFilterData: () => console.warn('no login provider'),
 });
 
 export interface FilterProviderProps {

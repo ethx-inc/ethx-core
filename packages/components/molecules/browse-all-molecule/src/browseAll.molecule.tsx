@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+
 import { ButtonBrowse } from '../../../atoms/browse-button-atom/src';
 
 export interface BrowseAllProps {
@@ -12,7 +13,10 @@ export const BrowseAll: FC<BrowseAllProps> = ({
 	onClick,
 }: BrowseAllProps) => {
 	return (
-		<div id='browseall' className='grid gap-6 grid-cols-2 lg:grid-cols-4 mx-auto my-10'>
+		<div
+			id='browseall'
+			className='grid gap-6 grid-cols-2 lg:grid-cols-4 mx-auto my-10'>
+			{/* TODO: pull the list of categories from DB */}
 			<div id='makeup'>
 				<ButtonBrowse title='makeup' onClick={() => onClick('makeup')} />
 			</div>

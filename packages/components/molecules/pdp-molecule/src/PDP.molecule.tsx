@@ -1,21 +1,23 @@
 import React, { FC, useContext } from 'react';
-import { PDPImage } from '../../../atoms/pdp-image-atom/src';
-import { PDPText } from '../../../atoms/pdp-text-atom/src';
-import { PDPAbout } from '../../../atoms/pdp-about-atom/src';
-import { PDPIngredient } from '../../../atoms/pdp-ingredient-atom/src'
-import { ButtonCTA } from '../../../atoms/button-cta/src';
 
 import { CartContext } from '../../../../services/context/cart-context';
+import { ButtonCTA } from '../../../atoms/button-cta/src';
+import { PDPAbout } from '../../../atoms/pdp-about-atom/src';
+import { PDPImage } from '../../../atoms/pdp-image-atom/src';
+import { PDPIngredient } from '../../../atoms/pdp-ingredient-atom/src';
+import { PDPText } from '../../../atoms/pdp-text-atom/src';
 
 export interface PDPMoleculeProps {
 	fontColor?;
 	onAddToCart?;
+	ingredients?;
 	/* Props here */
 }
 
 export const PDPMolecule: FC<PDPMoleculeProps> = ({
 	fontColor,
 	onAddToCart,
+	ingredients,
 }: PDPMoleculeProps) => {
 	const { cartData, setCartData } = useContext(CartContext);
 	const { items, selectedItem } = cartData;
@@ -35,9 +37,7 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 			</div>
 
 			<div>
-				<PDPIngredient 
-					fontColor='gray-500' 
-					productIL='Coming Soon!'/>
+				<PDPIngredient fontColor='gray-500' productIL={ingredients} />
 			</div>
 			<div>
 				<PDPAbout

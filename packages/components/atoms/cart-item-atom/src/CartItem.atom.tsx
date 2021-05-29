@@ -35,7 +35,11 @@ export const CartItem: FC<CartItemProps> = ({
 	console.log(selectedColor);
 	return (
 		<div className='grid grid-cols-3 my-2 pb-4 lg:pb-1 border-b-2 h-40'>
-			<img src={images[0]} alt={name} className='rounded-lg max-w-28 h-32 m-auto' />
+			<img
+				src={images[0]}
+				alt={name}
+				className='rounded-lg max-w-28 h-32 m-auto'
+			/>
 
 			<div className='grid grid-col justify-between w-full ml-4 lg:mx-4'>
 				<div className='flex flex-col text-xs mt-4 items-start'>
