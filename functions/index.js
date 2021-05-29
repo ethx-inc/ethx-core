@@ -8,7 +8,7 @@ const stripeInst = stripe(functions.config().stripe.secret_key);
 
 const URL =
 	'https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING';
-const accessToken = 'shippo_test_0409678586dd9b81acb7a493034612c50dc243bf';
+const accessToken = process.env.SHIPPO_TOKEN;
 // const ORDERSENDPOINT = 'https://api.goshippo.com/orders/';
 const clientId = process.env.CLIENT_ID;
 const randomString = Math.random()
@@ -16,6 +16,7 @@ const randomString = Math.random()
 	.replace(/[^a-z]+/g, '')
 	.substr(0, 5);
 const fetch = require('node-fetch');
+const { url } = require('node:inspector');
 
 // const { addSyntheticLeadingComment } = require('typescript');
 

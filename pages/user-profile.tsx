@@ -15,6 +15,7 @@ import {
 } from '../packages/services/firebase/firebase.utils';
 
 import {UserContext} from '../packages/services/context/user-context';
+import { getRouteMatcher } from 'next/dist/next-server/lib/router/utils';
 
 
 
@@ -67,7 +68,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                         label='set up' 
                                         color='white' 
                                         bgColor='primary' 
-                                        onClick={() => router.push("https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING")}
+                                        onClick={() => router.push(`https://goshippo.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=*&state=${userData.uid}`)}
                                     /> : 
                                     null}
                                 </div>
@@ -81,5 +82,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
         </div>
 	);
 };
+
+//                                        onClick={() => router.push(`https://goshippo.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=*&state=${userData.uid}`)}
 
 export default UserProflePage
