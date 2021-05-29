@@ -5,11 +5,24 @@ const { v4: uuidv4 } = require('uuid');
 
 const admin = Admin.initializeApp();
 const stripeInst = stripe(functions.config().stripe.secret_key);
-// const { addSyntheticLeadingComment } = require("typescript");
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
+const URL =
+	'https://goshippo.com/oauth/authorize?response_type=code&client_id=YOUR_PARTNER_ID&scope=*&state=YOUR_RANDOM_STRING';
+const accessToken = process.env.SHIPPO_TOKEN;
+// const ORDERSENDPOINT = 'https://api.goshippo.com/orders/';
+const clientId = process.env.CLIENT_ID;
+const randomString = Math.random()
+	.toString(36)
+	.replace(/[^a-z]+/g, '')
+	.substr(0, 5);
+const fetch = require('node-fetch');
+const { url } = require('node:inspector');
+
+// const { addSyntheticLeadingComment } = require('typescript');
+
+// Create and Deploy Your First Cloud Functions
+// https://firebase.google.com/docs/functions/write-firebase-functions
+
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
@@ -164,4 +177,19 @@ exports.onboardVendor = functions.https.onCall(async (data, context) => {
 	} catch (err) {
 		return null;
 	}
+});
+
+// Sending user to onboard Shippo
+exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
+	const response = await fetch(URL, {
+		method: 'Get',
+		headers: {
+			Authorization: `ShippoToken ${accessToken}`,
+			client_id: `${clientId}`,
+			scope: '*',
+			state: `${randomString}`,
+		},
+	});
+
+	return response;
 });

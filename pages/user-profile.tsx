@@ -6,7 +6,7 @@ import {Download} from '../packages/components/atoms/download-atom/src';
 
 import {ChangeEmailFormController} from '../packages/controllers/change-email-form-controller/ChangeEmailFormController'
 
-import { onboardVendor } from  '../packages/services/firebase/firebase.utils';
+import { onboardVendor, shippoOnboarding } from  '../packages/services/firebase/firebase.utils';
 
 import { useRouter } from 'next/router';
 
@@ -15,6 +15,7 @@ import {
 } from '../packages/services/firebase/firebase.utils';
 
 import {UserContext} from '../packages/services/context/user-context';
+import { getRouteMatcher } from 'next/dist/next-server/lib/router/utils';
 
 
 
@@ -62,6 +63,14 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
                                         onClick={() => onboardVendor().then(obj => router.push(obj.data.url))}
                                     /> : 
                                     null}
+                                    {userData.isVendor ? 
+                                    <NavButton 
+                                        label='set up' 
+                                        color='white' 
+                                        bgColor='primary' 
+                                        onClick={() => router.push(`https://goshippo.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=*&state=${userData.uid}`)}
+                                    /> : 
+                                    null}
                                 </div>
                             </div>
                         </div>
@@ -73,5 +82,7 @@ const UserProflePage: FC<UserProfileProps> = ({isSignUp, userName}: UserProfileP
         </div>
 	);
 };
+
+//                                        onClick={() => router.push(`https://goshippo.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=*&state=${userData.uid}`)}
 
 export default UserProflePage
