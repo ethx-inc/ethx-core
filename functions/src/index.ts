@@ -1,10 +1,19 @@
 // TODO: refactor imports to lazy load imports that are not needed in at lease 2 or more cloud functions
-const functions = require('firebase-functions');
-const stripe = require('stripe');
+
+import { auth, config, firestore, https } from 'firebase-functions';
+import { Stripe } from 'stripe';
+
+// const functions = require('firebase-functions');
+// const stripe = require('stripe');
 const Admin = require('firebase-admin');
 
 const admin = Admin.initializeApp();
-const stripeInst = stripe(functions.config().stripe.secret_key);
+
+const stripeConfig: Stripe.StripeConfig = {
+	apiVersion: '2020-08-27',
+};
+
+const stripeInst = new Stripe(config().stripe.secret_key, stripeConfig);
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -14,7 +23,7 @@ const stripeInst = stripe(functions.config().stripe.secret_key);
 //   response.send("Hello from Firebase!");
 // });
 
-exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
+exports.createStripeCustomer = auth.user().onCreate(async user => {
 	const customer = await stripeInst.customers.create({ email: user.email });
 	return admin
 		.firestore()
@@ -23,7 +32,7 @@ exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
 		.set({ customer_id: customer.id });
 });
 
-const getCustomerId = async userId => {
+const getCustomerId = async (userId: string) => {
 	const snapShot = await admin
 		.firestore()
 		.collection('stripe_customers')
@@ -32,16 +41,17 @@ const getCustomerId = async userId => {
 	return snapShot.data().customer_id;
 };
 
-exports.addPaymentSource = functions.firestore
+exports.addPaymentSource = firestore
 	.document('/stripe_customers/{userId}/tokens/{autoId}')
 	.onWrite(async (change, context) => {
 		const data = change.after.data();
+		let token;
 		if (data === null) {
 			return null;
 		}
-		const { token } = data;
+		data ? ({ token } = data) : null;
 		const customer = getCustomerId(context.params.userId);
-		const response = await stripe.customers.createSource(customer, {
+		const response = await Stripe.CustomersResource.createSource(customer, {
 			source: token,
 		});
 		return admin
@@ -53,7 +63,7 @@ exports.addPaymentSource = functions.firestore
 			.set(response, { merge: true });
 	});
 
-const convertValue = num => {
+const convertValue = (num: number) => {
 	const remainder = (num % 1).toFixed(2) * 100;
 	const wholeValue = Math.floor(num);
 	if (remainder === 0) {
@@ -64,7 +74,7 @@ const convertValue = num => {
 	return Number(numString + remainderString);
 };
 
-const createTransferMap = data => {
+const createTransferMap = (data: Record<string, unknown>) => {
 	const connectedAccountIdToTotal = {};
 	const keys = Object.keys(data);
 
@@ -82,7 +92,10 @@ const createTransferMap = data => {
 	return connectedAccountIdToTotal;
 };
 
-const createTransferGroup = async (transferMap, transferGroupId) => {
+const createTransferGroup = async (
+	transferMap: Record<string, number>,
+	transferGroupId: unknown,
+) => {
 	const keys = Object.keys(transferMap);
 	keys.forEach(connectedAccountId => {
 		const totalAmount = convertValue(transferMap[connectedAccountId]);
@@ -99,15 +112,15 @@ const createTransferGroup = async (transferMap, transferGroupId) => {
 };
 
 // create a checkout
-exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
-	const items = [];
+exports.createStripeCheckout = https.onCall(async (data, context) => {
+	const items: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
 	const keys = Object.keys(data);
 
 	keys.forEach(key => {
 		const item = data[key];
 		const price = item.prices[item.selectedSize];
 		const convertedPrice = convertValue(price);
-		const newItem = {
+		const newItem: Stripe.Checkout.SessionCreateParams.LineItem = {
 			quantity: item.quantity,
 			price_data: {
 				currency: 'usd',
@@ -123,8 +136,8 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	});
 	const transferMap = createTransferMap(data);
 	// dynamically importing to reduce global imports
-	const { v4: uuidv4 } = await import('uuid');
-	const transferGroupId = uuidv4();
+	const { v4: uuid_v4 } = await import('uuid');
+	const transferGroupId = uuid_v4();
 	// actually where session is created
 	const session = await stripeInst.checkout.sessions.create({
 		payment_method_types: ['card'],
@@ -145,26 +158,22 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 	};
 });
 // end of create session
-const generateAccountLink = accountID => {
-	return stripeInst.accountLinks
-		.create({
+
+exports.venderStripeOnBoarding = https.onCall(async (data, context) => {
+	const generateAccountLink = async (accountID: string) => {
+		const link = await stripeInst.accountLinks.create({
 			type: 'account_onboarding',
 			account: accountID,
 			refresh_url: 'https://ethx.vercel.app/user-profile',
 			return_url: 'https://ethx.vercel.app/success/onboarding-success',
-		})
-		.then(link => link.url);
-};
+		});
 
-exports.onboardVendor = functions.https.onCall(async (data, context) => {
-	try {
-		const account = await stripeInst.accounts.create({ type: 'express' });
+		return link ? link.url : null;
+	};
 
-		const accountLinkURL = await generateAccountLink(account.id);
-		return { url: accountLinkURL, accountId: account.id };
-	} catch (err) {
-		return null;
-	}
+	const account = await stripeInst.accounts.create({ type: 'express' });
+	const accountLinkURL = account ? await generateAccountLink(account.id) : null;
+	return accountLinkURL ? { url: accountLinkURL, accountId: account.id } : null;
 });
 
 // Sending user to onboard Shippo
