@@ -23,7 +23,7 @@ const HomePage: FC<HomeProps> = ({
 
     let testimonials = [
         {name:'Ruby Dove, Founder' , quote:'Welcome! We appreciate your patience as we work to create a platform that facilitates a simple & meaningful experience.', 
-		  img:'https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg', id: 0},
+		id: 0},
 
     ];
 
@@ -38,6 +38,7 @@ const HomePage: FC<HomeProps> = ({
 				<FilterMoc />
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
+			<div className='bg-primary text-center text-sm lg:text-lg text-light text-white py-2 px-4'>Need Help? Contact us at <span className='cursor-pointer underline'>support@ethx.shop</span> for a response within 48 hours!</div>
 
 		</div>
 	);
