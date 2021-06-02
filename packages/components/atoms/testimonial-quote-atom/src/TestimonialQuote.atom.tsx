@@ -24,7 +24,7 @@ export const TestimonialQuote: FC<TestimonialQuoteProps> = ({
 	return (
 		<div
 			className={`relative flex flex-col justify-center 
-          md:w-52 lg:w-96 mx-auto md:mb-2 
+          md:w-52 lg:w-1/2 mx-auto md:mb-2 
             mb-1 items-center py-1 px-3 ${bgColor ? `bg-${bgColor}` : ''}`}>
 			<span className={`text-${quoteColor} text-xl self-start font-serif`}>
 				<ImQuotesLeft />
