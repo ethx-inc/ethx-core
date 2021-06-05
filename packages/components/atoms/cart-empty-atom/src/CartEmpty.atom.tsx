@@ -25,7 +25,7 @@ export const CartEmpty: FC<CartEmptyProps> = (): JSX.Element => {
 			/>
 			<NavLink
 				label='merchant application'
-				href='https://forms.gle/PZPe967F9HRHh18u7'
+				href='https://forms.gle/Ar2dVFhdR1CVfbRd9'
 				css='text-center font-bold border-2 rounded-full border-primary bg-primary lg:bg-gray-50 w-3/5 lg:w-1/5 py-2 mx-auto mb-3'
 			/>
 		</div>
