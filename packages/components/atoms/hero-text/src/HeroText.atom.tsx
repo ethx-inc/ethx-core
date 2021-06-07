@@ -21,7 +21,7 @@ export const HeroText = ({
 						{title}
 					</h2>
 					<h4
-						className={`font-regular ml-6 lg:ml-0 w-2/5 mt-2 lg:mt-0 text-sm lg:text-lg text-${fontColor}`}>
+						className={`font-regular leading-tight ml-6 lg:ml-0 w-2/5 mt-2 lg:mt-0 text-sm lg:text-lg text-${fontColor}`}>
 						{' '}
 						{subtitle}
 					</h4>

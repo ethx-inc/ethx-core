@@ -104,11 +104,6 @@ export const createStripeCheckout = data =>
 export const onboardVendor = () =>
 	firebase.functions().httpsCallable('onboardVendor')();
 
-	export const shippoOnboarding = () =>
-firebase.functions().httpsCallable('shippoOnboarding')();
-
-// export const pushOrders = () =>
-// 	firebase.functions().httpsCallable('pushOrders')();
 
 
 const provider = new firebase.auth.GoogleAuthProvider();
