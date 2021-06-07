@@ -77,8 +77,4 @@ const UserProflePage: FC<UserProfileProps> = ({
 	);
 };
 
-
-
-
 export default UserProflePage;
-
