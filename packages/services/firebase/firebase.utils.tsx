@@ -44,7 +44,7 @@ export const createUserProfileDoc = async (
 	}
 	const data = { fname, lname, ...additionalData };
 
-	const userRef = firestoreDb.doc(`users/${userAuth.uid}`);
+	const userRef = firestoreDb.doc(`Users/${userAuth.uid}`);
 	// get whatever data is located at reference
 	const snapShot = await userRef.get();
 	// checks if the user doesn't exist
@@ -106,6 +106,9 @@ export const onboardVendor = () =>
 
 	export const shippoOnboarding = () =>
 firebase.functions().httpsCallable('shippoOnboarding')();
+
+// export const pushOrders = () =>
+// 	firebase.functions().httpsCallable('pushOrders')();
 
 
 const provider = new firebase.auth.GoogleAuthProvider();

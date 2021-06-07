@@ -16,7 +16,6 @@ const randomString = Math.random()
 	.replace(/[^a-z]+/g, '')
 	.substr(0, 5);
 const fetch = require('node-fetch');
-const { url } = require('node:inspector');
 
 // const { addSyntheticLeadingComment } = require('typescript');
 
@@ -156,6 +155,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
 		id: session.id,
 	};
 });
+
 // end of create session
 const generateAccountLink = accountID => {
 	return stripeInst.accountLinks
@@ -193,3 +193,13 @@ exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
 
 	return response;
 });
+
+exports.customerOrders = functions.auth.user().onCreate(async user => {
+	const orders = await stripeInst.orders.retrieve({ email: user.email });
+	return admin
+		.firestore()
+		.collection('stripe_customers')
+		.doc(user.uid)
+		.set({ order_id: orders.id });
+});
+

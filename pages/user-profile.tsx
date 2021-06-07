@@ -6,7 +6,7 @@ import {Download} from '../packages/components/atoms/download-atom/src';
 
 import {ChangeEmailFormController} from '../packages/controllers/change-email-form-controller/ChangeEmailFormController'
 
-import { onboardVendor, shippoOnboarding } from  '../packages/services/firebase/firebase.utils';
+import { onboardVendor, shippoOnboarding} from  '../packages/services/firebase/firebase.utils';
 
 import { useRouter } from 'next/router';
 
