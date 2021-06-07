@@ -17,6 +17,7 @@ const randomString = Math.random()
 	.substr(0, 5);
 const fetch = require('node-fetch');
 
+
 // const { addSyntheticLeadingComment } = require('typescript');
 
 // Create and Deploy Your First Cloud Functions
@@ -192,14 +193,5 @@ exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
 	});
 
 	return response;
-});
-
-exports.customerOrders = functions.auth.user().onCreate(async user => {
-	const orders = await stripeInst.orders.retrieve({ email: user.email });
-	return admin
-		.firestore()
-		.collection('stripe_customers')
-		.doc(user.uid)
-		.set({ order_id: orders.id });
 });
 
