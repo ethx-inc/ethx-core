@@ -21,3 +21,4 @@ const OnboardingSuccess: FC<OnboardingSuccessProps> = ({
 }
 
 export default OnboardingSuccess;
+//Works
