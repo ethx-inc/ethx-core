@@ -17,7 +17,6 @@ const randomString = Math.random()
 	.substr(0, 5);
 const fetch = require('node-fetch');
 
-
 // const { addSyntheticLeadingComment } = require('typescript');
 
 // Create and Deploy Your First Cloud Functions
@@ -32,22 +31,22 @@ exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
 	const customer = await stripeInst.customers.create({ email: user.email });
 	return admin
 		.firestore()
-		.collection('stripe_customers')
+		.collection('Users')
 		.doc(user.uid)
-		.set({ customer_id: customer.id });
+		.set({ stripeID: customer.id });
 });
 
 const getCustomerId = async userId => {
 	const snapShot = await admin
 		.firestore()
-		.collection('stripe_customers')
+		.collection('Users')
 		.doc(userId)
-		.get();
+		.get('stripeID');
 	return snapShot.data().customer_id;
 };
 
 exports.addPaymentSource = functions.firestore
-	.document('/stripe_customers/{userId}/tokens/{autoId}')
+	.document('/Users/{userId}/{stripeID}/tokens/{autoId}')
 	.onWrite(async (change, context) => {
 		const data = change.after.data();
 		if (data === null) {
@@ -60,7 +59,7 @@ exports.addPaymentSource = functions.firestore
 		});
 		return admin
 			.firestore()
-			.collection('stripe_customers')
+			.collection('Users')
 			.doc(context.params.userId)
 			.collection('sources')
 			.doc(response.fingerprint)
@@ -194,4 +193,3 @@ exports.shippoOnboarding = functions.https.onCall(async (data, context) => {
 
 	return response;
 });
-
