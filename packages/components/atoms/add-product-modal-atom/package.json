@@ -1,8 +1,8 @@
 {
-	"name": "@ethx/add-product-atom",
+	"name": "@ethx/error-page-atom",
 	"version": "0.1.0",
-	"description": "ETHX Add Product Atom",
-	"main": "AddProduct.atom.tsx",
+	"description": "ETHX ErrorPage Atom",
+	"main": "ErrorPage.atom.tsx",
 	"keywords": [],
 	"devDependencies": {},
 	"peerDependencies": {
