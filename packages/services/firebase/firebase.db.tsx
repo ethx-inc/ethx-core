@@ -73,7 +73,7 @@ export const prevPageInQuery = async (
 };
 
 export const getProduct = async (productId: string) => {
-	const productRef = firestoreDb.collection('products').doc(productId);
+	const productRef = firestoreDb.collection('Products').doc(productId);
 	try {
 		const productSnapShot = await productRef.get();
 		return { ...productSnapShot.data() };
@@ -84,7 +84,7 @@ export const getProduct = async (productId: string) => {
 };
 
 export const getBrand = async (brandId: string) => {
-	const brandRef = firestoreDb.collection('brands').doc(brandId);
+	const brandRef = firestoreDb.collection('Brands').doc(brandId);
 	try {
 		const brandSnapShot = await brandRef.get();
 		return { ...brandSnapShot.data() };
