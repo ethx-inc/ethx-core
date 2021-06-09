@@ -23,16 +23,16 @@ export const PDPAbout = ({
 			</div>
 
 			<div
-				className={`${sectionOpen ? `flex flex-col lg:flex-row` : `hidden`}`}>
-				<div className='mb-5 w-4/12 mx-auto'>
+				className={`${sectionOpen ? `flex flex-col lg:flex-row lg:gap-x-8` : `hidden`}`}>
+				<div className='w-3/4 mx-auto mb-5 lg:mb-0'>
 					<img
 						src={brandLogo}
 						alt='about-brand-logo'
 						className='object-scale-down'
 					/>
 				</div>
-				<div className='w-auto'>
-					<p className='text-sm overflow-clip'>{brandDetails}</p>
+				<div className='w-auto my-auto'>
+					<p className='text-sm overflow-clip lg:m-auto'>{brandDetails}</p>
 				</div>
 			</div>
 			<div className='hidden mt-10 mx-auto lg:mx-0 flex flex-row justify-center lg:w-1/5 lg:justify-start'>

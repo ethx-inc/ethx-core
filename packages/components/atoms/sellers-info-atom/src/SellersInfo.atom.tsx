@@ -3,14 +3,12 @@ import React from 'react';
 export interface SellersInfoProps {
 	shopOwner?: string;
 	memberSince?: string;
-	totalSales?: string;
 	totalOrders?: string;
 }
 
 export const SellersInfo = ({
 	shopOwner,
 	memberSince,
-	totalSales,
 	totalOrders,
 }: SellersInfoProps): JSX.Element => {
 	return (
@@ -19,7 +17,6 @@ export const SellersInfo = ({
 				<p className='text-lg italic font-medium my-4'>Shop Info</p>
 				<p className='text-md'>Shop Owner: {shopOwner}</p>
 				<p className='text-md'>Member Since: {memberSince} </p>
-				<p className='text-md'>Total Sales: {totalSales} </p>
 				<p className='text-md'>Total Orders: {totalOrders} </p>
 			</div>
 
@@ -27,7 +24,7 @@ export const SellersInfo = ({
 				<a href='/user-profile'>
 					<p className='text-sm italic underline'>Change Email</p>
 				</a>
-				<a href='user-profile'>
+				<a href='/user-profile'>
 					<p className='text-sm italic underline'>Change Password</p>
 				</a>
 			</div>
