@@ -17,9 +17,9 @@ const VendorHome: FC = () => {
     return (
         <div>
             <NavBar/>
-            <MainContentContainer css="flex flex-col items-center h-5/6 mt-10">
+            <MainContentContainer css="flex flex-col items-center h-5/6 lg:mt-10">
             <SellersBanner />
-            <div className='w-full mb-10 lg:ml-64'>
+            <div className='w-full mb-10'>
                 <MixedSectionText title={'the best brand'} subtitle={'your products'}/>
             </div>
             <ItemCardGrid>
