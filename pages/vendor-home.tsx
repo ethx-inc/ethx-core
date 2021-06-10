@@ -9,7 +9,7 @@ const VendorHomePage: FC = () => {
     return (
         <div>
             <NavBar/>
-            <MainContentContainer css="flex flex-col items-center h-5/6 lg:mt-10">
+            <MainContentContainer css="flex flex-col items-center h-5/6">
                 <VendorHome />
             </MainContentContainer>
         </div>

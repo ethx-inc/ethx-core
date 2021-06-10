@@ -11,11 +11,29 @@ import { AddProduct } from '../../../atoms/add-product-modal-atom/src';
 
 
 export interface VendorHomeProps {
+    brandDetails?: string;
+    brandLogo?: string;
+    brandName?: string;
+    memberSince?: string;
 	onSubmit?;
+    productImg?: string;
+    productName?: string;
+    productPrice?: string;
+    shopOwner?: string;
+    totalOrders?: string;
 }
 
 export const VendorHome: FC<VendorHomeProps> = ({
+    brandDetails,
+    brandLogo,
+    brandName,
+    memberSince,
 	onSubmit,
+    productImg,
+    productName,
+    productPrice,
+    shopOwner,
+    totalOrders,
 }: VendorHomeProps) => {
 
 	const [addNewProduct, setAddNewProduct] = React.useState(false);
@@ -23,14 +41,14 @@ export const VendorHome: FC<VendorHomeProps> = ({
 		<div>
 			<SellersBanner />
             <div className='w-full mb-10'>
-                <MixedSectionText title={'the best brand'} subtitle={'your products'}/>
+                <MixedSectionText title={brandName} subtitle={'your products'}/>
             </div>
             <ItemCardGrid>
-                <ItemCard brandName={'the best brand'} productName={'moisturizer'} productPrice={'5.99'} productImg={'/images/skincare-icon.png'}/>
-                <ItemCard brandName={'the best brand'} productName={'cleanser'} productPrice={'8.99'} productImg={'/images/skincare-icon.png'}/>
-                <ItemCard brandName={'the best brand'} productName={'serum'} productPrice={'12.99'} productImg={'/images/skincare-icon.png'}/>
-                <ItemCard brandName={'the best brand'} productName={'fragrance'} productPrice={'20.99'} productImg={'/images/skincare-icon.png'}/>
-                <ItemCard brandName={'the best brand'} productName={'body lotion'} productPrice={'15.99'} productImg={'/images/skincare-icon.png'}/>
+                <ItemCard brandName={brandName} productName={productName} productPrice={productPrice} productImg={productImg}/>
+                <ItemCard brandName={brandName} productName={productName} productPrice={productPrice} productImg={productImg}/>
+                <ItemCard brandName={brandName} productName={productName} productPrice={productPrice} productImg={productImg}/>
+                <ItemCard brandName={brandName} productName={productName} productPrice={productPrice} productImg={productImg}/>
+                <ItemCard brandName={brandName} productName={productName} productPrice={productPrice} productImg={productImg}/>
             </ItemCardGrid>
             <div className='flex flex-col justify-center w-full'>
                 <div className='w-full lg:w-2/5 mt-10 mx-auto flex justify-center'>
@@ -40,8 +58,8 @@ export const VendorHome: FC<VendorHomeProps> = ({
                 <AddProduct />
                 </div>
             </div>
-            <SellersInfo shopOwner={'#1 Seller'} memberSince={'03-02-2021'} totalOrders={'24'}/>
-            <PDPAbout fontColor={'gray-600'} brandLogo='/images/square-placeholder.jpeg' brandDetails={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tellus sit amet ligula pretium, quis consectetur dui euismod. Pellentesque efficitur eleifend vehicula. Vivamus vulputate leo vitae libero tempor, sed molestie augue pretium. Morbi semper, justo et tincidunt sagittis, magna metus euismod ipsum, at congue odio leo ac dolor. Cras ut lobortis tellus. Aenean massa tortor, finibus ac tristique sed, auctor ac mi. Donec quis placerat lacus. Donec placerat elementum leo, et feugiat orci euismod at. Maecenas sed gravida nunc. Sed sed nibh tellus. Mauris vulputate, ex convallis tempus consectetur, augue erat euismod mi, in vestibulum ex leo id ligula. Duis dictum euismod leo eleifend laoreet. Nunc finibus turpis leo, a semper quam pellentesque eget.'}/>
+            <SellersInfo shopOwner={shopOwner} memberSince={memberSince} totalOrders={totalOrders}/>
+            <PDPAbout fontColor={'gray-600'} brandLogo={brandLogo} brandDetails={brandDetails}/>
 		</div>
 	);
 };
