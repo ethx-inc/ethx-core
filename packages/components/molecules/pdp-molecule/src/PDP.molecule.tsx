@@ -30,18 +30,18 @@ export const PDPMolecule: FC<PDPMoleculeProps> = ({
 					pdpImages={selectedItem ? selectedItem.images : null}
 					productName={selectedItem.name}
 				/>
-				<PDPText fontColor='gray-500' />
+				<PDPText fontColor='gray-600' />
 				<div className='flex m-auto justify-center w-full lg:w-1/5 lg:mt-8'>
 					<ButtonCTA title='add to cart' handleClick={() => onAddToCart()} />
 				</div>
 			</div>
 
 			<div>
-				<PDPIngredient fontColor='gray-500' productIL={ingredients} />
+				<PDPIngredient fontColor='gray-600' productIL={ingredients} />
 			</div>
 			<div>
 				<PDPAbout
-					fontColor='gray-500'
+					fontColor='gray-600'
 					brandDetails={brandInfo ? brandInfo.description : null}
 					brandLogo={brandInfo ? brandInfo.img : null}
 				/>
