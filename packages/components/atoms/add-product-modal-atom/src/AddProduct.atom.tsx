@@ -10,9 +10,9 @@ export interface AddProductProps {
 export const AddProduct = ({
 	onClick,
 }: AddProductProps): JSX.Element => {
-	const [addVariant, setAddVariant] = React.useState(false);
+
 	return (
-		<div className='flex flex-col lg:flex-row lg:mt-5 m-auto lg:border-2 lg:rounded-lg p-8 lg:w-3/5'>
+		<div className='bg-white flex flex-col lg:flex-row lg:mt-5 m-auto lg:border-2 lg:rounded-lg p-8 lg:w-3/5'>
 			<div className='add-product-modal w-full'>
 				<form
 					className={``}>

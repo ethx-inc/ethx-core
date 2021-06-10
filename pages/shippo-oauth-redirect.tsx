@@ -15,7 +15,7 @@ const ShippoOnboardingSuccess: FC<ShippoOnboardingProps> = ({
     return (
         <div>
             <NavBarController/>
-            <HeroText fontColor={'primary'} subtitle={'Launching Summer 2021'} title={'Onboarding successful!'} />
+            <HeroText fontColor={'primary'} subtitle={''} title={'Onboarding successful!'} />
         </div>
 
     );
