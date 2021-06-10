@@ -14,7 +14,7 @@ const PurchaseSuccess: FC<PurchaseSuccessProps> = ({
     return (
         <div>
             <NavBarController/>
-            <HeroText fontColor={'primary'} subtitle={'Launching Summer 2021'} title={'Purchase successful!'} />
+            <HeroText fontColor={'primary'} subtitle={''} title={'Purchase successful!'} />
         </div>
 
     );

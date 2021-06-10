@@ -12,7 +12,7 @@ export const SellersInfo = ({
 	totalOrders,
 }: SellersInfoProps): JSX.Element => {
 	return (
-		<div className='text-gray-600 border-t border-primary w-5/6 my-5 mx-auto px-5 lg:mx-0 lg:mt-10'>
+		<div className='text-gray-600 border-t border-primary w-5/6 my-5 mx-auto px-5 lg:mt-10'>
 			<div>
 				<p className='text-lg italic font-medium my-4'>Shop Info</p>
 				<p className='text-md'>Shop Owner: {shopOwner}</p>
