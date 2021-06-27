@@ -11,9 +11,7 @@ export default {
 	argTypes: {},
 } as Meta;
 
-const Template: Story<AddProductProps> = args => (
-	<AddProduct {...args} />
-);
+const Template: Story<AddProductProps> = args => <AddProduct {...args} />;
 
 export const Base = Template.bind({});
 

@@ -23,7 +23,9 @@ export const PDPAbout = ({
 			</div>
 
 			<div
-				className={`${sectionOpen ? `flex flex-col lg:flex-row lg:gap-x-8` : `hidden`}`}>
+				className={`${
+					sectionOpen ? `flex flex-col lg:flex-row lg:gap-x-8` : `hidden`
+				}`}>
 				<div className='w-3/4 mx-auto mb-5 lg:mb-0'>
 					<img
 						src={brandLogo}

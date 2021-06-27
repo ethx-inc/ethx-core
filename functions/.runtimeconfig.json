@@ -1,0 +1,9 @@
+{
+  "stripe": {
+    "secret_key": "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",
+    "secret": "sk_test_51IhJJEIhOmWDctPwZqGBTmms0pK7xDr0zqaE9oMHnWYokHHvmXhDWTK3wQAw1cVgtKHepAd1oMowDR5e3g8Fhhpz00A6YgPA3b"
+  },
+  "shippo": {
+    "secret": "laHqnqs3gd8uI1UDkbXh6yU_51soAgq2r3SyQg_O3Js"
+  }
+}
