@@ -1,6 +1,6 @@
 import React from 'react';
-import HomePage from "./home";
 
+import HomePage from './home';
 
 export interface HomeProps {
 	color?: string;
@@ -8,14 +8,7 @@ export interface HomeProps {
 	title?: string;
 	subtitle?: string;
 }
-export const Home = (
-	color,
-	fontColor,
-	title,
-	subtitle
-
-): JSX.Element => {
-  
+export const Home = (color, fontColor, title, subtitle): JSX.Element => {
 	return (
 		<div>
 			<HomePage />

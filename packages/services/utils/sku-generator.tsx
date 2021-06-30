@@ -1,3 +1,5 @@
+import { getAllNewBrand } from '../firebase/firebase.db';
+
 export type PrimaryAttribute = {
 	color?: string;
 	scent?: string;
@@ -25,3 +27,5 @@ export const useCreateSKU = ({
 
 	return SKU;
 };
+
+console.log(JSON.stringify(getAllNewBrand));

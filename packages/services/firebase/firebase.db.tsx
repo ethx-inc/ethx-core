@@ -1,5 +1,4 @@
 import { firestoreDb } from './firebase.utils';
-import { CartItem } from '../context/cart-context';
 
 const pageLimit = 20;
 
@@ -84,7 +83,18 @@ export const getProduct = async (productId: string) => {
 };
 
 export const getBrand = async (brandId: string) => {
-	const brandRef = firestoreDb.collection('Brands').doc(brandId);
+	const brandRef = firestoreDb.collection('brands').doc(brandId);
+	try {
+		const brandSnapShot = await brandRef.get();
+		return { ...brandSnapShot.data() };
+	} catch (e) {
+		console.log('error getting product', e.message);
+		return null;
+	}
+};
+
+export const getAllNewBrand = async () => {
+	const brandRef = firestoreDb.collection('Brands').doc();
 	try {
 		const brandSnapShot = await brandRef.get();
 		return { ...brandSnapShot.data() };
