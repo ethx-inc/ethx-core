@@ -22,7 +22,7 @@ const HomePage: FC<HomeProps> = ({
 }: HomeProps) => {
 
     let testimonials = [
-        {name:'Ruby Dove, Founder' , quote:'Welcome! We appreciate your patience as we work to create a platform that facilitates a simple & meaningful experience.', 
+        {name:'Ruby Dove, Founder' , quote:'Welcome! We are conducting site maintenance to ensure we are creating a platform that facilitates a simple & meaningful experience. You may notice errors within the platform, but know that they are being addressed!', 
 		id: 0},
 
     ];
@@ -39,7 +39,6 @@ const HomePage: FC<HomeProps> = ({
 			</MainContentContainer>
             <TestimonialController testimonials = {testimonials}/>
 			<div className='bg-primary text-center text-sm lg:text-lg text-light text-white py-2 px-4'>Need Help? Contact us at <span className='cursor-pointer underline'>support@ethx.shop</span> for a response within 48 hours!</div>
-
 		</div>
 	);
 };
