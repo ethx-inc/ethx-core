@@ -16,12 +16,7 @@ export interface HomeProps {
 	subtitle?: string;
 }
 
-const HomePage: FC<HomeProps> = ({
-	color,
-	fontColor,
-	title,
-	subtitle,
-}: HomeProps) => {
+const HomePage: FC<HomeProps> = () => {
 	const testimonials = [
 		{
 			name: 'Ruby Dove, Founder',

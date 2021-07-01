@@ -4,7 +4,7 @@ import { ChangeEmailForm } from '../../components/molecules/change-email-form-mo
 import {
 	auth,
 	changePassword,
-	updateEmail,
+	updateCurrentUserEmail,
 } from '../../services/firebase/firebase.utils';
 
 export interface ChangeEmailFormControllerProps {
@@ -28,7 +28,7 @@ export const ChangeEmailFormController: FC<ChangeEmailFormControllerProps> = ({
 		}
 
 		if (type === 'email') {
-			updateEmail(field, onGoBack);
+			updateCurrentUserEmail(field, onGoBack);
 		}
 		if (type === 'password') {
 			if (providerId !== 'google.com') {

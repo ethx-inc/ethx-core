@@ -28,7 +28,7 @@
 		"@types/react": "^17.0.11",
 		"axios": "^0.21.1",
 		"fetch": "^1.1.0",
-		"firebase": "^8.4.1",
+		"firebase": "9.0.0-beta.2",
 		"firebase-tools": "^9.12.0",
 		"next": "10.0.8",
 		"node-fetch": "^2.6.1",
