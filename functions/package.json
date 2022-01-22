@@ -18,7 +18,7 @@
     "fetch": "^1.1.0",
     "firebase-admin": "^9.2.0",
     "firebase-functions": "^3.11.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "stripe": "^8.148.0",
     "uuid": "^8.3.2"
   },
